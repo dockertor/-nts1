@@ -1,0 +1,21 @@
+// Aula 1 - Preparativos para o nosso cenário
+
+Alguns modelos apenas são compatíveis, geralmente os mais caros e com antenas externas de alto ganho:
+
+adaptador-usb-wireless-tp-link  | :Adaptador Usb Wireless Tp-link]
+
+# iwconfig
+
+# ifconfig wlan0
+
+# iwlist wlan0 scanning
+
+# ifconfig wlan0 up
+
+# airmon-ng start wlan0
+
+Pra habilitar, caso você esteja usando o network manager, terá que desabilitar antes, com o comando:
+
+# airmon-ng check kill
+
+# iwconfig wlan0mon
