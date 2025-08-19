@@ -1,0 +1,141 @@
+# Aula sobre Alteração de Endereço MAC (MAC Spoofing)
+
+Olá a todos!
+
+Bem, mais uma aula aqui. Desta vez vamos mostrar para vocês como conseguimos alterar o nosso MAC Address, que é o nosso endereço físico da nossa placa de rede.
+
+## O que é MAC Address
+
+O Wi-Fi ou cabo - todos eles possuem um endereço MAC. Então isso é muito útil, por exemplo, caso você queira fazer algo em seu equipamento e não queira deixar rastros do seu endereço real da sua placa, ou ainda caso você queira entrar em uma rede com algum tipo de endereço MAC específico. Então isso é muito importante - podemos alterar o nosso endereçamento.
+
+## Ferramenta macchanger
+
+A gente usa geralmente o nosso comando `macchanger`. Com `-h`, podemos visualizar os comandos dele.
+
+### Opções Principais
+
+Principalmente vamos usar:
+
+- **`-r`**: Versão randômica - podemos alterar o nosso endereço para uma versão aleatória que o próprio sistema nos fornece
+- **`-m`**: Para configurar de forma manual - configura de uma forma fixa, de acordo com o endereçamento que você deseja  
+- **`-p`**: Reset - para voltar ao endereço MAC permanente, que é do próprio hardware, feito pelo fabricante
+
+## Procedimento Prático
+
+### Preparação Inicial
+
+Primeira coisa que temos que fazer é verificar se o nosso `wlan0` (nossa rede Wi-Fi) está em modo de monitoramento. Precisamos tirá-lo do modo de monitoramento.
+
+```bash
+airmon-ng stop wlan0mon
+```
+
+Para deixá-lo em modo normal e visualizá-lo.
+
+### Verificando o MAC Address Atual
+
+Agora vamos desativar nossa placa. Caso queira visualizar, pode ver aqui o nosso endereço MAC:
+
+```bash
+ifconfig wlan0
+```
+
+A gente está com o endereço do próprio fabricante, que é o endereço permanente. Isso aqui nunca muda, só a parte do "current MAC" - aí sim conseguimos fazer a alteração para o endereço que desejamos.
+
+### Desativando a Interface
+
+Vamos executar um `down` - vamos deixá-la no momento desativada:
+
+```bash
+ifconfig wlan0 down
+```
+
+Se ela sumiu novamente da nossa rede...
+
+## Alteração para MAC Randômico
+
+Agora vamos mudar o endereço para um randômico. Vamos usar:
+
+```bash
+macchanger -r wlan0
+```
+
+Ele escolheu esse endereço aqui de forma randômica (New MAC). Depois vamos ter que reativar a interface.
+
+### Verificando a Alteração
+
+Pode usar o comando `-s` para visualizar:
+
+```bash
+macchanger -s wlan0
+```
+
+O endereço mostrado é o que selecionamos. O `-s` mostra o que está ativo.
+
+Então está aqui o endereço novo, bem diferente do que estava antes.
+
+### Reativando a Interface
+
+Vamos reativar:
+
+```bash
+ifconfig wlan0 up
+ifconfig
+```
+
+Final `75F`... então realmente foi alterado com sucesso do que era originalmente.
+
+## Alteração para MAC Específico
+
+Agora, caso queira deixar um endereço MAC específico, pode usar:
+
+```bash
+ifconfig wlan0 down
+macchanger -m 00:11:22:33:90:AB wlan0
+```
+
+Um endereço que você deseja.
+
+### Verificando o Resultado
+
+Olha como ficou nossa tabela:
+- O **permanente** sempre vai ficar do mesmo jeito
+- O **atual** que estava sendo utilizado  
+- O que vamos querer mudar, que é o `90:AB` que escolhemos
+
+Vamos reativar novamente:
+
+```bash
+ifconfig wlan0 up
+ifconfig
+```
+
+Final `90:AB`... então conseguimos alterar.
+
+## Voltando ao MAC Original
+
+Caso queira usar novamente o nosso MAC Address original, temos a opção do reset:
+
+```bash
+ifconfig wlan0 down
+macchanger -p wlan0
+```
+
+Para voltar ao original. Como ficou aqui: voltou para o que era originalmente - escolhemos voltar para o nosso MAC Address original.
+
+```bash
+ifconfig wlan0 up
+ifconfig
+```
+
+Voltar como estávamos antes, que é o endereço MAC permanente do próprio fabricante.
+
+## Conclusão
+
+Então é isso, pessoal. Essa é mais uma técnica de autenticação e configuração que vamos usar e também utilizaremos ao longo das nossas aulas.
+
+Então são apenas algumas configurações básicas por enquanto, para que, quando formos aplicar algo mais avançado, usaremos tudo isso de uma vez. Vai ser muito importante.
+
+Tudo bem? Então é isso aí.
+
+Abraço para todo mundo!
