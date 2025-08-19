@@ -1,0 +1,53 @@
+# Aula Teórica sobre WLAN e Suas Vulnerabilidades
+
+Bem, ao longo desta aula, vamos apresentar para vocês uma explicação teórica, de forma rápida, sobre como funciona basicamente uma rede Wi-Fi, chamada de WLAN, e também suas vulnerabilidades inerentes.
+
+Então, aqui vamos trabalhar especificamente nessas vulnerabilidades que temos em nossas conexões via Wi-Fi.
+
+## Estrutura dos Frames em WLAN
+
+Em WLAN, a comunicação acontece através de frames, como se pode ver no frame control. Existem vários tipos de blocos ou etapas que podemos dividir em bytes. São várias informações que temos aqui.
+
+Basicamente, um frame ou quadro possui esse tipo de características. E o próprio campo do frame control, que é este primeiro aqui, ele tem um subdomínio mais complexo.
+
+Então, dentro do nosso frame control, que é a parte mais importante com a qual vamos querer trabalhar, ele possui dois bytes. Ele tem aqui alguns tipos de frames, algum frame especial que é o "type". Temos aqui dentro vários outros tipos de quadros ou outros bits dos quais podemos falar.
+
+E o mais importante é este quadro antes do type. Neste tipo de type, temos três tipos de estruturas da WLAN:
+- Um que é o de gerenciamento
+- Outro que é o de controle  
+- E o mais importante, que é o de dados
+
+## Frames de Gerenciamento
+
+Esses frames de gerenciamento vão ser basicamente responsáveis pela manutenção e comunicação entre os pontos de acesso e clientes sem fio.
+
+Eles podem ter basicamente três tipos de subtipos:
+- Autenticação e desautenticação
+- Pedido de associação e resposta de associação
+- Pedido de reassociação (como se reconecta)
+- Desassociação e sua resposta
+- Beacon, pedido de sondagem e sua resposta
+
+## Frames de Controle e Dados
+
+Os frames de controle são basicamente responsáveis por garantir o correto intercâmbio de dados entre esses pontos. Neles temos alguns tipos de subtipos: temos as solicitações de envio, temos o ClearToSend e a confirmação.
+
+Todos esses tipos de frames que são de dados carregam os dados reais que são enviados.
+
+## Ferramentas de Análise
+
+Através desses dados, conseguimos interceptar ou rastrear esses quadros através de um programa que vamos usar em nosso Kali Linux, chamado Wireshark, por exemplo. Temos vários outros programas, como Airodump ou TCPDump ou Tshark, entre vários outros, que mostraremos para vocês ao longo desta aula.
+
+## Vulnerabilidades
+
+São esses frames, ou frame control principalmente, que vamos usar para fazer toda a nossa verificação. Então, esta seria a nossa vulnerabilidade de segurança.
+
+Mesmo em redes WPA, WPA2, enfim, todas elas possuem esse tipo de vulnerabilidade. E aqui conseguimos também realizar todas as nossas aulas e todos os nossos laboratórios e experimentos.
+
+Então, só para vocês saberem deste cenário - como funciona ou onde vamos atuar, ou como funciona o nosso ataque de wireless e suas vulnerabilidades - essas são vulnerabilidades inerentes que são impossíveis, até por enquanto, de serem corrigidas.
+
+## Conclusão
+
+Então, pessoal, é isso aí. Vamos continuar nas próximas aulas já partindo para a parte prática, com os laboratórios sendo realizados.
+
+Até mais, abraço para todo mundo!
