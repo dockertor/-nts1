@@ -1,0 +1,158 @@
+# Tutorial: Auditoria de Segurança Wi-Fi com Kali Linux
+
+## Introdução
+
+Olá, todos os alunos! Tudo bem com vocês?
+
+Nesta aula, vamos aprender como descobrir senhas de Wi-Fi usando captura de handshake com técnicas como o handshake WPA/WPA2, que basicamente quebra nossa autenticação através do uso de força bruta (brute force) com uma Wordlist. Vamos usar o próprio Kali Linux que é o sistema operacional padrão para este tipo de teste.
+
+## Preparando o Ambiente
+
+Basicamente, precisamos seguir o que temos feito até agora. Temos nosso roteador - tudo é um ambiente controlado. Ele possui nosso Wi-Fi "WiFi Test", que está exibindo nosso nome. É um roteador normal com o nome configurado, canal automático também configurado, o nome dele está sendo exibido. A segurança dele é WPA2, que é o mais recomendado e que a maioria das pessoas utiliza no protocolo wireless.
+
+O problema é que configuramos uma senha simples: 1, 2, 3, 4, 5, 6, 7, 8, 9 - ou seja, isso é muito fácil de quebrar com qualquer tipo de Wordlist. Então, é uma configuração simples para conseguirmos fazer nossas configurações de ambiente.
+
+Meu Windows está aqui conectado ao "WiFi Test". Não tem internet, mas está conectado. Aqui temos nosso Kali Linux onde faremos os testes.
+
+## Processo de Captura
+
+Primeiro, vamos monitorar nosso Wi-Fi. Vamos derrubar a conexão do Windows que está conectado, simulando um ambiente onde existe um cliente conectado ao roteador. Como derrubamos a conexão daquele cliente? Geralmente ele vai conectar automaticamente - derrubamos e depois ele se conecta sozinho, ou a pessoa vai lá e conecta novamente.
+
+Com isso, capturamos o que chamamos de handshake, que basicamente é quando nosso Kali Linux captura os pacotes transmitidos do nosso cliente (nosso alvo) até nosso roteador. Esses pacotes são totalmente criptografados, então não conseguimos ler diretamente. Os pacotes são trocados no ar através da conexão ou reconexão do Wi-Fi.
+
+Esse handshake que capturamos será usado para fazer um ataque offline, porque se fôssemos atacar diretamente um roteador, qualquer tipo de roteador tem proteção contra brute force, então seríamos bloqueados. Por isso fazemos o ataque offline - pegamos aquele handshake e usamos nossa Wordlist nele.
+
+## Sobre as Wordlists
+
+Claro, temos nossa Wordlist no Kali Linux por padrão, que não é muita coisa. Você pode encontrar na internet wordlists gigantescas, enormes, com trilhões e trilhões de palavras diferentes. Essas wordlists são alimentadas através de vazamentos de milhões de senhas pela internet, de grandes sites, bancos de dados, etc. Essas wordlists vão aumentando cada vez mais, e a complexidade das senhas vai ficando mais fácil de localizar.
+
+Por isso que hoje em dia você consegue visualizar alguns sites que pedem para você mudar sua senha, colocar uma senha mais difícil. Muitos sites hoje em dia nem deixam você usar senhas simples - tem que ter regras: no mínimo 8 caracteres, letras maiúsculas, minúsculas, caracteres especiais, etc. Tudo isso é para dificultar, porque realmente, contra a maior capacidade de processamento das nossas máquinas e nossos Kali Linux, é mais difícil manter tudo seguro.
+
+## Configurando o Modo Monitor
+
+A primeira coisa que precisamos fazer é colocar nossa placa de rede em modo monitor. Ela não está ainda, então vamos configurá-la.
+
+```bash
+airmon-ng start wlan0
+```
+
+Se ela não aparecer, como estamos fazendo muitas aulas de Wi-Fi, tire a placa do seu porto USB e coloque novamente que ela vai funcionar.
+
+Vamos deixar nossa placa de rede em modo de monitoramento para conseguirmos monitorar o ar. Já sabemos qual é nosso alvo, mas vamos monitorar o ar para capturar uma vítima.
+
+```bash
+airodump-ng wlan0mon
+```
+
+## Identificando o Alvo
+
+O que queremos é esse "WiFi Test", com autenticação WPA2. Aqui temos nosso WiFi Test no canal 10, nosso MAC Address, e vamos ver nossa vítima - nosso cliente que está conectado nele. Podemos filtrar pelo canal para ficar mais fácil:
+
+```bash
+airodump-ng -c 10 wlan0mon
+```
+
+Agora temos nosso roteador identificado, já temos nosso alvo. Nosso Windows está no WiFi Test conectado. Temos o BSSID e nossa estação (nosso cliente) que está conectada ao nosso roteador no canal 10.
+
+## Capturando o Handshake
+
+Agora vamos derrubar essa conexão, mas antes precisamos estar monitorando e capturando. Vamos deixar ele aqui novamente em monitoramento e filtrar pelo nosso canal e pelo nosso BSSID, capturando nosso handshake.
+
+```bash
+airodump-ng -c 10 --bssid C0:25:E9:XX:XX:XX -w captura wlan0mon
+```
+
+Ele vai criar vários arquivos com esse mesmo nome "captura": captura-01.cap, arquivo de log, etc. Nossa placa de rede WiFi está configurada.
+
+Ele vai monitorar aquela frequência, aquela rede normalmente, e o mais importante: capturar nosso handshake. Mas como podemos fazer isso sendo que o cliente está conectado normalmente? Vamos derrubar essa conexão e depois ele vai automaticamente se reconectar, já que estava conectado anteriormente.
+
+## Executando o Ataque de Desautenticação
+
+Vamos abrir outro terminal para derrubarmos a conexão, deixando este terminal ativo e ligado.
+
+```bash
+aireplay-ng -0 100 -a C0:25:E9:XX:XX:XX -c D7:3A:XX:XX:XX:XX wlan0mon
+```
+
+Onde:
+- `-0 100`: envia 100 pacotes de desautenticação
+- `-a`: MAC do roteador (BSSID)  
+- `-c`: MAC do cliente
+
+Vamos derrubar aquela conexão enviando 100 pacotes. E não demorou muito - já derrubou. Vamos finalizar o ataque. Ele vai se reconectar novamente.
+
+O cliente, simulando uma situação real, vai ver que o WiFi está desconectado e vai tentar conectar novamente. E pronto! O handshake foi capturado! Ele até mostra nosso BSSID. Podemos dar Ctrl+C para sair.
+
+Conseguimos com sucesso nosso arquivo. O cliente conseguiu se reconectar novamente, então não vai achar nada demais - só teve uma queda de conectividade momentânea.
+
+## Verificando os Arquivos Capturados
+
+Nosso handshake (nosso arquivo) já foi criado. Vamos dar um `ls` para ver:
+
+```bash
+ls
+```
+
+Ele está aqui: "captura". Esse nome "captura" foi o nome que demos no comando. Ele criou vários arquivos: captura.cap (que vamos trabalhar), além de outros formatos como CSV (arquivos de log), XML, etc. Vamos trabalhar com esse .cap.
+
+## Quebrando a Senha
+
+Já capturamos nosso handshake, agora vamos trabalhar com esse arquivo. É um arquivo comum que pode ser trabalhado com o aircrack, que é o comando que serve para quebrar as senhas usando uma Wordlist.
+
+Primeiro, vamos ver a wordlist disponível:
+
+```bash
+ls /usr/share/wordlists/
+```
+
+Temos algumas wordlists aqui. A que queremos é a "rockyou.txt". É um arquivo grande, porém tem milhões de entradas. Ele está compactado (.txt.gz), então vamos descompactar:
+
+```bash
+gzip -d /usr/share/wordlists/rockyou.txt.gz
+ls -lh /usr/share/wordlists/rockyou.txt
+```
+
+É um arquivo de 134 megabytes, que é muito pouco nos padrões de hoje. Você encontra wordlists com terabytes, com trilhões e trilhões de palavras. Mas para nosso teste, isso é suficiente.
+
+## Executando o Aircrack
+
+Agora vamos quebrar nosso arquivo captura.cap usando a wordlist:
+
+```bash
+aircrack-ng -b C0:25:E9:XX:XX:XX -w /usr/share/wordlists/rockyou.txt captura.cap
+```
+
+Onde:
+- `-b`: nosso BSSID
+- `-w`: nossa wordlist
+- `captura.cap`: arquivo que precisamos quebrar
+
+Foi bem rápido! Na minha máquina consegui mais de 3.100 palavras por segundo. Dependendo da sua máquina, isso vai depender muito do seu processador, potência, modelo, ano - tudo isso altera o tempo.
+
+Se tivesse que rodar toda a lista (que é pequena), demoraria quase uma hora. Para uma lista de apenas 134MB! Imagine usando uma GPU, que tem muito mais capacidade de processamento para quebras de senhas, ou processadores mais potentes.
+
+## Resultado
+
+A senha encontrada foi: **123456789**
+
+Nada que já não sabíamos - já tínhamos falado que a senha era essa. Então nosso WiFi foi "crackeado" com sucesso.
+
+## Conclusão e Recomendações de Segurança
+
+Por isso é importante usar:
+- Caracteres maiúsculos
+- Caracteres minúsculos  
+- Caracteres especiais
+- Senhas longas e complexas
+
+Eu sei que é um pouco chato, essa questão de segurança não é muito confortável, mas hoje em dia os computadores estão ficando cada vez mais potentes, e precisamos ter maior atenção com as senhas, principalmente quando acontecem grandes vazamentos de senhas de sites e bancos de dados enormes.
+
+## Considerações Finais
+
+Pessoal, foi isso! Conseguimos quebrar uma senha, conseguimos derrubar nosso cliente, forçá-lo a se reconectar, capturar um handshake e executar um brute force naquele arquivo.
+
+**Importante**: Este tutorial é apenas para fins educacionais e deve ser usado apenas em redes próprias ou com autorização explícita. O uso não autorizado dessas técnicas é ilegal.
+
+---
+
+*Espero que tenham gostado! Qualquer dúvida ou pergunta, podem fazer no fórum do nosso curso. Abraço para todo mundo!*
