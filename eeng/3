@@ -1,0 +1,192 @@
+# Kali Linux Installation on VirtualBox
+
+Hello everyone! How are you all doing?
+
+Well, another lesson here. We're going to install our Kali Linux.
+
+It's important that you have already installed VirtualBox. This is important. Don't use other types of virtualization systems. Use VirtualBox, ok? Because it's cross-platform and it's completely free.
+
+So, we can have the complete functionality of Kali Linux through VirtualBox.
+
+So, it's important that you follow exactly what we're doing here in this installation lesson, ok?
+
+## Kali Linux Download
+
+So, the first thing: enter the Kali Linux website, **Kali.org** and download our virtual machine.
+
+So, you can come here, enter the homepage. Go to "Download". There you have the type of installation you want to do.
+
+I suggest you do the **virtual machines** installation. It's simpler, faster. So, that's what I recommend you work with, ok?
+
+So, you come here, click here and download here, look, our Kali Linux on VirtualBox.
+
+**Don't use other virtualization systems**, ok? Because many people use other virtualization systems and have problems. Then they need support, anyway. And I don't provide support regarding other systems. Only on VirtualBox itself, ok?
+
+### Torrent Download
+
+So, download via torrent. I suggest you go via torrent, because it's a heavy file. So, if you have unstable internet, if you have internet that might drop, and so on, then I suggest you download via torrent. It's safer for you to use.
+
+So, VirtualBox is what I recommend you use.
+
+## File Extraction
+
+Then, after you download our file via torrent here, you need to extract this file.
+
+On Windows, you have to use a program that does the extraction. Like **7-Zip**? You can download this program for Windows too.
+
+So, for Windows, just download it here, look. If you don't have it, you can download it from the **7-zip.org** website. This is our program for Windows.
+
+So, install it and extract this file. You can extract your file with 7-Zip, ok? Which we download by default, ok?
+
+So, on your Windows, download the program, which is a decompressor. It's equivalent to the famous WinRAR, right? Which we use a lot.
+
+So, here we can also download and decompress.
+
+## VirtualBox Import
+
+So, after you've done the file extraction here, it will generate a new folder here. Inside it we have two files: one that is **.vdi**.
+
+This VDI is the file - it is the Kali Linux system itself. Let's say, the virtual hard disk itself, ok.
+
+And this one here, the **.vbox**, which is the file that is executed by VirtualBox, which will be opened by VirtualBox. That's why it's linked to this VDI file, which is from our Kali Linux VirtualBox, ok?
+
+So, you click here on the **.vbox** file and open it with Oracle VirtualBox, to be able to import the system here, ok? This is very important to do this configuration step, ok?
+
+So, it's a ready machine. It's not that, you don't need to mess around. We won't need to do the installation from scratch, anyway. So, everything is ready.
+
+## Important Configurations
+
+What you need to do now is work on your network part. Configure your network part and other optional configurations, like RAM memory, some CPU configuration that you need.
+
+### Hardware Requirements
+
+So, it's necessary that you have good hardware capacity to be able to use it. Kali Linux has many tools, it's a very complete and very heavy platform at the same time.
+
+So, it's necessary that you have hardware of **at least 4 or 8 GB of RAM memory** just for Kali Linux. And **minimum 4 CPU cores** for processing for it.
+
+So, this is very important.
+
+### Network Configurations
+
+And also, the important part is also the network configurations. **Don't use NAT type configuration**.
+
+So, let's see here: in the settings tab. You imported the machine, click here on **Settings**.
+
+Then, our network fields will be here, for example. **I never work via NAT**, because you won't make your internet accessible.
+
+So, always work in **Bridged** mode, because this way, we'll be able to work with Kali Linux with a real IP address. This will work with your IPv4 and IPv6 too, if it's active on your network.
+
+So, this is very important.
+
+The name is the name of your network interface. On your Windows, you need to know what your network interface is that you're going to use. So, this is very important for you to know how to work.
+
+So, well, **promiscuous mode**: leave it as "allow all", because then Kali Linux, as it has many tools, many things, so it's important that you have access to your network. This is also very important.
+
+### System Configurations
+
+Let's see here in the **System** part. As I said: RAM memory of **at least 4 to 8 GB**. Yes, at least 4 GB RAM, 8 GB is the minimum. Because Kali Linux is very heavy and it's important that you have good hardware for it.
+
+**Processor**: as I said, about **4 cores minimum**. That's what I ask you to use. This is very important.
+
+Well, graphics card: Kali Linux doesn't work by default. It works more with the processor itself. So, graphics card, GPU, it doesn't work.
+
+So, these are the two most important resources, ok? This is very important.
+
+### Optional Configurations
+
+Now, the other optional ones, like audio, you can disable the audio. We don't use audio. You can disable it.
+
+So, let's check again: how you configured this is very important. On the network card, always leave it in **bridged mode**. Your system, both in RAM memory and processing, have good hardware so you can work here peacefully, ok?
+
+Give an **OK**, save and let's enter our Kali Linux.
+
+## Access Credentials
+
+But just to get ahead here: the user is **kali/kali**. It's here in our description. Let's see if they can use them here. It's here: user **kali** and password **kali**. This is the regular user, regular user of Kali Linux.
+
+Later, we can enter as a root user, anyway. I'll just leave it for a next lesson how we can do this type of configuration.
+
+### Keyboard Configuration
+
+And the keyboard by default is the standard North American keyboard. So, for you who are going to use the standard Brazilian keyboard, for example, which is the one that has the ABNT standard, then you'll have some keys there a little different to use. But you can change this here later.
+
+## Prerequisite: Linux Knowledge
+
+And, folks, remembering again here, I'll warn you: **it's necessary that you have knowledge in Linux**.
+
+There are many things here that I can't talk about because I already have a Linux course. So, I can't teach Linux and Kali Linux at the same time.
+
+So, you already have to have good knowledge about Linux: command configurations, text editors, vim, nano, things like that. How does Linux work?
+
+Because Kali Linux works directly on the Debian platform, on the Debian system. So, it's important that you already have Linux knowledge, how it works before taking this Kali Linux course.
+
+Kali Linux is an advanced system. So, you need to have a knowledge base, otherwise you'll be lost, you won't be able to make the configurations, you won't be able to use the tools.
+
+This gets a lot of complaints from my students and I say it, I warn them, unfortunately it's ignored and they suffer with the experience, because they don't have Linux knowledge, they don't know about Linux. So, then they suffer a bit to learn to work with very basic things.
+
+So, here's the warning: it's very, very important - you knowing, it's practically mandatory - you knowing Linux before taking our Kali Linux course.
+
+So, here's the warning. The warning applies to all lessons. So this is very, very important.
+
+## Starting the System
+
+So, let's go. I'll start our VirtualBox system here and I'll enlarge the little screen here so you can see better, so you can see better in our video. This is important.
+
+So, Kali Linux is a penetration testing system and Kali Linux is a heavy machine, it has many programs, many tools, everything for pentest practically.
+
+So, today we're going to study a lot with all these tools too. So that's why it's important to have quality, good hardware, because otherwise it gets very heavy. Kali Linux can crash your machine, anyway, if it's too heavy.
+
+So it's important to have a good system to work with our Kali Linux, ok?
+
+### System Login
+
+So, the first thing I have to do: let's enter the platform here. The login and password is **kali/kali**, I already told you that, ok?
+
+So, **kali** user and password **kali**. Login. We'll be able to enter our platform here.
+
+## Initial Configurations
+
+So, the first thing we'll have to do is know what our terminal configurations are. I think I'll leave it for a next lesson and I'll do some terminal configurations, like, for example, via SSH.
+
+So, if you need to leave SSH enabled, then see in the configurations lesson, first steps, configurations through our terminal, ok?
+
+So, open the terminal here and here are all the configurations that are made through our terminal, ok?
+
+I'll use it a lot. Some tools, obviously, I'll use through Kali Linux itself here, ok?
+
+So, there are all our tools that I'll show in the lesson. There are many tools, as I said, there are many and various tools. So it's important to know how to use them and the terminal too, ok?
+
+This is important here: learning to use our terminal, enabling SSH for remote access, in case you want, for example, to use SSH in a Putty on Windows or PowerShell itself, PowerShell via SSH. It's possible to do all this too.
+
+### Connectivity Check
+
+So, folks, that's it, ok? So I hope you liked it. Check those network configurations too, right? See if it got an IP address, if it got a valid IP address, right? In IPv4 and IPv6, ok?
+
+You can type the command, for example:
+```
+hostname -I
+```
+
+And see here, look, a valid IPv4 address, right? So a 192.168.1.125, which it got from my local network, and IPv6, right? In case your internet provider has IPv6 too, ok?
+
+So, all this is very important for us to start doing our installations, configurations and everything else here.
+
+## Course Methodology
+
+Well, throughout our course, I'll use Kali Linux. Depending on it, sometimes I'll use only via terminal, right? I'm working with desktop environment, ok?
+
+So, I'll generally work via terminal like this so you can see better. Other times, I'll use the graphical interface itself, right? Of Kali Linux itself, right?
+
+To work with the tools, I'll do many installations, configurations, ok?
+
+So, there will be many, many hours of content for us to work with, ok?
+
+## Final Recommendations
+
+So, that's it. Any doubt or question, you can ask there in our course forum, ok?
+
+It's very important that you follow exactly what I'm doing, ok? **Don't change anything, don't mess with anything**, ok? Neither virtualization system, nor anything like that, ok?
+
+So, feel free, right? To ask about the program, in case you have any doubt, because I'll answer as quickly as possible.
+
+So, that's it. See you later, folks!
