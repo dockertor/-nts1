@@ -1,0 +1,55 @@
+# Theoretical Lesson on WLAN and Its Vulnerabilities
+
+Well, throughout this lesson, we're going to present to you a theoretical explanation, quickly, about how a Wi-Fi network basically works, called WLAN, and also its inherent vulnerabilities.
+
+So, here we'll work specifically on these vulnerabilities that we have in our Wi-Fi connections.
+
+## WLAN Frame Structure
+
+In WLAN, communication happens through frames, as can be seen in the frame control. There are various types of blocks or stages that we can divide into bytes. There are various pieces of information that we have here.
+
+Basically, a frame has this type of characteristics. And the frame control field itself, which is this first one here, has a more complex subdomain.
+
+So, within our frame control, which is the most important part we want to work with, it has two bytes. It has here some types of frames, some special frame that is the "type". We have here inside various other types of frames or other bits that we can talk about.
+
+And the most important is this frame before the type. In this type of type, we have three types of WLAN structures:
+
+* One that is management
+* Another that is control  
+* And the most important, which is data
+
+## Management Frames
+
+These management frames will be basically responsible for maintenance and communication between access points and wireless clients.
+
+They can basically have three types of subtypes:
+
+* Authentication and deauthentication
+* Association request and association response
+* Reassociation request (how it reconnects)
+* Disassociation and its response
+* Beacon, probe request and its response
+
+## Control and Data Frames
+
+Control frames are basically responsible for ensuring the correct data exchange between these points. In them we have some types of subtypes: we have send requests, we have ClearToSend and confirmation.
+
+All these types of frames that are data carry the real data that is sent.
+
+## Analysis Tools
+
+Through this data, we can intercept or track these frames through a program that we'll use in our Kali Linux, called Wireshark, for example. We have various other programs, like Airodump or TCPDump or Tshark, among various others, which we'll show you throughout this lesson.
+
+## Vulnerabilities
+
+It's these frames, or frame control mainly, that we'll use to do all our verification. So, this would be our security vulnerability.
+
+Even in WPA, WPA2 networks, anyway, they all have this type of vulnerability. And here we can also perform all our lessons and all our laboratories and experiments.
+
+So, just for you to know about this scenario - how it works or where we'll act, or how our wireless attack works and its vulnerabilities - these are inherent vulnerabilities that are impossible, at least for now, to be corrected.
+
+## Conclusion
+
+So, folks, that's it. We'll continue in the next lessons already moving to the practical part, with the laboratories being performed.
+
+See you later, a hug to everyone!
