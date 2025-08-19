@@ -1,0 +1,226 @@
+# Configurações Iniciais do Kali Linux
+
+Olá a todos os alunos! Tudo bem com vocês, pessoal?
+
+Bom, primeiros passos depois que vocês fizeram a sua instalação do seu Kali Linux.
+
+Primeira coisa: as configurações básicas, entre elas configurar o usuário root, habilitar o acesso via SSH do seu Kali Linux para vocês acessarem o seu sistema remotamente, tanto via Windows, via Linux, enfim, de forma remota.
+
+E depois fazer a atualização do seu sistema, caso precise.
+
+Então essa é uma etapa importante para vocês fazerem.
+
+## Configuração do Usuário Root
+
+Então, primeira coisa: abram o seu terminal do seu Kali Linux.
+
+Ele sempre vai abrir como usuário comum, não é um usuário root - ele não tem superpoderes no seu sistema. Então é preciso que vocês tenham acesso ao seu usuário root.
+
+Então como podemos ter acesso ao usuário root? Lembrando que esse tipo de assunto é assunto de Linux, mas eu vou explicar para vocês aí para vocês poderem adiantar.
+
+Então, primeira coisa: rodem o nosso comando:
+```bash
+sudo su
+```
+
+Espaço `sudo`, espaço `su`, tudo bem? Ele vai pedir a senha do seu usuário kali, que é **kali** também.
+
+E prontinho! Aí temos aqui o acesso ao usuário root.
+
+### O que é o usuário root?
+
+O usuário root do Linux é o usuário que tem todos os poderes plenos. É o usuário administrador, então ele tem acesso a tudo e a todos. Ele pode fazer qualquer coisa no seu sistema.
+
+Então ele tem que ser usado com muito cuidado, tudo bem?
+
+É importante vocês saberem manusear entre usuário comum e usuário root. Isso também é muito importante.
+
+Isso também é assunto básico de Linux, não só de Kali Linux, mas de sistemas Linux. Todos os sistemas baseados no Linux têm um usuário root, tudo bem?
+
+Então a primeira coisa é saber como vocês podem trafegar de um para outro.
+
+### Definindo senha para o usuário root
+
+O usuário root não tem senha, então vamos ter que configurar uma senha para ele.
+
+Então, o comando é:
+```bash
+passwd root
+```
+
+Ou só `passwd` para mudar a sua senha, para poder criar uma senha.
+
+Então, dão Enter e coloquem aqui uma nova senha. Por exemplo: 123456, 123456.
+
+Obviamente, usem senhas muito melhores do que isso. É um usuário administrador. Tomem cuidado para não ser hackeado, obviamente. O próprio sistema que vocês querem proteger para não ser hackeado.
+
+Então vamos lá.
+
+## Configuração do SSH
+
+Então, uma outra coisa importante é configurar o SSH, que é o nosso protocolo de acesso remoto, tudo bem?
+
+Então, temos que configurar porque por padrão ele vem como bloqueado. Ele vem desabilitado.
+
+Então é importante a gente habilitar isso. Vocês podem habilitar tanto para o acesso ao usuário root direto ou não. Então aí é opcional de vocês.
+
+### Habilitando o serviço SSH
+
+Mas então, a primeira coisa que a gente vai fazer é habilitar o daemon. Daemon é o programinha que roda em background.
+
+Então vamos dar um:
+```bash
+systemctl enable --now ssh
+```
+
+Por que esse comando aqui? O que isso significa? A gente vai conseguir habilitar o sistema do SSH.
+
+Toda vez que o sistema ligar, vocês derem um restart, reiniciarem o seu sistema, o SSH ou daemon, esse protocolo vai estar ativado por padrão.
+
+E o `--now` é para dar um start agora. É equivalente ao `systemctl start`.
+
+Então, vocês já deixam ele ativado, tudo bem?
+
+Então isso é muito importante.
+
+### Verificando o status do SSH
+
+Como a gente pode visualizar? Para verificar, usem o comando:
+```bash
+systemctl status ssh
+```
+
+Vocês vão conseguir visualizar. Olha aqui, está com **active (running)**.
+
+Só me perdoem pela imagem, que como estou usando uma máquina virtual, ela vai ficar pequenininha. Mas geralmente, eu sempre trabalho com a minha tela aqui do meu Linux para vocês poderem enxergar melhor os comandos. Só para a gente aprender mesmo aqui, tudo bem?
+
+Então, vejam como está ativado.
+
+## Acesso Remoto via SSH
+
+Então, primeira coisa é: vamos acessar o nosso Kali Linux remotamente. A gente já ativou o SSH.
+
+Então, descobram o seu endereço IP:
+```bash
+hostname -I
+```
+
+Acho que já falei isso, menos I maiúsculo. A gente vai mostrar aqui os endereços IPs, tanto IPv4 quanto IPv6. Vocês podem acessar tanto um quanto outro.
+
+Então, o 192.168.1.125, esse é o endereço do meu Kali Linux.
+
+Então, eu vou acessar de forma remota pelo IP do meu Kali Linux.
+
+### Acesso via Windows PowerShell
+
+Caso vocês estejam usando Windows - eu estou usando aqui um Windows Server, mas serve para Windows desktop também - só baixar o **PowerShell 7**. Temos uma aula também que fala sobre isso.
+
+Vocês podem usar pelo PowerShell 7. O que eu vou usar é:
+```powershell
+ssh kali@192.168.1.125
+```
+
+Obviamente vocês vão ter endereços diferentes do meu. Cada ambiente de rede tem o seu endereço: 192.168.1.125, 192.168.1.112, etc.
+
+Como é o primeiro acesso, ele vai pedir aqui para vocês poderem habilitar o nosso fingerprint, que seria a nossa assinatura digital.
+
+E ponham aqui a senha do seu Kali Linux. Kali Linux é kali/kali.
+
+Então, **kali** usuário, **kali** senha.
+
+Prontinho! Acessamos remotamente via PowerShell no meu Windows, PowerShell versão 7. Não pode ser o PowerShell antigo. Tem que ser o PowerShell novo.
+
+### Vantagens do acesso remoto
+
+Então, temos aqui o acesso remoto do meu Kali Linux via meu Windows.
+
+Isso também é muito importante. Então, vocês vão conseguir fazer os comandos do seu Kali Linux aqui.
+
+Então, é uma maneira boa de vocês trabalharem com o seu Kali Linux via terminal. Por que isso? Porque às vezes vocês vão precisar copiar e colar comandos, essas coisas, e é melhor trabalhar assim desse jeito, tudo bem?
+
+Então, se vocês conseguem ter aqui o acesso remoto, para mais informações sobre SSH, configurações, temos aí no nosso curso de Linux. Para vocês saberem, tudo bem? Isso é a parte importante.
+
+## Atualização do Sistema
+
+Bom, para a gente poder atualizar aqui o nosso sistema, podem usar:
+```bash
+apt update
+```
+
+Ele vai atualizar o seu sistema, atualizar os repositórios do seu sistema.
+
+Obviamente, vocês têm que verificar que estejam com internet funcionando. Isso é importante. A sua internet tem que estar funcionando perfeitamente, tudo bem?
+
+Ele vai acessar os servidores do Kali Linux.
+
+### Listando atualizações disponíveis
+
+E depois ele vai perguntar aqui se vocês querem atualizar. Então, vocês podem rodar o comando aqui:
+```bash
+apt list --upgradable
+```
+
+Para vocês poderem ver a lista.
+
+E temos aqui mais de 700 pacotes para atualizar. É bastante coisa.
+
+Como eu disse, o Kali Linux é pesado, ele tem muitas ferramentas, muitos programas. Ele é uma plataforma completa, ele não é apenas um sistema operacional. Ele vem com tudo o que for possível, então ele é bem pesado.
+
+Ele é bem pesado, tem muitas atualizações e também bugs, às vezes.
+
+### Experiência com o Kali Linux
+
+Então, na minha experiência de vários anos de instrutor de pentest, o Kali Linux é um sistema muito bom. Ele está se atualizando de forma constante.
+
+Porém, alguns bugs na versão podem ocorrer. Então, isso tem que estar claro para vocês.
+
+### Executando as atualizações
+
+Primeiro, vocês dão um `update`. Caso vocês queiram atualizar, podem dar o comando:
+```bash
+apt upgrade
+```
+
+O upgrade vai habilitar todas as nossas atualizações. É um comando que vai demorar muito. Já adianto para vocês.
+
+Vocês dão um Enter. Ele vai fazer todos os cálculos de atualização. É muita coisa.
+
+Aqui vai atualizar bastante coisa. Tem toda uma lista de atualizações. O que será atualizado? Os programas principais e as suas dependências, tudo bem?
+
+É muita coisa. Deixa eu mostrar para vocês via remoto, vamos ver para vocês poderem enxergar melhor aqui.
+
+É muita coisa para atualizar com o comando `apt upgrade`. Tem muitos programas para serem atualizados. Demora muito. É muita coisa.
+
+Mas talvez seja preciso. É uma opção de vocês. Vocês podem atualizar ou não, tudo bem?
+
+## Resumo das Configurações
+
+Isso é isso para vocês poderem estar cientes da nossa configuração:
+
+1. **Terminal do Kali Linux** - primeira coisa
+2. **Habilitar usuário root** - trocar senha
+3. **Habilitar SSH** - para poder ter acesso remoto
+
+Algumas aulas eu vou usar os programas por aqui mesmo, mas vou usar numa tela maior para vocês poderem enxergar, tudo bem?
+
+Algumas aulas, muitas aulas, vou usar o próprio terminal. Aí vocês vão poder enxergar melhor aqui.
+
+Mas vocês podem usar também pelo PowerShell do Windows, pelo terminal do Linux, ou algum emulador de SSH. O Putty também é possível, tudo bem?
+
+## Conclusão
+
+É isso aí. Deixei tudo muito claro, tudo como funciona, os primeiros passos, passo a passo, tudo bem?
+
+Então, é isso aí. Espero que vocês gostem. Qualquer dúvida ou pergunta, ou se faltou alguma coisa importante, só me avisar.
+
+Então, é isso aí!
+
+---
+
+## Próxima Aula: Wireless Hacking
+
+Olá a todos! Tudo bem com vocês?
+
+Vamos dar início à nossa seção sobre **Wireless Hacking** ou **Ataques Wi-Fi**.
+
+Só que para isso precisamos de um...
