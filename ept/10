@@ -1,0 +1,179 @@
+# Aula sobre Invasão de Rede Oculta e Bypass de Filtro MAC
+
+Olá a todos! Tudo bem com vocês?
+
+Bem, mais uma aula aqui. Desta vez vamos fazer um tipo de invasão em uma rede oculta. Vamos descobrir, além do seu nome, também o seu MAC Address e, além disso, vamos invadir e burlar a restrição pelo filtro de MAC Address.
+
+## Filtro de MAC Address
+
+Isso é muito comum - principalmente todos os roteadores, mesmo os mais antigos até os mais novos, todos eles possuem isso: você consegue restringir o acesso à nossa rede Wi-Fi através de uma lista seletiva de MAC Address.
+
+Ou seja, mesmo se eu souber a senha, mesmo se eu souber o acesso, ela não vai conseguir acessar porque o endereço MAC Address não está nessa lista. Então você não vai conseguir fazer a conexão mesmo tendo a senha.
+
+Vamos burlar isso: vamos burlar a proteção da rede oculta e vamos burlar a restrição do MAC Address. Para vocês verem que quase nada é realmente seguro - conseguimos burlar essas duas coisas.
+
+## Configuração Inicial do Roteador
+
+Vamos fazer isso no Kali Linux. Primeira coisa que tenho que fazer: principalmente vamos habilitar o filtro de MAC Address.
+
+Vou pegar o MAC Address da minha placa - vou fazer na minha conexão pelo Ubuntu, mas vocês podem fazer pelo Windows, não tem problema nenhum. Você precisa descobrir o endereço MAC.
+
+No meu Ubuntu, que vai ser o meu cliente (supondo um cliente normal), então vou copiar o MAC Address da minha placa de rede Wi-Fi.
+
+### Configurando o Roteador
+
+Vou colocar aqui no meu roteador. Podemos habilitar - ele vai ser o meu Ubuntu. O roteador Wi-Fi está habilitado.
+
+Aqui no nosso Wireless:
+- Vou desabilitar "Exibir nome da rede"  
+- Vou deixar o nome da rede como "WiFi" mesmo
+- Canal, largura de banda: tudo automático
+
+O MAC Address vai estar restrito - ou seja, só vai conseguir conectar com esse MAC Address aqui. Se não, não vai conseguir.
+
+### Testando a Conexão Legítima
+
+Vamos ver aqui, conectar na minha rede oculta. Podemos testar: se você quiser o "WiFi", nenhuma... pronto, já consegui conectar perfeitamente.
+
+Vamos ver nossa lista de clientes: HP, aqui canal B171. Aqui é o meu canal B171 - essa é a minha lista de restrição. Está tudo certinho, está conectado com sucesso.
+
+## Iniciando o Ataque
+
+Agora vamos fazer isso no nosso Kali Linux. Vamos derrubar essa conexão, vamos fazer ele se reconectar novamente. Vamos descobrir o nome daquela rede oculta e, com isso, também vamos descobrir qual é o endereço MAC.
+
+Embora nós já saibamos o endereço, estamos supondo que estamos fazendo um ataque a um cliente desconhecido em ambiente controlado, então temos todo o acesso.
+
+### Configurando o Modo Monitor
+
+Primeira coisa: vamos configurar o modo monitor. Vamos desculpar... vamos configurar o Kali agora:
+
+```bash
+airmon-ng start wlan0
+```
+
+Encontrou ele ativo. Vamos executar `ifconfig` para ver se voltou para nosso monitoramento.
+
+Meu Ubuntu (que é o cliente que vai ser atacado) está conectado normalmente.
+
+### Localizando o Alvo
+
+Vamos encontrar nossa configuração no canal 10. A gente já fez nas aulas anteriores - estou indo mais rápido, só estou recapitulando.
+
+Vamos encontrar o canal 10, nossa rede oculta. Vamos filtrar:
+
+```bash
+airodump-ng -c 10 wlan0mon
+```
+
+Aqui podemos filtrar nosso ataque. Vamos ver aqui: temos nosso canal 10, nossa rede oculta aqui, nosso BSSID está conectado.
+
+Se a gente tiver nossa conexão, vai facilitar. C150 - já temos também o cliente que está conectado nesse aqui: C150, nosso oculto. Vamos atacar esse aqui.
+
+Já tem um cliente, obviamente. Já temos um cliente associado. Vamos derrubar para descobrir o nome (supondo que não saibamos).
+
+### Executando o Ataque de Desautenticação
+
+Vamos dar uma pausa. Esse é o cliente e esse é o nosso roteador. Vamos derrubar ele.
+
+Deixa ele monitorando. Deixa eu abrir outro terminal aqui para poder configurar.
+
+Aqui nosso atacante: vamos derrubar com nosso cliente. Vamos pegar nosso alvo: é esse aqui C150, e nosso cliente é esse aqui: final B171.
+
+```bash
+aireplay-ng -0 100 -a [BSSID] -c B171 wlan0mon
+```
+
+Vamos dar o ataque. Já vai fazer a desconexão.
+
+## Descobrindo Informações
+
+Descobriu aqui o "WiFi" - já caiu, já descobriu "WiFi" o nome. Já descobri também "WiFi" - já caiu.
+
+Deixa eu parar aqui o ataque. Ótimo, já descobrimos. A gente já sabia, mas estamos simulando, então o nome da nossa rede oculta é "WiFi".
+
+O nome do nosso cliente é esse aqui. Deixa eu reconectar novamente - ele vai se reconectar, se restabelecer.
+
+Deixa eu ver aqui minha lista também. Está aqui associado. Prontinho, está conectado.
+
+## Clonagem de MAC Address
+
+Agora já temos o nome da nossa rede oculta e o MAC do cliente/estação. Vamos fazer o quê? Já sabemos quem é ele, já sabemos o nome da nossa rede (não tem senha - é aberta).
+
+Vamos atacar nossa rede, mesmo ele com aquela restrição. Vamos fazer aqui uma clonagem.
+
+### Saindo do Modo Monitor
+
+Vamos parar nossa placa:
+
+```bash
+airmon-ng stop wlan0mon
+ifconfig
+```
+
+Para ver se saiu mesmo do modo monitor.
+
+### Clonando o MAC Address
+
+Vamos ver aqui. No Kali Linux já tem essa função, então não precisa usar o `macchanger`. O Kali Linux (e qualquer distribuição Linux) já possui esse tipo de recurso.
+
+Vou tentar conectar, mas não vou conseguir fazer a conexão porque não tenho o MAC Address correto. Então tenho que clonar o MAC Address.
+
+Deixa eu editar aqui... deixa eu apagar aqui.
+
+Agora vamos recriar novamente: rede oculta, nome "WiFi", sem senha. Ele conecta.
+
+Ótimo! Vamos ver aqui novamente em editar. Vamos ver na configuração - ele tem esse MAC clonado.
+
+### Aplicando o MAC Clonado
+
+Agora sim, vamos copiar o endereço MAC do nosso cliente que está habilitado nessa lista: B171. Esse foi o da lista.
+
+Vamos clonar esse aqui. Ele pode conectar esse porque ele está na nossa restrição. Vamos nos passar por ele: B171, endereço MAC clonado. Salva, fecha.
+
+Agora vamos conseguir conectar.
+
+## Resultado do Ataque
+
+Mas temos um problema: temos dois. Nosso roteador não vai saber quem é quem. Ele vai... caiu os dois. Talvez os dois não vão conseguir fazer a conexão.
+
+Você pode tentar fazer a conexão... já me conectei!
+
+`ifconfig` - olha, já pegou o endereço IP: 192.168.1.122.
+
+Vamos testar aqui. O nosso cliente original não vai conseguir saber quem é quem - o MAC clonado é só um. Meu Ubuntu também não conseguiu conectar... ou conseguiu? Vamos ver... ele conseguiu também.
+
+No meu Kali Linux também conseguiu. Então a pessoa não vai nem saber. O administrador da rede vai achar muito estranho: o MAC Address é o mesmo, mas dois dispositivos estão acessando com o mesmo MAC.
+
+### Testando Conectividade
+
+Vou testar aqui meu roteador. Deixa eu abrir aqui meu roteador no terminal:
+
+```bash
+ping 192.168.1.1
+```
+
+Estou pingando. Vamos pingar aqui: 192.168.1.1. Podemos tentar acessar - estou acessando.
+
+Vou abrir o navegador normalmente também. Estou acessando normalmente meu roteador: 192.168.1.1 - TP-Link.
+
+Vou acessar normalmente. Ou seja, se eu conseguir acessar meu roteador, vou acessar a internet também. Estou navegando normal.
+
+### Confirmação do Bypass
+
+Deixa eu acessar aqui: 192.168.1.1. Pronto, estou dentro.
+
+Então consegui burlar. Talvez porque tem uma sessão aberta, mas estou aqui acessando. Vou acessar até isso - pode ser burlado.
+
+Até isso também é burlado. O TP-Link, meu roteador não vai saber. Estou com uma aba aqui, e ele também conseguiu abrir. Só pode uma pessoa acessar normalmente.
+
+## Conclusão
+
+Então é isso, pessoal. Podem ver que mesmo com restrição, conseguimos burlar. Deixamos ele oculto, deixamos ele com MAC Address restrito, mas não adiantou - conseguimos burlar.
+
+Essa é uma aula de pentest Wi-Fi muito importante e muito interessante. Sabemos também como se precisa tomar cuidado.
+
+Se você trabalhar com Wi-Fi, todo cuidado é pouco.
+
+Bem, pessoal, então é isso aí. A aula foi essa. Qualquer dúvida que vocês tenham, podem perguntar lá no fórum do nosso curso para podermos responder o mais rápido possível.
+
+Abraço para todo mundo!
