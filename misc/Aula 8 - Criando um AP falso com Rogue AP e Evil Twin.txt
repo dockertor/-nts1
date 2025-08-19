@@ -1,0 +1,113 @@
+// Aula 8 - Criando um AP falso com Rogue AP e Evil Twin
+
+# airmon-ng start wlan0
+
+# airodump-ng wlan0mon
+
+# airbase-ng -e Wifi-Teste -c 10 -P wlan0mon
+
+# ifconfig at0 up
+
+# ifconfig
+
+# ifconfig at0 192.168.2.1/24
+
+# route
+
+# route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.2.1
+
+# apt install isc-dhcp-server
+
+# cd /etc/dhcp
+
+# mv dhcpd.conf dhcpd.conf.bk
+
+# vim dhcpd.conf
+
+option domain-name "kali-linux";
+option domain-name-servers 8.8.8.8, 8.8.4.4;
+subnet 192.168.2.0 netmask 255.255.255.0 {
+    range 192.168.2.10 192.168.2.200;
+    option subnet-mask 255.255.255.0;
+    option broadcast-address 192.168.2.255;
+    option routers 192.168.2.1;
+    option domain-name-servers home;
+}
+default-lease-time 600;
+max-lease-time 7200;
+authoritative;
+
+$ sudo systemctl enable isc-dhcp-server
+$ sudo systemctl start isc-dhcp-server
+
+# echo 1 > /proc/sys/net/ipv4/ip_forward
+
+# cat /proc/sys/net/ipv4/ip_forward
+
+# iptables -F
+
+# iptables -L -n
+
+# iptables --table nat --append POSTROUTING --out-interface at0 -j MASQUERADE
+
+# iptables --append FORWARD --in-interface at0 -j ACCEPT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

