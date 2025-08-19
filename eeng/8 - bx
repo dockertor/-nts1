@@ -1,0 +1,169 @@
+# Lesson on Locating and Attacking Hidden Networks
+
+Hello everyone, students! How are you all doing?
+
+Well, another lesson. This time we will work on locating hidden networks on our Kali Linux.
+
+## Initial Router Configuration
+
+Firstly, we need a router. If you need to access any router, it can be a simpler one, but most modern ones have this type of feature.
+
+We will do the following: we will work and try to locate hidden networks near your location.
+
+So let's start here. I am here with my router, on the Wireless section. Here on my router, it is here: "Display network name".
+
+Here you can display. Here there is also an explanation: you will display your SSID name. The name is the one that is shown when you try to connect to some network - it shows the name to you.
+
+But you can hide it, you can hide it in such a way that people do not know the real name. In my case, it is "WiFi Test".
+
+### Hiding the Network
+
+Let's see here, let's try hiding our network. Let's uncheck "Display" here.
+
+On my Windows, I also have another network, another Wi-Fi card, that also shows here all our Wi-Fi networks of our machine.
+
+You can see that there is already a "Hidden Network" - you can see that it is already hidden, our network just hid.
+
+Let's see here on my Kali Linux too - you can see that it is no longer there. My network does not appear anymore, you can see that it is also not here anymore.
+
+So everything is hidden here: our network, our system.
+
+## Setting Up Monitor Mode
+
+Now let's do the following: let's configure our network card in monitor mode. Let's put it in monitor mode.
+
+Remember to use our `wlan0` here.
+
+So, `airmon-ng start wlan0` - let's put it in monitor mode.
+
+I will leave it configured. And here we have two configurations. In fact, it's not a warning.
+
+As we did not kill our network management interface (this network management part here), it warns you itself.
+
+So it shows you the configuration and already disables it.
+
+### Eliminating Interferences
+
+We are now configured. You can use this command here: `airmon-ng check kill` for you to kill any type of process that may cause problems.
+
+So it automatically kills for you these two types of processes so you can configure.
+
+After that, run `ifconfig` here to see if we really have the `wlan0mon`, which we are in monitoring mode.
+
+## Detecting Hidden Networks
+
+Let's run `airodump-ng`. We already know our network, so it shouldn't be that difficult.
+
+Our network is this one here: the strongest signal, -40. It will appear with these empty fields here. The name has zero characters.
+
+I have the type of encryption it uses, the authentication. I have some information, even so. You can see the power.
+
+I know it's this one because it's the only one of my network here. But if you have some other hidden networks, you will see several others of these here with this type of empty characters.
+
+### Filtering by Channel
+
+Maybe the number of your network changes. You can filter to a specific channel to better perform our attack.
+
+Let's filter by channel 10. It's working here. Let's interrupt here with Ctrl+C.
+
+Let's run normally like our command `airodump-ng`, but with `-c 10` (channel 10 is the only one, if I'm not mistaken).
+
+If it's not the only one, it's one of the few. We can perform our attack better.
+
+## Discovery Strategy
+
+What will be our attack? We will drop some connection that is in it. There is no connection in it yet to discover the actual network name.
+
+So we have two ways:
+1. You wait for someone to connect to it (which I think is a bit more unlikely)
+2. You drop the connections that are already in it
+
+So, very likely, someone should be connected to this network. It's not the case because we will make our connection.
+
+After we drop that connection or wait for someone to connect, we will be able to visualize here what the BSSID is, what station is being associated with our MAC Address.
+
+### Connecting a Device
+
+For now, we don't have any here. Let's see here on our network on Windows. Let's connect to some specific network here so we can see.
+
+Let's use here "Hidden Network". Let's connect here. Hidden Network is hidden. To be able to connect, we need the settings.
+
+We can know here our network. So let's go to "Hidden Network". If you want to know, let's see here in "Hidden Network". Let's know the name.
+
+So you don't know the name, there is no way. But it's "WiFi Test". We already know here.
+
+This one here: "WiFi Test". Let's see here "WiFi Test". In this one, it will ask for the password.
+
+Yes, it's 123456789. To be able to connect, it will ask for the password. Obviously: 123456789.
+
+Ready. Now it will connect. Now yes, let's know here what will connect to our router.
+
+## Discovering Network Information
+
+We have already discovered here. You can see here "WiFi Test". It was discovered because someone connected - it was our router here, our station MAC Address: ending 17A9.
+
+So it connected. We were able to discover. Here it also connected. It will appear - here it will give "Hidden Network" or hidden network. It will appear here its little name after.
+
+And here it is already connected. We have discovered our name.
+
+## Executing Deauthentication Attack
+
+Now we can drop this. Not only this type of connection, but any type of Wi-Fi connection. Not necessarily Wi-Fi hidden, but drop any one.
+
+That's why we need a powerful Wi-Fi card, because we have to send signals to drop our network configuration.
+
+Our Hidden Network is already connected. Let me see here. It disconnected again. Our connection here was made successfully.
+
+### Identifying Targets
+
+Let's do it here. We have already discovered, including, what is our MAC Address: this ending C150. We also have the station - the MAC Address of the connected station.
+
+You can attack or drop the attack of that connection with both MAC Addresses, or just with one. It is more efficient with both.
+
+If you want to know: only with the BSSID works very well with cell phones. For desktop stations, something larger, a notebook, maybe both MAC Addresses work better.
+
+### Executing the Attack
+
+Let's do it here in our configuration. Let's use our `aireplay-ng`. Let's use our command:
+
+```bash
+aireplay-ng -0 100 -a [BSSID] wlan0mon
+```
+
+- `-0`: deauthentication mode
+- `100`: 100 attacks (can be more efficient)
+- `-a`: with our base, this one here BSSID
+
+You might get it right or not, but with more efficiency, if you use (as it already says) the client MAC:
+
+```bash
+aireplay-ng -0 100 -a [BSSID] -c [CLIENT_MAC] wlan0mon
+```
+
+This is another option too. You put here, before the `wlan0mon`, `-c` and the client MAC address - the complete client address. And then we have greater efficiency.
+
+## Attack Result
+
+I am connected here on my Windows. It will fall here our connection. The system takes a little while. It also depends on the Wi-Fi adapter you are using - if it's an external card, it's a little more efficient.
+
+It disconnected. You can see? It is no longer connected. And the attack continues. It won't be able to connect.
+
+It won't be able to connect. It doesn't matter, you can see? The person tries to connect, can't. The attack is continuing.
+
+When it finishes the 100 attacks, you will see that the network has disappeared to try to connect. It finished. It's getting quite...
+
+So this is the interesting part: it won't be able to. You can see that now that it stopped, now it can connect here to our Wi-Fi network.
+
+Let me see here... Now yes, it connected. Can you see?
+
+## Conclusion
+
+So, guys, that's it. You can do this on your phone, on your... any type of device.
+
+If you know the client address, even better - the attack is much more efficient. If not, you can test only by the BSSID on that router too. It's another option.
+
+Alright, guys? So that's it.
+
+If you have any questions, you can ask in the forum of our course.
+
+Hugs for everyone!
