@@ -1,0 +1,192 @@
+# Instalação do Kali Linux no VirtualBox
+
+Olá a todos! Tudo bem com vocês, pessoal?
+
+Bom, mais uma aula aqui. Vamos fazer a instalação do nosso Kali Linux.
+
+É importante que vocês já tenham instalado o VirtualBox. Isso é importante. Não usem outros tipos de sistemas de virtualização. Usem o VirtualBox, tudo bem? Porque ele é multiplataforma e ele é totalmente gratuito.
+
+Então, a gente consegue ter o funcionamento completo do Kali Linux pelo VirtualBox.
+
+Então, é importante que vocês sigam exatamente o que a gente está fazendo aqui nessa aula de instalação, tudo bem?
+
+## Download do Kali Linux
+
+Então, a primeira coisa: entrar no site do Kali Linux, **Kali.org** e fazer o download da nossa máquina virtual.
+
+Então, vocês podem vir aqui, entrar na página inicial. Vão em "Download". Aí tem aqui o tipo de instalação que vocês desejam fazer.
+
+Eu sugiro que vocês façam a instalação de **máquinas virtuais**. É mais simples, mais rápido. Então, é o que eu recomendo vocês trabalharem, tudo bem?
+
+Então, vocês vêm aqui, clicam aqui e baixam aqui, ó, o nosso Kali Linux no VirtualBox.
+
+**Não usem outros sistemas de virtualização**, tudo bem? Porque muitas pessoas usam outros sistemas de virtualização e dão problema. Aí tem que prestar suporte, enfim. E eu não presto suporte com relação aos outros sistemas. Apenas no próprio VirtualBox mesmo, tudo bem?
+
+### Download via Torrent
+
+Então, baixem via torrent. Eu sugiro que vocês vão via torrent, porque é um arquivo pesado. Então, se vocês tiverem uma internet instável, se vocês tiverem uma internet que pode cair, tudo mais, então sugiro que vocês baixem via torrent. É mais seguro para vocês usarem.
+
+Então, o VirtualBox é o que eu recomendo vocês utilizarem.
+
+## Descompactação do Arquivo
+
+Aí, depois que vocês baixarem aqui o nosso arquivo via torrent, vocês precisam descompactar esse arquivo.
+
+No Windows, têm que usar um programa que faz aí a descompactação. Que seja o **7-Zip**? Vocês podem baixar esse programa para o Windows também.
+
+Então, para o Windows, só vocês baixarem aqui, ó. Se vocês não tiverem, vocês podem baixar no site **7-zip.org**. Esse é o nosso programa para o Windows.
+
+Então, instalem ele e extraiam esse arquivo. Vocês podem extrair o seu arquivo com o 7-Zip, tudo bem? Que a gente baixa por padrão, tudo bem?
+
+Então, no seu Windows, baixem o programa, que é um descompactador. É equivalente ao famoso WinRAR, né? Que a gente usa bastante.
+
+Então, aqui a gente consegue baixar também e descompactar.
+
+## Importação no VirtualBox
+
+Então, depois que vocês fizeram aqui a extração do arquivo, vai gerar aqui uma nova pasta. Dentro dela temos dois arquivos: um que é **.vdi**.
+
+Esse VDI é o arquivo - ele é o próprio sistema do Kali Linux. Digamos assim, o disco rígido virtual próprio, tudo bem.
+
+E esse daqui, o **.vbox**, que é o arquivo que é executado pelo VirtualBox, que vai ser aberto pelo VirtualBox. Por isso, ele está interligado a esse arquivo VDI, que é do nosso VirtualBox do Kali Linux, tudo bem?
+
+Então, vocês clicam aqui no arquivo **.vbox** e abrem com o Oracle VirtualBox, para poder importar o sistema aqui, tudo bem? Isso é muito importante fazer essa etapa de configuração, tudo bem?
+
+Então, é uma máquina pronta. Não é isso, não precisa ficar mexendo. Não vamos precisar ficar fazendo a instalação do zero, enfim. Então, está tudo pronto.
+
+## Configurações Importantes
+
+O que vocês precisam fazer agora é mexer na sua parte de rede. Configurar a sua parte de rede e outras configurações opcionais, como a memória RAM, alguma configuração de CPU que precisar.
+
+### Requisitos de Hardware
+
+Então, é necessário que vocês tenham uma capacidade de hardware boa para poder usar. O Kali Linux tem muitas ferramentas, é uma plataforma muito completa e muito pesada ao mesmo tempo.
+
+Então, é necessário que vocês tenham um hardware aí de **pelo menos 4 ou 8 GB de memória RAM** só para o Kali Linux. E **4 núcleos no mínimo de CPU**, de processamento para ele.
+
+Então, isso é muito importante.
+
+### Configurações de Rede
+
+E também, a parte importante também são as configurações de rede. **Não usem configuração do tipo NAT**.
+
+Então, vamos ver aqui: na aba de configurações. Vocês importaram a máquina, clicam aqui em **Configurações**.
+
+Aí, vai estar aqui os nossos campos de rede, por exemplo. **Nunca trabalho via NAT**, porque vocês não vão deixar acessível a sua internet.
+
+Então, sempre trabalhem em modo **Bridged**, porque assim, nós vamos conseguir trabalhar com o Kali Linux com um endereço IP real. Isso vai trabalhar com o seu IPv4 e IPv6 também, caso estiver ativo na sua rede.
+
+Então, isso é muito importante.
+
+O nome é o nome da sua interface de rede. No seu Windows, vocês precisam saber qual é a sua interface de rede que vocês vão usar. Então, isso é muito importante vocês saberem trabalhar.
+
+Então, bem, o **modo promíscuo**: deixem aí como "permite tudo", porque aí o Kali Linux, como ele tem muitas ferramentas, muitas coisas, então é importante que vocês tenham acesso à sua rede. Isso também é muito importante.
+
+### Configurações de Sistema
+
+Vamos ver aqui na parte de **Sistema**. Como eu disse: memória RAM de **pelo menos 4 a 8 GB**. Sim, pelo menos 4 GB RAM, 8 GB é o mínimo. Porque o Kali Linux, ele é muito pesado e é importante que vocês tenham um tipo de hardware bom para ele.
+
+**Processador**: como eu falei, uns **4 núcleos no mínimo**. É o que eu peço aí para vocês usarem. Isso é muito importante.
+
+Bem, placa de vídeo: o Kali Linux, ele não trabalha por padrão. Ele trabalha mais com o processador mesmo. Então, placa de vídeo, GPU, ele não trabalha.
+
+Então, esses são os dois recursos mais importantes, tudo bem? Isso é muito importante.
+
+### Configurações Opcionais
+
+Agora, as outras opcionais, como o áudio, podem desabilitar o áudio. Não usamos o áudio. Podem desabilitar.
+
+Então, vamos verificar novamente: como vocês configuraram isso é muito importante. Na placa de rede, deixar sempre em **modo bridged**. O seu sistema, tanto em memória RAM quanto em processamento, ter um bom hardware para vocês poderem trabalhar aqui tranquilamente, tudo bem?
+
+Dão um **OK**, salvam e vamos entrar em nosso Kali Linux.
+
+## Credenciais de Acesso
+
+Mas só para adiantar aqui: o usuário é **kali/kali**. Está aqui na nossa descrição. Vamos ver se podem usar eles aqui. Está aqui: usuário **kali** e senha **kali**. Isso é o usuário comum, usuário comum do Kali Linux.
+
+Depois, a gente pode entrar em um usuário root, enfim. Só vou deixar para uma próxima aula como a gente pode fazer esse tipo de configuração.
+
+### Configuração de Teclado
+
+E o teclado por padrão é o teclado padrão norte-americano. Então, para vocês que vão usar o teclado padrão brasileiro, por exemplo, que é o que tem o padrão ABNT, então vocês vão ter algumas teclas aí um pouquinho diferentes de usar. Mas vocês podem mudar isso aqui posteriormente.
+
+## Pré-requisito: Conhecimento em Linux
+
+E, gente, lembrando novamente aqui, vou avisar: **é necessário que vocês tenham conhecimento em Linux**.
+
+Tem muitas coisas aqui que eu não posso falar porque eu já tenho um curso de Linux. Então, não tenho como ensinar Linux e Kali Linux ao mesmo tempo.
+
+Então, vocês já têm que ter uma boa bagagem sobre Linux: configurações de comando, editores de texto, vim, nano, essas coisas assim. Como que funciona o Linux?
+
+Porque o Kali Linux, ele trabalha diretamente na plataforma Debian, no sistema Debian. Então, é importante que vocês já tenham conhecimento de Linux, como que funciona antes de fazer esse curso de Kali Linux.
+
+O Kali Linux é um sistema avançado. Então, vocês precisam ter uma base de conhecimento, senão vocês vão ficar perdidos, vocês vão não conseguir fazer aí as configurações, não vão conseguir usar as ferramentas.
+
+Isso tem muita reclamação dos meus alunos e eu falo, eu aviso, infelizmente é ignorado e sofrem com a experiência, porque não têm conhecimento de Linux, não conhecem sobre Linux. Então, aí sofrem um pouco para aprender a mexer com coisas muito básicas.
+
+Então, fica aí o aviso: é muito, muito importante - vocês saberem, é praticamente obrigatório - vocês saberem Linux antes de fazer esse nosso curso de Kali Linux.
+
+Então, fica aí o aviso. O aviso vale para todas as aulas. Então isso é muito, muito importante.
+
+## Iniciando o Sistema
+
+Então, vamos lá. Vou iniciar aqui o nosso sistema do nosso VirtualBox e vou aumentar aqui a telinha para vocês poderem visualizar melhor, para vocês poderem enxergar melhor aí em nosso vídeo. Isso é importante.
+
+Então, o Kali Linux é um sistema de penetration testing e o Kali Linux é uma máquina pesada, tem muitos programas, muitas ferramentas, tudo para pentest praticamente.
+
+Então, hoje vamos estudar aí bastante com todas essas ferramentas também. Então é por isso que é importante ter um hardware com qualidade, bom, porque senão fica muito pesado. O Kali Linux pode travar sua máquina, enfim, se for muito pesado.
+
+Então é importante ter um sistema bomzinho para trabalhar com o nosso Kali Linux, tudo bem?
+
+### Login no Sistema
+
+Então, primeira coisa que eu tenho que fazer: vamos entrar aqui na plataforma. O login e senha é **kali/kali**, já falei isso para vocês, ok?
+
+Então, **kali** usuário e senha **kali**. Login. A gente vai conseguir entrar aqui em nossa plataforma.
+
+## Configurações Iniciais
+
+Então, a primeira coisa que a gente vai ter que fazer é saber quais são as configurações do nosso terminal. Acho que vou deixar aí numa próxima aula e vou fazer algumas configurações de terminal, como, por exemplo, via SSH.
+
+Então, se precisa deixar o SSH habilitado, então vejam na aula de configurações, de primeiros passos, de configurações pelo nosso terminal, ok?
+
+Então, abrem aqui o terminal e estão aqui todas as configurações que são feitas pelo nosso terminal, ok?
+
+Eu vou usar muito ele. Algumas ferramentas, obviamente, eu vou usar pelo próprio Kali Linux mesmo aqui, ok?
+
+Então, tem todas as nossas ferramentas que vou mostrar na aula. São muitas ferramentas, como eu disse, são muitas e várias ferramentas. Então é importante saber como utilizar e o terminal também, ok?
+
+É importante isso aqui: aprender a usar o nosso terminal, habilitar o SSH para um acesso remoto, caso vocês queiram, por exemplo, usar o SSH em um Putty no Windows ou o PowerShell mesmo, o PowerShell via SSH. É possível fazer tudo isso também.
+
+### Verificação de Conectividade
+
+Então, gente, é isso aí, ok? Então espero que tenham gostado. Vejam aí essas configurações de rede também, né? Vejam se pegou endereço IP, se pegou endereço IP válido, né? Em IPv4 e IPv6, ok?
+
+Vocês podem digitar o comando, por exemplo:
+```
+hostname -I
+```
+
+E visualizar aqui, ó, um endereço IPv4 válido, né? Então um 192.168.1.125, que ele pegou da minha rede local, e IPv6, né? Caso a sua operadora de internet tenha aí IPv6 também, tudo bem?
+
+Então, tudo isso é muito importante para a gente começar a fazer aqui as nossas instalações, configurações e tudo mais.
+
+## Metodologia do Curso
+
+Bem, ao longo aí do nosso curso, eu vou usar o Kali Linux. Dependendo, às vezes eu vou usar apenas via terminal, né? Eu estou trabalhando com ambiente desktop, ok?
+
+Então, eu vou geralmente trabalhar via terminal assim para vocês poderem enxergar melhor. Outras vezes, eu vou usar a própria interface gráfica mesmo, né? Do próprio Kali Linux, né?
+
+Para a gente trabalhar com as ferramentas, eu vou fazer muitas instalações, configurações, ok?
+
+Então, vão ter aí muitas e muitas horas aí de conteúdo para a gente poder trabalhar, tudo bem?
+
+## Recomendações Finais
+
+Então, é isso aí. Qualquer dúvida ou pergunta, vocês podem fazer lá no fórum do nosso curso, ok?
+
+É importantíssimo que vocês sigam exatamente o que eu estou fazendo, ok? **Não alterem nada, não mexam em nada**, ok? Nem sistema de virtualização, nem nada do tipo, tudo bem?
+
+Então, ficam à vontade, né? Para perguntar sobre o programa, no caso vocês tenham alguma dúvida, porque eu vou responder o mais rápido possível que eu conseguir.
+
+Então, é isso daí. Até mais, gente!
