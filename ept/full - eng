@@ -1,0 +1,1621 @@
+
+
+---
+
+@1
+
+# Introdução ao Curso de Teste de Penetração Wi-Fi
+
+Olá, todos! Tudo bem com vocês, pessoal?
+
+Bom, para você que está nos assistindo, para você que já é um aluno ou que está em dúvida, vamos fazer aqui uma breve introdução aos cursos de invasão de redes Wi-Fi com o Kali Linux, um pentest em Wi-Fi.
+
+Não vou me estender muito, eu sou o instrutor deste nosso novo curso.
+
+Vamos falar aqui rapidamente uma introdução sobre o que é um teste de penetração em redes Wi-Fi.
+
+Então, essa é uma pergunta muito comum e muito útil.
+
+Basicamente, o teste de penetração em redes sem fio é uma abordagem para avaliar a segurança de redes Wi-Fi.
+
+Então, isso envolve empregar táticas e técnicas que os hackers mal-intencionados (hackers éticos, como a gente fala) podem empregar para explorar vulnerabilidades na sua infraestrutura sem fio.
+
+Então, o objetivo é identificar fraquezas nas defesas da sua rede e corrigi-las antes que algum invasor possa realmente explorá-las.
+
+Então, o nosso teste inclui testar redes Wi-Fi, dispositivos Bluetooth, pontos de acesso sem fio, dispositivos sem fio como tablets e mouses, entre outras coisas.
+
+Então, esses equipamentos são alvos importantes, porque o hacker realmente tem acesso à nossa rede Wi-Fi e não requer nenhum tipo de engenharia social.
+
+Então, ele tem acesso físico, acesso direto à sua rede Wi-Fi.
+
+Então, aí consegue ter uma proximidade física muito melhor, muito mais precisa, e assim realmente conseguir invadir ou tentar fazer algum tipo de invasão ou algum tipo de técnica de manipulação na sua rede Wi-Fi.
+
+Então, esse tipo de vulnerabilidade pode variar, como, por exemplo, senhas fracas, dispositivos mal configurados ou configurados de forma errada, algum tipo de detecção de firmware que seja desatualizado.
+
+Então, tudo isso pode contribuir para o nosso pentest, todos esses fatores contribuem para a nossa invasão da nossa rede Wi-Fi.
+
+## Por que testar uma rede sem fio?
+
+Então, isso acontece porque as redes sem fio, as conexões sem fio podem ser comprometidas. A rede sem fio pode ser acessada à distância, ou seja, qualquer um pode estar tendo acesso à rede sem fio se você realmente não souber quem é.
+
+Então, os usuários não autorizados, os usuários mal-intencionados podem realmente explorar esse tipo de ambiente.
+
+Então, podemos revelar algum tipo de fraqueza que pode se esconder numa rede sem fio, como eu já falei, configurações incorretas de segurança ou algum tipo de vulnerabilidade conhecida. 
+
+Geralmente, por exemplo, isso é muito importante porque pode ser explorado facilmente se não for descoberto, então temos uma certa preocupação.
+
+Então, esses fatores realmente deixam as suas redes sem fio muito desprotegidas, e isso traz sérios riscos para sua rede.
+
+Como, por exemplo, podemos ter algum tipo de vulnerabilidade que a gente pode descobrir rapidamente e fazer um fortalecimento das medidas de segurança.
+
+Então, você consegue rapidamente atualizar, principalmente com relação ao firmware. O nosso protocolo de criptografia realmente foi melhorando cada vez mais, vai ficando cada vez mais forte a nossa criptografia.
+
+Então, isso é muito bom.
+
+## Conformidade Regulatória
+
+A conformidade regulatória - então, temos aqui recomendações específicas de segurança que devem ser obedecidas.
+
+Isso porque muitas empresas passam por um certo tipo de auditoria, então tudo isso tem que estar certinho.
+
+Para que os testes de penetração ajudem a verificar se realmente está em conformidade com essas orientações, para evitar multas e coisas assim, ou até mesmo violação de dados.
+
+Também, você consegue proteger a reputação da sua empresa. Então, ao realizar os testes de penetração, você demonstra compromisso, principalmente com a segurança de dados.
+
+Além de economia de custos - por exemplo, se você tiver algum tipo de violação de dados, isso vai trazer problemas jurídicos, indenizações, perdas comerciais, entre outras coisas. Tudo isso tem que ser levado em conta, tudo bem?
+
+E redes Wi-Fi são cada vez mais usadas, então cada vez mais está sendo utilizado redes Wi-Fi.
+
+Então, realmente é um ambiente muito importante a ser testado, a ser verificado para poder ver se está tudo certinho, o máximo possível aqui em nossas redes Wi-Fi.
+
+## Conteúdo do Curso
+
+Bem, então, esses cursos vão mostrar o passo a passo de como funcionam os ataques, os principais ataques, como um invasor faz, como a gente consegue, por exemplo, além de invadir uma rede Wi-Fi, o que a gente pode fazer quando um invasor realmente entra numa rede Wi-Fi.
+
+Tudo isso é muito importante, tudo bem?
+
+Então, espero que vocês gostem do nosso curso. Para vocês aí, vai ser um conhecimento cada vez mais valioso e mais importante.
+
+Então, qualquer dúvida ou pergunta que vocês tiverem, podem entrar em contato com a escola, que vamos tentar responder o mais rápido possível.
+
+Então, é isso aí, até mais!
+
+---
+
+@2
+
+# Instalação do VirtualBox no Windows
+
+Olá a todos! Tudo bem com vocês, pessoal?
+
+Bom, mais uma aula muito importante. Vamos fazer a instalação do VirtualBox na nossa máquina Windows.
+
+O VirtualBox é o melhor sistema para a gente emular as nossas máquinas virtuais. Temos outras máquinas virtuais, mas não usem, ok? Usem o VirtualBox, tudo bem?
+
+Então é um programa gratuito que vocês podem baixar e usar. Ele é multiplataforma, então funciona tanto para Linux quanto para Mac, ok?
+
+## Download do VirtualBox
+
+Então temos aqui o nosso site **VirtualBox.org**. Eu vou disponibilizar para vocês o link para vocês baixarem, ok? Eu vou deixar o link para vocês acessarem.
+
+Vamos ver aqui como baixar o nosso programinha. Clique em **Download**. Aí está aqui: VirtualBox para plataforma. Temos para Windows, macOS, temos para Linux, temos para Solaris, ok?
+
+Vamos baixar aqui o nosso programa para Windows, tudo bem? É um arquivo executável. Aqui vamos baixar, tudo bem?
+
+## Instalação
+
+Aqui você só dá dois cliques nele e ele vai fazer a nossa execução, ok? Eu estou aqui usando um Windows Server, ok? Mas ele serve para Windows desktop também: Windows 10, 11, 12 e por aí vai, ok? O importante é que funciona independentemente da versão que você for utilizar.
+
+Então vamos fazer a nossa instalação. É o famoso "Next, Next, Next", ok? Só aceitar os termos e as licenças, vai instalar aqui o nosso programa.
+
+Clica em **Next**, clica em **Yes** quando aparecer sobre conexão. Vai perguntar aqui sobre os **Create Shortcuts**. Você pode criar também e fazer aqui a nossa instalação.
+
+Então nosso VirtualBox não demora muito, ok? Ele também não é muito pesado, tudo bem?
+
+E prontinho! Já foi feita a nossa instalação do nosso VirtualBox. Clique em **Finish** e vai abrir aqui o nosso VirtualBox, tudo bem?
+
+## Interface do VirtualBox
+
+Aparece uma janelinha assim. Aí você pode ver aqui: clicar em **Novo** para criar uma nova máquina, né? Caso você queira. Eu vou usar isso na próxima aula, independentemente do tipo de sistema que você vai utilizar, tudo bem?
+
+Aqui tem o nome, a pasta da máquina virtual que vai ficar armazenada. Então o seu sistema operacional inteiro vai ser um arquivo, resumindo: a imagem que você vai ter que baixar.
+
+### O que é uma imagem?
+
+A imagem é a imagem do seu sistema operacional. Todos eles têm: o Windows tem uma imagem, o Linux tem uma imagem, que é a imagem do sistema operacional inteiro, praticamente, tudo bem?
+
+Aí tem aqui os tipos de sistema: Windows, Linux, enfim, o tipo de sistema operacional que você vai escolher, tudo bem?
+
+Se é Linux, por exemplo, que tipo de Linux que é: se é um Debian, um Ubuntu, um Red Hat (que seria também um CentOS), um Kali Linux, um Ubuntu, ok? Então tudo isso depende do que você vai utilizar, tudo bem, pessoal?
+
+## VirtualBox Extension Pack
+
+E não menos importante - deixa eu frisar aqui - temos que baixar também o **VirtualBox Extension Pack**. Isso também é importante baixar, tudo bem?
+
+São extensões extras para melhorar a compatibilidade do seu VirtualBox, né? Para você usar USB, para você usar câmeras, para você usar algum tipo de extensão importante. Então também é importante isso.
+
+Vem aqui e faz o download. Ele é um programa único, ok? Esse programa do Extension Pack, ele serve para todos os sistemas, porque ele vai ser aberto ou executado pelo VirtualBox, ok?
+
+### Instalação do Extension Pack
+
+Então eu baixei ele aqui. Se você for dar dois cliques nele, ele vai ser executado pelo VirtualBox, ok? Ele vai abrir pelo VirtualBox. Aí você vem aqui e clica em **Instalar**.
+
+Aí você aceita aqui os termos, que são o nosso contrato, né? **Eu concordo**. E prontinho! Já está instalado aqui o nosso Extension Pack, ok? Isso é importante, tudo bem?
+
+## Conclusão
+
+Então o nosso Oracle VirtualBox já está pronto para a gente utilizar, tudo bem?
+
+Eu vou usar o VirtualBox no meu Linux, ok? No meu Linux Ubuntu. Não tem problema, a configuração é a mesma, ok? Como vocês podem visualizar aqui, ok? Eu estou usando aqui um Ubuntu, mas no Windows é a mesma coisa, ok?
+
+Como eu falei, ele é multiplataforma. As configurações são as mesmas, tudo bem?
+
+Então é isso aí, ok? Espero que vocês tenham gostado dessa nossa aula. Qualquer dúvida ou pergunta, vocês podem fazer em nosso fórum, ok?
+
+E trabalhem com o VirtualBox, ok? Eu trabalho com o VirtualBox, ok? Não trabalho com nenhum outro tipo de virtualização, tudo bem?
+
+Então é isso daí, até mais!
+
+---
+
+@3
+
+
+# Instalação do Kali Linux no VirtualBox
+
+Olá a todos! Tudo bem com vocês, pessoal?
+
+Bom, mais uma aula aqui. Vamos fazer a instalação do nosso Kali Linux.
+
+É importante que vocês já tenham instalado o VirtualBox. Isso é importante. Não usem outros tipos de sistemas de virtualização. Usem o VirtualBox, tudo bem? Porque ele é multiplataforma e ele é totalmente gratuito.
+
+Então, a gente consegue ter o funcionamento completo do Kali Linux pelo VirtualBox.
+
+Então, é importante que vocês sigam exatamente o que a gente está fazendo aqui nessa aula de instalação, tudo bem?
+
+## Download do Kali Linux
+
+Então, a primeira coisa: entrar no site do Kali Linux, **Kali.org** e fazer o download da nossa máquina virtual.
+
+Então, vocês podem vir aqui, entrar na página inicial. Vão em "Download". Aí tem aqui o tipo de instalação que vocês desejam fazer.
+
+Eu sugiro que vocês façam a instalação de **máquinas virtuais**. É mais simples, mais rápido. Então, é o que eu recomendo vocês trabalharem, tudo bem?
+
+Então, vocês vêm aqui, clicam aqui e baixam aqui, ó, o nosso Kali Linux no VirtualBox.
+
+**Não usem outros sistemas de virtualização**, tudo bem? Porque muitas pessoas usam outros sistemas de virtualização e dão problema. Aí tem que prestar suporte, enfim. E eu não presto suporte com relação aos outros sistemas. Apenas no próprio VirtualBox mesmo, tudo bem?
+
+### Download via Torrent
+
+Então, baixem via torrent. Eu sugiro que vocês vão via torrent, porque é um arquivo pesado. Então, se vocês tiverem uma internet instável, se vocês tiverem uma internet que pode cair, tudo mais, então sugiro que vocês baixem via torrent. É mais seguro para vocês usarem.
+
+Então, o VirtualBox é o que eu recomendo vocês utilizarem.
+
+## Descompactação do Arquivo
+
+Aí, depois que vocês baixarem aqui o nosso arquivo via torrent, vocês precisam descompactar esse arquivo.
+
+No Windows, têm que usar um programa que faz aí a descompactação. Que seja o **7-Zip**? Vocês podem baixar esse programa para o Windows também.
+
+Então, para o Windows, só vocês baixarem aqui, ó. Se vocês não tiverem, vocês podem baixar no site **7-zip.org**. Esse é o nosso programa para o Windows.
+
+Então, instalem ele e extraiam esse arquivo. Vocês podem extrair o seu arquivo com o 7-Zip, tudo bem? Que a gente baixa por padrão, tudo bem?
+
+Então, no seu Windows, baixem o programa, que é um descompactador. É equivalente ao famoso WinRAR, né? Que a gente usa bastante.
+
+Então, aqui a gente consegue baixar também e descompactar.
+
+## Importação no VirtualBox
+
+Então, depois que vocês fizeram aqui a extração do arquivo, vai gerar aqui uma nova pasta. Dentro dela temos dois arquivos: um que é **.vdi**.
+
+Esse VDI é o arquivo - ele é o próprio sistema do Kali Linux. Digamos assim, o disco rígido virtual próprio, tudo bem.
+
+E esse daqui, o **.vbox**, que é o arquivo que é executado pelo VirtualBox, que vai ser aberto pelo VirtualBox. Por isso, ele está interligado a esse arquivo VDI, que é do nosso VirtualBox do Kali Linux, tudo bem?
+
+Então, vocês clicam aqui no arquivo **.vbox** e abrem com o Oracle VirtualBox, para poder importar o sistema aqui, tudo bem? Isso é muito importante fazer essa etapa de configuração, tudo bem?
+
+Então, é uma máquina pronta. Não é isso, não precisa ficar mexendo. Não vamos precisar ficar fazendo a instalação do zero, enfim. Então, está tudo pronto.
+
+## Configurações Importantes
+
+O que vocês precisam fazer agora é mexer na sua parte de rede. Configurar a sua parte de rede e outras configurações opcionais, como a memória RAM, alguma configuração de CPU que precisar.
+
+### Requisitos de Hardware
+
+Então, é necessário que vocês tenham uma capacidade de hardware boa para poder usar. O Kali Linux tem muitas ferramentas, é uma plataforma muito completa e muito pesada ao mesmo tempo.
+
+Então, é necessário que vocês tenham um hardware aí de **pelo menos 4 ou 8 GB de memória RAM** só para o Kali Linux. E **4 núcleos no mínimo de CPU**, de processamento para ele.
+
+Então, isso é muito importante.
+
+### Configurações de Rede
+
+E também, a parte importante também são as configurações de rede. **Não usem configuração do tipo NAT**.
+
+Então, vamos ver aqui: na aba de configurações. Vocês importaram a máquina, clicam aqui em **Configurações**.
+
+Aí, vai estar aqui os nossos campos de rede, por exemplo. **Nunca trabalho via NAT**, porque vocês não vão deixar acessível a sua internet.
+
+Então, sempre trabalhem em modo **Bridged**, porque assim, nós vamos conseguir trabalhar com o Kali Linux com um endereço IP real. Isso vai trabalhar com o seu IPv4 e IPv6 também, caso estiver ativo na sua rede.
+
+Então, isso é muito importante.
+
+O nome é o nome da sua interface de rede. No seu Windows, vocês precisam saber qual é a sua interface de rede que vocês vão usar. Então, isso é muito importante vocês saberem trabalhar.
+
+Então, bem, o **modo promíscuo**: deixem aí como "permite tudo", porque aí o Kali Linux, como ele tem muitas ferramentas, muitas coisas, então é importante que vocês tenham acesso à sua rede. Isso também é muito importante.
+
+### Configurações de Sistema
+
+Vamos ver aqui na parte de **Sistema**. Como eu disse: memória RAM de **pelo menos 4 a 8 GB**. Sim, pelo menos 4 GB RAM, 8 GB é o mínimo. Porque o Kali Linux, ele é muito pesado e é importante que vocês tenham um tipo de hardware bom para ele.
+
+**Processador**: como eu falei, uns **4 núcleos no mínimo**. É o que eu peço aí para vocês usarem. Isso é muito importante.
+
+Bem, placa de vídeo: o Kali Linux, ele não trabalha por padrão. Ele trabalha mais com o processador mesmo. Então, placa de vídeo, GPU, ele não trabalha.
+
+Então, esses são os dois recursos mais importantes, tudo bem? Isso é muito importante.
+
+### Configurações Opcionais
+
+Agora, as outras opcionais, como o áudio, podem desabilitar o áudio. Não usamos o áudio. Podem desabilitar.
+
+Então, vamos verificar novamente: como vocês configuraram isso é muito importante. Na placa de rede, deixar sempre em **modo bridged**. O seu sistema, tanto em memória RAM quanto em processamento, ter um bom hardware para vocês poderem trabalhar aqui tranquilamente, tudo bem?
+
+Dão um **OK**, salvam e vamos entrar em nosso Kali Linux.
+
+## Credenciais de Acesso
+
+Mas só para adiantar aqui: o usuário é **kali/kali**. Está aqui na nossa descrição. Vamos ver se podem usar eles aqui. Está aqui: usuário **kali** e senha **kali**. Isso é o usuário comum, usuário comum do Kali Linux.
+
+Depois, a gente pode entrar em um usuário root, enfim. Só vou deixar para uma próxima aula como a gente pode fazer esse tipo de configuração.
+
+### Configuração de Teclado
+
+E o teclado por padrão é o teclado padrão norte-americano. Então, para vocês que vão usar o teclado padrão brasileiro, por exemplo, que é o que tem o padrão ABNT, então vocês vão ter algumas teclas aí um pouquinho diferentes de usar. Mas vocês podem mudar isso aqui posteriormente.
+
+## Pré-requisito: Conhecimento em Linux
+
+E, gente, lembrando novamente aqui, vou avisar: **é necessário que vocês tenham conhecimento em Linux**.
+
+Tem muitas coisas aqui que eu não posso falar porque eu já tenho um curso de Linux. Então, não tenho como ensinar Linux e Kali Linux ao mesmo tempo.
+
+Então, vocês já têm que ter uma boa bagagem sobre Linux: configurações de comando, editores de texto, vim, nano, essas coisas assim. Como que funciona o Linux?
+
+Porque o Kali Linux, ele trabalha diretamente na plataforma Debian, no sistema Debian. Então, é importante que vocês já tenham conhecimento de Linux, como que funciona antes de fazer esse curso de Kali Linux.
+
+O Kali Linux é um sistema avançado. Então, vocês precisam ter uma base de conhecimento, senão vocês vão ficar perdidos, vocês vão não conseguir fazer aí as configurações, não vão conseguir usar as ferramentas.
+
+Isso tem muita reclamação dos meus alunos e eu falo, eu aviso, infelizmente é ignorado e sofrem com a experiência, porque não têm conhecimento de Linux, não conhecem sobre Linux. Então, aí sofrem um pouco para aprender a mexer com coisas muito básicas.
+
+Então, fica aí o aviso: é muito, muito importante - vocês saberem, é praticamente obrigatório - vocês saberem Linux antes de fazer esse nosso curso de Kali Linux.
+
+Então, fica aí o aviso. O aviso vale para todas as aulas. Então isso é muito, muito importante.
+
+## Iniciando o Sistema
+
+Então, vamos lá. Vou iniciar aqui o nosso sistema do nosso VirtualBox e vou aumentar aqui a telinha para vocês poderem visualizar melhor, para vocês poderem enxergar melhor aí em nosso vídeo. Isso é importante.
+
+Então, o Kali Linux é um sistema de penetration testing e o Kali Linux é uma máquina pesada, tem muitos programas, muitas ferramentas, tudo para pentest praticamente.
+
+Então, hoje vamos estudar aí bastante com todas essas ferramentas também. Então é por isso que é importante ter um hardware com qualidade, bom, porque senão fica muito pesado. O Kali Linux pode travar sua máquina, enfim, se for muito pesado.
+
+Então é importante ter um sistema bomzinho para trabalhar com o nosso Kali Linux, tudo bem?
+
+### Login no Sistema
+
+Então, primeira coisa que eu tenho que fazer: vamos entrar aqui na plataforma. O login e senha é **kali/kali**, já falei isso para vocês, ok?
+
+Então, **kali** usuário e senha **kali**. Login. A gente vai conseguir entrar aqui em nossa plataforma.
+
+## Configurações Iniciais
+
+Então, a primeira coisa que a gente vai ter que fazer é saber quais são as configurações do nosso terminal. Acho que vou deixar aí numa próxima aula e vou fazer algumas configurações de terminal, como, por exemplo, via SSH.
+
+Então, se precisa deixar o SSH habilitado, então vejam na aula de configurações, de primeiros passos, de configurações pelo nosso terminal, ok?
+
+Então, abrem aqui o terminal e estão aqui todas as configurações que são feitas pelo nosso terminal, ok?
+
+Eu vou usar muito ele. Algumas ferramentas, obviamente, eu vou usar pelo próprio Kali Linux mesmo aqui, ok?
+
+Então, tem todas as nossas ferramentas que vou mostrar na aula. São muitas ferramentas, como eu disse, são muitas e várias ferramentas. Então é importante saber como utilizar e o terminal também, ok?
+
+É importante isso aqui: aprender a usar o nosso terminal, habilitar o SSH para um acesso remoto, caso vocês queiram, por exemplo, usar o SSH em um Putty no Windows ou o PowerShell mesmo, o PowerShell via SSH. É possível fazer tudo isso também.
+
+### Verificação de Conectividade
+
+Então, gente, é isso aí, ok? Então espero que tenham gostado. Vejam aí essas configurações de rede também, né? Vejam se pegou endereço IP, se pegou endereço IP válido, né? Em IPv4 e IPv6, ok?
+
+Vocês podem digitar o comando, por exemplo:
+```
+hostname -I
+```
+
+E visualizar aqui, ó, um endereço IPv4 válido, né? Então um 192.168.1.125, que ele pegou da minha rede local, e IPv6, né? Caso a sua operadora de internet tenha aí IPv6 também, tudo bem?
+
+Então, tudo isso é muito importante para a gente começar a fazer aqui as nossas instalações, configurações e tudo mais.
+
+## Metodologia do Curso
+
+Bem, ao longo aí do nosso curso, eu vou usar o Kali Linux. Dependendo, às vezes eu vou usar apenas via terminal, né? Eu estou trabalhando com ambiente desktop, ok?
+
+Então, eu vou geralmente trabalhar via terminal assim para vocês poderem enxergar melhor. Outras vezes, eu vou usar a própria interface gráfica mesmo, né? Do próprio Kali Linux, né?
+
+Para a gente trabalhar com as ferramentas, eu vou fazer muitas instalações, configurações, ok?
+
+Então, vão ter aí muitas e muitas horas aí de conteúdo para a gente poder trabalhar, tudo bem?
+
+## Recomendações Finais
+
+Então, é isso aí. Qualquer dúvida ou pergunta, vocês podem fazer lá no fórum do nosso curso, ok?
+
+É importantíssimo que vocês sigam exatamente o que eu estou fazendo, ok? **Não alterem nada, não mexam em nada**, ok? Nem sistema de virtualização, nem nada do tipo, tudo bem?
+
+Então, ficam à vontade, né? Para perguntar sobre o programa, no caso vocês tenham alguma dúvida, porque eu vou responder o mais rápido possível que eu conseguir.
+
+Então, é isso daí. Até mais, gente!
+
+---
+
+@4
+
+# Configurações Iniciais do Kali Linux
+
+Olá a todos os alunos! Tudo bem com vocês, pessoal?
+
+Bom, primeiros passos depois que vocês fizeram a sua instalação do seu Kali Linux.
+
+Primeira coisa: as configurações básicas, entre elas configurar o usuário root, habilitar o acesso via SSH do seu Kali Linux para vocês acessarem o seu sistema remotamente, tanto via Windows, via Linux, enfim, de forma remota.
+
+E depois fazer a atualização do seu sistema, caso precise.
+
+Então essa é uma etapa importante para vocês fazerem.
+
+## Configuração do Usuário Root
+
+Então, primeira coisa: abram o seu terminal do seu Kali Linux.
+
+Ele sempre vai abrir como usuário comum, não é um usuário root - ele não tem superpoderes no seu sistema. Então é preciso que vocês tenham acesso ao seu usuário root.
+
+Então como podemos ter acesso ao usuário root? Lembrando que esse tipo de assunto é assunto de Linux, mas eu vou explicar para vocês aí para vocês poderem adiantar.
+
+Então, primeira coisa: rodem o nosso comando:
+```bash
+sudo su
+```
+
+Espaço `sudo`, espaço `su`, tudo bem? Ele vai pedir a senha do seu usuário kali, que é **kali** também.
+
+E prontinho! Aí temos aqui o acesso ao usuário root.
+
+### O que é o usuário root?
+
+O usuário root do Linux é o usuário que tem todos os poderes plenos. É o usuário administrador, então ele tem acesso a tudo e a todos. Ele pode fazer qualquer coisa no seu sistema.
+
+Então ele tem que ser usado com muito cuidado, tudo bem?
+
+É importante vocês saberem manusear entre usuário comum e usuário root. Isso também é muito importante.
+
+Isso também é assunto básico de Linux, não só de Kali Linux, mas de sistemas Linux. Todos os sistemas baseados no Linux têm um usuário root, tudo bem?
+
+Então a primeira coisa é saber como vocês podem trafegar de um para outro.
+
+### Definindo senha para o usuário root
+
+O usuário root não tem senha, então vamos ter que configurar uma senha para ele.
+
+Então, o comando é:
+```bash
+passwd root
+```
+
+Ou só `passwd` para mudar a sua senha, para poder criar uma senha.
+
+Então, dão Enter e coloquem aqui uma nova senha. Por exemplo: 123456, 123456.
+
+Obviamente, usem senhas muito melhores do que isso. É um usuário administrador. Tomem cuidado para não ser hackeado, obviamente. O próprio sistema que vocês querem proteger para não ser hackeado.
+
+Então vamos lá.
+
+## Configuração do SSH
+
+Então, uma outra coisa importante é configurar o SSH, que é o nosso protocolo de acesso remoto, tudo bem?
+
+Então, temos que configurar porque por padrão ele vem como bloqueado. Ele vem desabilitado.
+
+Então é importante a gente habilitar isso. Vocês podem habilitar tanto para o acesso ao usuário root direto ou não. Então aí é opcional de vocês.
+
+### Habilitando o serviço SSH
+
+Mas então, a primeira coisa que a gente vai fazer é habilitar o daemon. Daemon é o programinha que roda em background.
+
+Então vamos dar um:
+```bash
+systemctl enable --now ssh
+```
+
+Por que esse comando aqui? O que isso significa? A gente vai conseguir habilitar o sistema do SSH.
+
+Toda vez que o sistema ligar, vocês derem um restart, reiniciarem o seu sistema, o SSH ou daemon, esse protocolo vai estar ativado por padrão.
+
+E o `--now` é para dar um start agora. É equivalente ao `systemctl start`.
+
+Então, vocês já deixam ele ativado, tudo bem?
+
+Então isso é muito importante.
+
+### Verificando o status do SSH
+
+Como a gente pode visualizar? Para verificar, usem o comando:
+```bash
+systemctl status ssh
+```
+
+Vocês vão conseguir visualizar. Olha aqui, está com **active (running)**.
+
+Só me perdoem pela imagem, que como estou usando uma máquina virtual, ela vai ficar pequenininha. Mas geralmente, eu sempre trabalho com a minha tela aqui do meu Linux para vocês poderem enxergar melhor os comandos. Só para a gente aprender mesmo aqui, tudo bem?
+
+Então, vejam como está ativado.
+
+## Acesso Remoto via SSH
+
+Então, primeira coisa é: vamos acessar o nosso Kali Linux remotamente. A gente já ativou o SSH.
+
+Então, descobram o seu endereço IP:
+```bash
+hostname -I
+```
+
+Acho que já falei isso, menos I maiúsculo. A gente vai mostrar aqui os endereços IPs, tanto IPv4 quanto IPv6. Vocês podem acessar tanto um quanto outro.
+
+Então, o 192.168.1.125, esse é o endereço do meu Kali Linux.
+
+Então, eu vou acessar de forma remota pelo IP do meu Kali Linux.
+
+### Acesso via Windows PowerShell
+
+Caso vocês estejam usando Windows - eu estou usando aqui um Windows Server, mas serve para Windows desktop também - só baixar o **PowerShell 7**. Temos uma aula também que fala sobre isso.
+
+Vocês podem usar pelo PowerShell 7. O que eu vou usar é:
+```powershell
+ssh kali@192.168.1.125
+```
+
+Obviamente vocês vão ter endereços diferentes do meu. Cada ambiente de rede tem o seu endereço: 192.168.1.125, 192.168.1.112, etc.
+
+Como é o primeiro acesso, ele vai pedir aqui para vocês poderem habilitar o nosso fingerprint, que seria a nossa assinatura digital.
+
+E ponham aqui a senha do seu Kali Linux. Kali Linux é kali/kali.
+
+Então, **kali** usuário, **kali** senha.
+
+Prontinho! Acessamos remotamente via PowerShell no meu Windows, PowerShell versão 7. Não pode ser o PowerShell antigo. Tem que ser o PowerShell novo.
+
+### Vantagens do acesso remoto
+
+Então, temos aqui o acesso remoto do meu Kali Linux via meu Windows.
+
+Isso também é muito importante. Então, vocês vão conseguir fazer os comandos do seu Kali Linux aqui.
+
+Então, é uma maneira boa de vocês trabalharem com o seu Kali Linux via terminal. Por que isso? Porque às vezes vocês vão precisar copiar e colar comandos, essas coisas, e é melhor trabalhar assim desse jeito, tudo bem?
+
+Então, se vocês conseguem ter aqui o acesso remoto, para mais informações sobre SSH, configurações, temos aí no nosso curso de Linux. Para vocês saberem, tudo bem? Isso é a parte importante.
+
+## Atualização do Sistema
+
+Bom, para a gente poder atualizar aqui o nosso sistema, podem usar:
+```bash
+apt update
+```
+
+Ele vai atualizar o seu sistema, atualizar os repositórios do seu sistema.
+
+Obviamente, vocês têm que verificar que estejam com internet funcionando. Isso é importante. A sua internet tem que estar funcionando perfeitamente, tudo bem?
+
+Ele vai acessar os servidores do Kali Linux.
+
+### Listando atualizações disponíveis
+
+E depois ele vai perguntar aqui se vocês querem atualizar. Então, vocês podem rodar o comando aqui:
+```bash
+apt list --upgradable
+```
+
+Para vocês poderem ver a lista.
+
+E temos aqui mais de 700 pacotes para atualizar. É bastante coisa.
+
+Como eu disse, o Kali Linux é pesado, ele tem muitas ferramentas, muitos programas. Ele é uma plataforma completa, ele não é apenas um sistema operacional. Ele vem com tudo o que for possível, então ele é bem pesado.
+
+Ele é bem pesado, tem muitas atualizações e também bugs, às vezes.
+
+### Experiência com o Kali Linux
+
+Então, na minha experiência de vários anos de instrutor de pentest, o Kali Linux é um sistema muito bom. Ele está se atualizando de forma constante.
+
+Porém, alguns bugs na versão podem ocorrer. Então, isso tem que estar claro para vocês.
+
+### Executando as atualizações
+
+Primeiro, vocês dão um `update`. Caso vocês queiram atualizar, podem dar o comando:
+```bash
+apt upgrade
+```
+
+O upgrade vai habilitar todas as nossas atualizações. É um comando que vai demorar muito. Já adianto para vocês.
+
+Vocês dão um Enter. Ele vai fazer todos os cálculos de atualização. É muita coisa.
+
+Aqui vai atualizar bastante coisa. Tem toda uma lista de atualizações. O que será atualizado? Os programas principais e as suas dependências, tudo bem?
+
+É muita coisa. Deixa eu mostrar para vocês via remoto, vamos ver para vocês poderem enxergar melhor aqui.
+
+É muita coisa para atualizar com o comando `apt upgrade`. Tem muitos programas para serem atualizados. Demora muito. É muita coisa.
+
+Mas talvez seja preciso. É uma opção de vocês. Vocês podem atualizar ou não, tudo bem?
+
+## Resumo das Configurações
+
+Isso é isso para vocês poderem estar cientes da nossa configuração:
+
+1. **Terminal do Kali Linux** - primeira coisa
+2. **Habilitar usuário root** - trocar senha
+3. **Habilitar SSH** - para poder ter acesso remoto
+
+Algumas aulas eu vou usar os programas por aqui mesmo, mas vou usar numa tela maior para vocês poderem enxergar, tudo bem?
+
+Algumas aulas, muitas aulas, vou usar o próprio terminal. Aí vocês vão poder enxergar melhor aqui.
+
+Mas vocês podem usar também pelo PowerShell do Windows, pelo terminal do Linux, ou algum emulador de SSH. O Putty também é possível, tudo bem?
+
+## Conclusão
+
+É isso aí. Deixei tudo muito claro, tudo como funciona, os primeiros passos, passo a passo, tudo bem?
+
+Então, é isso aí. Espero que vocês gostem. Qualquer dúvida ou pergunta, ou se faltou alguma coisa importante, só me avisar.
+
+Então, é isso aí!
+
+-
+
+## Próxima Aula: Wireless Hacking
+
+Olá a todos! Tudo bem com vocês?
+
+Vamos dar início à nossa seção sobre **Wireless Hacking** ou **Ataques Wi-Fi**.
+
+Só que para isso precisamos de um...
+
+---
+
+@5
+
+
+# Setup para Wireless Hacking - Configuração do Laboratório
+
+Olá a todos! Tudo bem com vocês, pessoal?
+
+Bom, mais uma aula aqui. Vamos dar início à nossa seção sobre **Wireless Hacking** ou **ataques Wi-Fi**. 
+
+Só que para isso precisamos de um setup. A gente já vai explicar aqui para vocês, porque a gente precisa dessas configurações ou equipamentos, senão não vamos conseguir fazer ou dar início nas próximas aulas, tudo bem?
+
+## Equipamentos Necessários
+
+Então, para a gente poder dar aqui continuidade, precisamos de:
+
+### 1. Computadores/Dispositivos
+- **Pelo menos dois PCs ou celulares** com antenas Wi-Fi para fazer o nosso laboratório
+- **Pelo menos uma máquina com Windows 7 ou 10**, enfim, também com Wi-Fi. Pode ser um notebook ou até mesmo uma outra máquina virtual, caso você prefira. Também pode estar sendo utilizado
+
+### 2. Roteador Wi-Fi
+- **Um roteador** - pode ser qualquer tipo de roteador Wi-Fi que suporte encriptação **WEP, WPA e WPA2**. Isso também é muito importante
+- Todos os roteadores hoje em dia, seja um modelo mais avançado ou mais simples, possuem essas funcionalidades
+
+### 3. Adaptador USB Wi-Fi (MAIS IMPORTANTE)
+E o mais importante: em nosso Kali Linux, nosso sistema operacional, vamos precisar de um **adaptador USB Wi-Fi** que possibilite o uso do **modo monitor**, ou seja, o uso do monitoramento da conexão Wi-Fi.
+
+**E não são todos os modelos!** São modelos geralmente mais caros, são modelos geralmente que têm aquela antena, que têm um alto ganho, têm um chipset um pouco mais potente. Por isso que eles são mais caros.
+
+Eu vou até deixar para vocês o link no site para vocês darem uma olhada.
+
+#### Modelos Compatíveis
+Não é qualquer modelo, como eu disse. Se vocês forem procurar, por exemplo, no site de e-commerce, temos aqui alguns modelos:
+
+- **Este daqui aguenta** - são os modelos mais caros
+- **Este daqui também suporta** - WN722N - são os modelos mais caros  
+- **Este daqui não suporta**
+- **Este daqui não** - não tem como fazer
+
+São modelos mais caros mesmo. Então, caso vocês queiram fazer um teste de wireless hacking, é preciso que vocês tenham um adaptador USB mais potente.
+
+Este daqui também serve, tudo bem? São chips, são adaptadores Wi-Fi mais caros. Alguns deles apenas suportam, não são todos que suportam, tudo bem?
+
+**Por isso, se não tiverem o equipamento adequado, não vamos conseguir fazer direito a nossa aula.**
+
+## Configuração no VirtualBox
+
+Eu vou usar um modelo exatamente igual. Nosso roteador vai ser exatamente esse mesmo modelo aqui. Qualquer tipo de roteador que contenha esse tipo de criptografia - todos eles, os mais modernos, mesmo se for o mais barato, possuem. Então não tem problema nenhum para isso.
+
+Vamos abrir aqui. Eu estou usando o meu VirtualBox. Eu estou com o meu Wi-Fi na minha máquina aqui, como vocês podem usar. Ele usa a rede Wi-Fi, mas eu vou ter que fazer o quê? 
+
+Vou jogar esse meu adaptador, esse meu adaptadorzinho aqui Wi-Fi, dentro do meu Kali Linux, que está dentro da minha máquina virtual.
+
+### Configurando o USB no VirtualBox
+
+Então vamos ver aqui no Kali Linux: **Configurações** → **USB**, porque como é adaptador USB, está na parte USB para a gente poder configurar.
+
+Aqui, o **adaptador USB 2.0** é suficiente. Vamos ver aqui... vamos ver o ícone verdinho. O meu, como é um chip Atheros, o **USB WLAN**, então eu vou escolher esse.
+
+É o nome do chip, do chip que está dentro do nosso adaptador. Por isso que não são todos, novamente, não são todos os modelos que suportam. Os modelos mais caros que a gente consegue fazer essa configuração.
+
+Dão um **OK**.
+
+### Resultado da Configuração
+
+Então, feito isso, o nosso adaptador USB vai sair da nossa máquina real, da nossa máquina física, e vai ser plugado em nosso Kali Linux, como se ele estivesse dentro do nosso Kali Linux diretamente.
+
+Vamos inicializar aqui agora o nosso sistema. Vocês podem visualizar que ele vai sair da nossa máquina, ele vai ser desconectado aqui e vai passar a ser conectado em nosso Kali Linux de maneira direta.
+
+Aqui em nosso sistema, se vocês forem no Windows também, é a mesma coisa: ele vai deixar de servir ao seu sistema Windows, por exemplo, ele vai servir pro Kali Linux exclusivamente.
+
+## Testando a Configuração
+
+Vamos entrar aqui no usuário root: 123456.
+
+Vocês podem usar terminal também, não tem problema nenhum.
+
+Então vamos ver aqui, ó: rede Wi-Fi. Estão vendo? Então já temos aqui nossa rede Wi-Fi já está funcionando.
+
+E mais importante: vamos abrir o nosso terminal. Nosso Kali Linux, vou deixar ele maximizado aqui para vocês poderem enxergar melhor.
+
+### Identificando o Adaptador Wi-Fi
+
+Então, no nosso terminal do nosso Kali Linux, vamos ter que configurar a nossa placa Wi-Fi, o nosso adaptador.
+
+O comando é:
+```bash
+iwconfig
+```
+
+A gente pode ver: temos aqui o nosso **wlan0**, que é o nosso chip, o nosso adaptador Wi-Fi USB.
+
+Então, a gente tem aqui o nosso **wlan0**, que é ele que a gente vai trabalhar nas aulas sobre a nossa seção aqui do Wi-Fi.
+
+Lembrando: se vocês tiverem algum outro chip Wi-Fi ou uma placa onboard Wi-Fi, pode ser que apareça com nome diferente, como **wlan1**, por exemplo, caso tenham mais de uma. Não tem problema nenhum.
+
+O importante é vocês conseguirem identificar qual que é a sua placa mesmo.
+
+### Visualizando as Configurações
+
+Então vamos fazer... vamos digitar o nosso comando, caso queiram visualizar:
+```bash
+ifconfig wlan0
+```
+
+Que é o nosso adaptador USB.
+
+Então temos aqui o nosso **MAC address**. Como ele não está conectado a nada, então não tem nenhum tipo de problema de pacotes recebidos ou enviados.
+
+### Fazendo Scan das Redes
+
+Mas vamos fazer um scan. Caso queiram fazer um scan, também é possível. Vocês podem usar o comando:
+```bash
+iw list
+```
+
+Caso queiram:
+```bash
+iwlist wlan0 scan
+```
+
+Para vocês fazerem.
+
+Aí vai fazer o quê? Vai fazer um scan de todas as redes Wi-Fi que ele consegue capturar.
+
+Tem aqui o nome, a potência, a qualidade, se ele está criptografado ou não, o nome daquela rede, a frequência dela (2.4 GHz). Se vocês tiverem um adaptador com 5 GHz, ele também pode capturar essa frequência.
+
+Temos o NET, Claro Wi-Fi, aqui outra rede... então tem a criptografia. Está habilitada, como vocês podem visualizar.
+
+Enfim, temos vários tipos de redes Wi-Fi na minha região. Se vocês tiverem também, vocês vão ver as suas redes.
+
+É basicamente isso daqui, é basicamente essa lista aqui que a gente vê aqui em nossa configuração. Nada além.
+
+## Configurando o Modo Monitor
+
+Então, agora que a gente já sabe... bom, caso queiram usar o nosso comando, agora vamos ter que subir nossa placa para a gente ativar a interface de rede.
+
+Então o comando é:
+```bash
+ifconfig wlan0 up
+```
+
+Que a gente vai deixar ela ativa.
+
+### Ativando o Modo Monitor
+
+E para colocar ela em **modo monitor**, que é o mais importante - deixar ela em modo de monitoramento - a gente tem que usar o nosso:
+```bash
+airmon-ng start wlan0
+```
+
+Isso é o nosso comando. **Airmon-ng** é um programa que já vem instalado em nosso Kali Linux.
+
+E `start wlan0`. O **wlan0** é nossa placa Wi-Fi que a gente vai fazer a configuração.
+
+E prontinho!
+
+### Verificando a Configuração
+
+Então olha aqui: o nosso chip Atheros. Por isso que eu falo novamente: **não é qualquer tipo de USB**. Apenas placas com chips mais potentes mesmo possuem esse tipo de recurso. A gente pode fazer esse tipo de monitoramento.
+
+Caso vocês queiram ver como ficou, rodem o comando:
+```bash
+iwconfig wlan0
+```
+
+Olha aqui como ficou.
+
+Se vocês quiserem visualizar também, podem usar o comando:
+```bash
+ifconfig
+```
+
+Então ele não aparece mais como **wlan0** apenas, mas sim como **wlan0mon**.
+
+Então, a gente mudou o tipo de configuração dela para monitoramento.
+
+## Resultado Final
+
+E com isso, a partir de agora, a gente consegue fazer toda a nossa análise do que se passa dentro da nossa placa de rede Wi-Fi USB.
+
+Então, é a partir daqui que a gente consegue:
+- Monitorar tudo
+- Capturar os pacotes
+- Usar, obviamente, outros programas
+
+Então, aqui a gente consegue fazer muita coisa legal a partir de agora, tudo bem?
+
+## Conclusão
+
+Então, gente, é isso daqui, ok? Nossa aula de setup para configurar nossa placa de rede Wi-Fi.
+
+**Lembrando novamente que não é qualquer tipo de adaptador USB!** 
+
+Então, caso vocês não tenham um adaptador USB desses modelos específicos, infelizmente vocês não vão conseguir dar prosseguimento, não vão conseguir nas próximas aulas fazer aqui os nossos testes, tudo bem?
+
+Então, gente, é isso daí. Qualquer dúvida ou pergunta podem deixar lá no fórum do nosso curso.
+
+Um abraço para todo mundo!
+
+---
+
+@6
+
+# Aula Teórica sobre WLAN e Suas Vulnerabilidades
+
+Bem, ao longo desta aula, vamos apresentar para vocês uma explicação teórica, de forma rápida, sobre como funciona basicamente uma rede Wi-Fi, chamada de WLAN, e também suas vulnerabilidades inerentes.
+
+Então, aqui vamos trabalhar especificamente nessas vulnerabilidades que temos em nossas conexões via Wi-Fi.
+
+## Estrutura dos Frames em WLAN
+
+Em WLAN, a comunicação acontece através de frames, como se pode ver no frame control. Existem vários tipos de blocos ou etapas que podemos dividir em bytes. São várias informações que temos aqui.
+
+Basicamente, um frame ou quadro possui esse tipo de características. E o próprio campo do frame control, que é este primeiro aqui, ele tem um subdomínio mais complexo.
+
+Então, dentro do nosso frame control, que é a parte mais importante com a qual vamos querer trabalhar, ele possui dois bytes. Ele tem aqui alguns tipos de frames, algum frame especial que é o "type". Temos aqui dentro vários outros tipos de quadros ou outros bits dos quais podemos falar.
+
+E o mais importante é este quadro antes do type. Neste tipo de type, temos três tipos de estruturas da WLAN:
+- Um que é o de gerenciamento
+- Outro que é o de controle  
+- E o mais importante, que é o de dados
+
+## Frames de Gerenciamento
+
+Esses frames de gerenciamento vão ser basicamente responsáveis pela manutenção e comunicação entre os pontos de acesso e clientes sem fio.
+
+Eles podem ter basicamente três tipos de subtipos:
+- Autenticação e desautenticação
+- Pedido de associação e resposta de associação
+- Pedido de reassociação (como se reconecta)
+- Desassociação e sua resposta
+- Beacon, pedido de sondagem e sua resposta
+
+## Frames de Controle e Dados
+
+Os frames de controle são basicamente responsáveis por garantir o correto intercâmbio de dados entre esses pontos. Neles temos alguns tipos de subtipos: temos as solicitações de envio, temos o ClearToSend e a confirmação.
+
+Todos esses tipos de frames que são de dados carregam os dados reais que são enviados.
+
+## Ferramentas de Análise
+
+Através desses dados, conseguimos interceptar ou rastrear esses quadros através de um programa que vamos usar em nosso Kali Linux, chamado Wireshark, por exemplo. Temos vários outros programas, como Airodump ou TCPDump ou Tshark, entre vários outros, que mostraremos para vocês ao longo desta aula.
+
+## Vulnerabilidades
+
+São esses frames, ou frame control principalmente, que vamos usar para fazer toda a nossa verificação. Então, esta seria a nossa vulnerabilidade de segurança.
+
+Mesmo em redes WPA, WPA2, enfim, todas elas possuem esse tipo de vulnerabilidade. E aqui conseguimos também realizar todas as nossas aulas e todos os nossos laboratórios e experimentos.
+
+Então, só para vocês saberem deste cenário - como funciona ou onde vamos atuar, ou como funciona o nosso ataque de wireless e suas vulnerabilidades - essas são vulnerabilidades inerentes que são impossíveis, até por enquanto, de serem corrigidas.
+
+## Conclusão
+
+Então, pessoal, é isso aí. Vamos continuar nas próximas aulas já partindo para a parte prática, com os laboratórios sendo realizados.
+
+Até mais, abraço para todo mundo!
+
+---
+
+@7
+
+# Aula sobre Monitoramento de Redes Wi-Fi
+
+Olá a todos! Tudo bem com vocês?
+
+Bem, mais uma aula aqui. Desta vez vamos aprender como podemos monitorar o nosso ambiente wireless.
+
+Vamos entrar no nosso ambiente aqui. Se você já está em qualquer ambiente hoje, principalmente em grandes cidades, grandes metrópoles ou em grandes áreas, você vai ter obviamente muita saturação de frequências Wi-Fi.
+
+Então, você pode fazer isso em qualquer área, já que hoje em dia o Wi-Fi está mais presente do que nunca.
+
+## Configuração do Ambiente
+
+Vamos voltar aqui ao nosso ambiente. Eu estou no meu Kali Linux executado pelo meu Ubuntu, mas você pode fazer isso também pelo seu terminal. Não tem problema nenhum, tudo bem?
+
+Vou ajustar aqui para ficar melhor visível para vocês.
+
+Então vamos ver, primeiro verificar se ele realmente está em modo de monitoramento. Então execute um `iwconfig` para ver se ele está em modo monitor de monitoramento.
+
+Essa é a primeira coisa que vamos ter que verificar.
+
+## Usando o Airodump-ng
+
+Com isso agora, podemos usar nosso Airodump. Com o Airodump, conseguimos fazer o quê? O monitoramento da nossa rede.
+
+Execute: `airodump-ng wlan0mon`
+
+Deixe-me voltar aqui para o nosso comando: `airodump-ng wlan0mon` para modo de monitoramento.
+
+Ele vai ficar monitorando aqui toda a nossa rede.
+
+## Informações Coletadas
+
+Isso aqui é uma parte muito interessante e muito importante. Por quê? Aqui temos vários tipos de informações que vamos usar ao longo das nossas aulas.
+
+### ESSID (Nome da Rede)
+Como, por exemplo, aqui temos o nome de cada rede. Isso aqui já sabemos - os nomes de cada rede. Quando vamos acessar uma rede, todos eles têm nome. Aqui vamos ter o ESSID.
+
+Temos aqui "CriamoLo". Eu tenho aqui o nosso "WiFi Teste" que podemos estar utilizando. Tem outros aqui também, como "VEM", que é o nome da nossa rede.
+
+### Método de Autenticação
+Temos o método de autenticação. Como é que ela é feita, a autenticação? A maioria hoje em dia é tudo pelo PSK, que é o método mais seguro.
+
+### Tipo de Criptografia
+O tipo de criptografia: o WPA2 é o mais utilizado hoje. Tem também o WEP, mas este é menos seguro. Então vai ser bem menos utilizado esse tipo de configuração.
+
+Algumas redes abertas, inclusive, como "NET_CLARO_WIFI", é uma rede aberta, então ela não tem senha. Mas para você poder navegar, você precisa de um login, se não me engano. Então aqui tem outro tipo de segurança.
+
+### Canal e Potência
+O canal: geralmente também são automáticos. Aqui temos o canal 1, o canal 11, que é onde nossa frequência está.
+
+Quantidade de dados que foram transportados de um para outro, a potência deles, a potência de cada sinal. Quanto menor é melhor: se está -40, está mais próximo; quando fica -80, está mais longe ainda.
+
+Então, quanto maior o valor (mais próximo de zero), melhor; quanto menor (mais negativo), pior. Essa é a lógica da nossa potência. Como está com sinal negativo, quanto mais próximo de zero, melhor fica; quanto mais longe (mais negativo), pior fica.
+
+### MAC Address
+E aqui temos o nosso MAC Address também. Vamos trabalhar muito também nessas aulas com esses MAC Address.
+
+Nas aulas que vêm, vamos trabalhar bastante aqui os MAC Address. Esses MAC Address aqui são os MAC Address dos roteadores - os chamados BSSID.
+
+Então todos eles têm aqui o nosso MAC Address, e aqui embaixo temos algumas informações importantes.
+
+### Dispositivos Conectados
+Como, por exemplo, temos os MAC Address dos nossos roteadores e os MAC Address de dispositivos que estão conectados nesses roteadores.
+
+Então, terminando em 98F2, temos o WiFi aqui, e temos alguns hosts: celulares, notebooks, enfim, qualquer tipo de conexão Wi-Fi. Podemos ver que eles estão listados aqui com o nosso MAC Address, como se pode visualizar aqui.
+
+Mas temos outros também, como o 4A43, que é esse outro roteador aqui. Eu estou aqui num ambiente com poucas conexões Wi-Fi, mas vocês, se estiverem numa conexão bastante volumosa, com bastante Wi-Fi, bastantes roteadores, vão conseguir visualizar bastante coisa.
+
+### Informações Adicionais
+Então aqui temos a potência da nossa conexão, se tem algum tipo de pacote perdido, se tem algum tipo de pacotes perdidos - também conseguimos visualizar isso aqui, o que também é bem importante.
+
+## Filtragem por Canal
+
+Essa aqui é a parte básica de poder monitorar. Caso eu queira monitorar, por exemplo, um canal específico, eu posso monitorar um canal único para filtrar isso, o que também ajuda muito e é muito importante.
+
+Para sair da tela, aperte Ctrl+C para poder sair aqui da nossa tela, e vamos tentar configurar aqui, por exemplo, um canal específico.
+
+É o mesmo comando: Airodump, podemos complementar aqui:
+`airodump-ng wlan0mon -c 1`
+
+Por exemplo, aí vamos filtrar. Aqui, ó, o canal 1, estão vendo? Então filtramos apenas esse tipo de conexão, o que facilita na escolha do seu alvo, por exemplo.
+
+## Filtragem por BSSID
+
+Isso é importante para configurar. Ainda podemos filtrar pelo nosso BSSID, filtrar por um roteador específico.
+
+Então, por exemplo, vamos filtrar aqui pelo nosso roteador, vamos filtrar esse nosso roteadorzinho aqui.
+
+Ctrl+C para sair. O mesmo comando, você pode filtrar pelo nosso canal, caso queira, ou pelo nosso BSSID.
+
+Então vamos usar aqui como comando:
+`airodump-ng wlan0mon -c 1 --bssid [MAC_ADDRESS]`
+
+Prontinho. Então aqui temos apenas um, então só vai listar apenas um único ponto de acesso, e todas as suas conexões que estão conectadas nele.
+
+## Conclusão
+
+Pessoal, essa aqui é uma fase - estamos bem no começo ainda, mas é importante vocês saberem todos esses tipos de técnicas, porque elas serão usadas mais adiante nas aulas um pouco mais avançadas.
+
+Bem, então pessoal, é isso aí. Vamos continuar aqui para a nossa próxima aula.
+
+Abraço para todo mundo!
+
+
+---
+
+@8
+
+# Aula sobre Localização e Ataque a Redes Ocultas
+
+Olá a todos, alunos! Tudo bem com vocês?
+
+Bem, mais uma aula. Desta vez vamos trabalhar com a localização de redes ocultas em nosso Kali Linux.
+
+## Configuração Inicial do Roteador
+
+Então, primeiramente, precisamos de um roteador. Se você tem que ter acesso a algum roteador, pode ser um mais simples, porém os mais modernos, todos eles possuem esse tipo de recurso.
+
+Nós vamos fazer isso: vamos trabalhar e tentar localizar redes ocultas perto da sua localização, onde você está.
+
+Então vamos começar aqui. Eu estou aqui com meu roteador, na parte de Wireless. Aqui no meu roteador, ele está aqui: "Exibir nome de rede".
+
+Aqui você consegue exibir. Aqui também tem uma explicação: você vai exibir o seu nome do seu SSID. O nome é este que é mostrado quando você vai tentar se conectar em alguma rede - ele mostra para vocês o nome.
+
+Mas você pode deixar isso oculto, pode deixar isso de maneira oculta, sem que as pessoas saibam qual o nome real. No meu caso, é "WiFi Teste".
+
+### Ocultando a Rede
+
+Vamos ver aqui, vamos experimentar ocultar a nossa rede. Vamos desmarcar "Exibir" aqui.
+
+No meu Windows, eu tenho aqui também uma outra rede, uma outra placa Wi-Fi, que também mostra aqui todas as nossas redes Wi-Fi da nossa máquina.
+
+Pode ver que já tem uma "Hidden Network" - pode ver que ele já está oculto, a nossa rede acabou de ocultar.
+
+Vamos ver aqui no meu Kali Linux também - pode ver que já não tem mais. A minha rede não aparece mais, pode ver que também não está mais aqui.
+
+Então já está tudo oculto aqui: a nossa rede, o nosso sistema.
+
+## Configurando o Modo Monitor
+
+Agora vamos fazer aqui: vamos configurar a nossa placa de rede em modo monitor. Vamos deixá-la em modo monitor.
+
+Lembre-se de usar aqui o nosso `wlan0`.
+
+Então, `airmon-ng start wlan0` - vamos deixá-lo em modo monitor.
+
+Vou deixá-lo configurado. E aqui temos duas configurações. Na verdade, não é um aviso.
+
+Como não matamos nosso interface de gerenciamento de rede (essa parte aqui de gerenciamento de rede), ele mesmo avisa para você.
+
+Então ele mostra para você a configuração e já deixa desabilitado.
+
+### Eliminando Interferências
+
+Vamos estar aqui configurado. Pode usar esse comando aqui: `airmon-ng check kill` para você matar qualquer tipo de processo que pode causar problemas.
+
+Então ele automaticamente já mata para você esses dois tipos de processos para você poder configurar.
+
+Feito isso, execute `ifconfig` aqui para ver se realmente temos o `wlan0mon`, que estamos em modo monitoramento.
+
+## Detectando Redes Ocultas
+
+Vamos executar `airodump-ng`. A gente já sabe da nossa rede, então não precisa ser tão difícil assim.
+
+A nossa rede é essa daqui: o sinal mais potente, -40. Ela vai aparecer com esses campos aqui vazios. O nome tem zero caracteres.
+
+Eu tenho o tipo de criptografia que ela usa, a autenticação. Eu tenho algumas informações, mesmo assim. Pode ver a potência.
+
+Eu sei que é essa daqui porque é a única aqui da minha rede. Mas se você tiver algum outro tipo de redes ocultas, você vai ver várias outras dessas aqui com esse tipo de caracteres vazios.
+
+### Filtrando por Canal
+
+Talvez mude o número da sua rede. Você pode filtrar para um canal específico para poder melhor fazer o nosso ataque.
+
+Vamos filtrar pelo canal 10. Está trabalhando aqui. Vamos interromper aqui com Ctrl+C.
+
+Vamos executar normalmente como o nosso comando `airodump-ng`, só que com `-c 10` (o canal 10 é o único, se não me engano).
+
+Se não é o único, é um dos únicos. A gente consegue fazer o nosso ataque melhor.
+
+## Estratégia de Descoberta
+
+Qual vai ser o nosso ataque? Vamos derrubar alguma conexão que está nele. Não tem nenhuma conexão nele ainda para poder descobrir o nome da rede de fato.
+
+Então temos dois jeitos:
+1. Você esperar alguém conectar nele (que eu acho um pouco mais improvável)
+2. Você derrubar as conexões que já estão nele
+
+Então, muito provavelmente, alguém deve estar conectado nessa rede. Não é o caso, porque vamos fazer a nossa conexão.
+
+Depois que derrubarmos aquela conexão ou esperarmos alguém se conectar, vamos conseguir visualizar aqui qual o BSSID, qual a estação que está sendo associada nesse nosso MAC Address.
+
+### Conectando um Dispositivo
+
+Por enquanto não temos nenhum aqui. Vamos ver aqui em nossa rede no Windows. Vamos conectar em alguma rede específica aqui para podermos ver.
+
+Vamos usar aqui "Hidden Network". Vamos conectar aqui. Hidden Network é oculta. Para podermos conectar, precisamos das configurações.
+
+Podemos saber aqui a nossa rede. Então vamos para "Hidden Network". Caso você queira saber, vamos ver aqui em "Hidden Network". Vamos saber o nome.
+
+Então não sabe o nome, não há como. Mas é "WiFi Teste". A gente já sabe aqui.
+
+Esse daqui: "WiFi Teste". Vamos ver aqui "WiFi Teste". Neste, ele vai pedir a senha.
+
+Sim, é 123456789. Para podermos conectar, ele vai pedir a senha. Obviamente: 123456789.
+
+Pronto. Agora ele vai conectar. Agora sim, vamos saber aqui o que vai conectar nesse nosso roteador.
+
+## Descobrindo Informações da Rede
+
+A gente já descobriu aqui. Já pode ver aqui "WiFi Teste". Já foi descoberto porque alguém conectou - foi esse nosso roteador aqui, esse nosso MAC Address da estação: final 17A9.
+
+Então conectou. A gente conseguiu descobrir. Aqui também já conectamos. Vai aparecer - aqui vai ter dado "Hidden Network" ou rede oculta. Vai aparecer aqui o nomezinho dele depois.
+
+E aqui já está conectado. Já descobrimos o nosso nome.
+
+## Executando Ataque de Desautenticação
+
+Agora podemos derrubar isso. Não só esse tipo de conexão, mas qualquer tipo de conexão Wi-Fi. Não necessariamente seja Wi-Fi oculto, mas derrubar qualquer um.
+
+Por isso precisamos de uma placa Wi-Fi potente, porque temos que mandar sinais para derrubar a nossa rede de configuração.
+
+O nosso Hidden Network já está conectado. Deixa eu ver aqui. Desconectou de novo. A nossa conexão aqui foi feita com sucesso.
+
+### Identificando Alvos
+
+Vamos dar aqui. Já descobrimos, inclusive, qual é o nosso MAC Address: esse final C150. Também temos a estação - o MAC Address da estação conectada.
+
+Você pode atacar ou derrubar o ataque daquela conexão com os dois MAC Address, ou só com um. É mais eficiente com os dois.
+
+Caso você queira saber: só com o BSSID funciona muito bem com celulares. Para estações de desktop, alguma coisa mais grande, um notebook, talvez os dois MAC Address funcionam melhor.
+
+### Executando o Ataque
+
+Vamos aqui em nossa configuração. Vamos usar o nosso `aireplay-ng`. Vamos usar o nosso comando:
+
+```bash
+aireplay-ng -0 100 -a [BSSID] wlan0mon
+```
+
+- `-0`: modo de desautenticação  
+- `100`: 100 ataques (pode ser mais eficiente)
+- `-a`: com a nossa base, este aqui BSSID
+
+Você pode talvez dar certo ou não, mas com mais eficiência, se você usar (como ele já fala) o MAC do cliente:
+
+```bash
+aireplay-ng -0 100 -a [BSSID] -c [MAC_CLIENTE] wlan0mon
+```
+
+Essa é uma outra opção também. Você coloca aqui, antes do `wlan0mon`, `-c` e o endereço do cliente MAC - o endereço do cliente completo. E aí sim temos uma maior eficiência.
+
+## Resultado do Ataque
+
+Estou conectado aqui no meu Windows. Já vai cair aqui a nossa conexão. O sistema demora um pouquinho. Depende também do adaptador Wi-Fi que você está utilizando - se for uma placa externa, é um pouquinho mais eficiente.
+
+Já desconectou. Está vendo? Já não está mais conectada. E o ataque continua. Ele não vai conseguir se conectar.
+
+Ele não vai conseguir se conectar. Não adianta, está vendo? A pessoa tenta se conectar, não consegue. O ataque está continuando.
+
+Quando terminar os 100 ataques, você vai ver que já até sumiu aqui a rede para tentar se conectar. Terminou. Está muito... está até dificultando bastante.
+
+Então essa é a parte interessante: ele não vai conseguir. Você vê que agora que já parou, agora ele vai conseguir se conectar aqui na nossa rede Wi-Fi.
+
+Deixa eu ver aqui... Agora sim, conectou. Está vendo?
+
+## Conclusão
+
+Então, pessoal, é isso aí. Você pode fazer isso no seu celular, no seu... qualquer tipo de dispositivo.
+
+Se você souber o endereço do cliente, melhor ainda - o ataque é muito mais eficiente. Se não, você pode testar só pelo BSSID naquele roteador também. É uma outra opção.
+
+Tudo bem, pessoal? Então é isso aí.
+
+Qualquer dúvida que vocês tenham, podem perguntar lá no fórum do nosso curso.
+
+Abraço para todo mundo!
+
+---
+
+@9
+
+# Aula sobre Alteração de Endereço MAC (MAC Spoofing)
+
+Olá a todos!
+
+Bem, mais uma aula aqui. Desta vez vamos mostrar para vocês como conseguimos alterar o nosso MAC Address, que é o nosso endereço físico da nossa placa de rede.
+
+## O que é MAC Address
+
+O Wi-Fi ou cabo - todos eles possuem um endereço MAC. Então isso é muito útil, por exemplo, caso você queira fazer algo em seu equipamento e não queira deixar rastros do seu endereço real da sua placa, ou ainda caso você queira entrar em uma rede com algum tipo de endereço MAC específico. Então isso é muito importante - podemos alterar o nosso endereçamento.
+
+## Ferramenta macchanger
+
+A gente usa geralmente o nosso comando `macchanger`. Com `-h`, podemos visualizar os comandos dele.
+
+### Opções Principais
+
+Principalmente vamos usar:
+
+- **`-r`**: Versão randômica - podemos alterar o nosso endereço para uma versão aleatória que o próprio sistema nos fornece
+- **`-m`**: Para configurar de forma manual - configura de uma forma fixa, de acordo com o endereçamento que você deseja  
+- **`-p`**: Reset - para voltar ao endereço MAC permanente, que é do próprio hardware, feito pelo fabricante
+
+## Procedimento Prático
+
+### Preparação Inicial
+
+Primeira coisa que temos que fazer é verificar se o nosso `wlan0` (nossa rede Wi-Fi) está em modo de monitoramento. Precisamos tirá-lo do modo de monitoramento.
+
+```bash
+airmon-ng stop wlan0mon
+```
+
+Para deixá-lo em modo normal e visualizá-lo.
+
+### Verificando o MAC Address Atual
+
+Agora vamos desativar nossa placa. Caso queira visualizar, pode ver aqui o nosso endereço MAC:
+
+```bash
+ifconfig wlan0
+```
+
+A gente está com o endereço do próprio fabricante, que é o endereço permanente. Isso aqui nunca muda, só a parte do "current MAC" - aí sim conseguimos fazer a alteração para o endereço que desejamos.
+
+### Desativando a Interface
+
+Vamos executar um `down` - vamos deixá-la no momento desativada:
+
+```bash
+ifconfig wlan0 down
+```
+
+Se ela sumiu novamente da nossa rede...
+
+## Alteração para MAC Randômico
+
+Agora vamos mudar o endereço para um randômico. Vamos usar:
+
+```bash
+macchanger -r wlan0
+```
+
+Ele escolheu esse endereço aqui de forma randômica (New MAC). Depois vamos ter que reativar a interface.
+
+### Verificando a Alteração
+
+Pode usar o comando `-s` para visualizar:
+
+```bash
+macchanger -s wlan0
+```
+
+O endereço mostrado é o que selecionamos. O `-s` mostra o que está ativo.
+
+Então está aqui o endereço novo, bem diferente do que estava antes.
+
+### Reativando a Interface
+
+Vamos reativar:
+
+```bash
+ifconfig wlan0 up
+ifconfig
+```
+
+Final `75F`... então realmente foi alterado com sucesso do que era originalmente.
+
+## Alteração para MAC Específico
+
+Agora, caso queira deixar um endereço MAC específico, pode usar:
+
+```bash
+ifconfig wlan0 down
+macchanger -m 00:11:22:33:90:AB wlan0
+```
+
+Um endereço que você deseja.
+
+### Verificando o Resultado
+
+Olha como ficou nossa tabela:
+- O **permanente** sempre vai ficar do mesmo jeito
+- O **atual** que estava sendo utilizado  
+- O que vamos querer mudar, que é o `90:AB` que escolhemos
+
+Vamos reativar novamente:
+
+```bash
+ifconfig wlan0 up
+ifconfig
+```
+
+Final `90:AB`... então conseguimos alterar.
+
+## Voltando ao MAC Original
+
+Caso queira usar novamente o nosso MAC Address original, temos a opção do reset:
+
+```bash
+ifconfig wlan0 down
+macchanger -p wlan0
+```
+
+Para voltar ao original. Como ficou aqui: voltou para o que era originalmente - escolhemos voltar para o nosso MAC Address original.
+
+```bash
+ifconfig wlan0 up
+ifconfig
+```
+
+Voltar como estávamos antes, que é o endereço MAC permanente do próprio fabricante.
+
+## Conclusão
+
+Então é isso, pessoal. Essa é mais uma técnica de autenticação e configuração que vamos usar e também utilizaremos ao longo das nossas aulas.
+
+Então são apenas algumas configurações básicas por enquanto, para que, quando formos aplicar algo mais avançado, usaremos tudo isso de uma vez. Vai ser muito importante.
+
+Tudo bem? Então é isso aí.
+
+Abraço para todo mundo!
+
+---
+
+@10
+
+# Aula sobre Invasão de Rede Oculta e Bypass de Filtro MAC
+
+Olá a todos! Tudo bem com vocês?
+
+Bem, mais uma aula aqui. Desta vez vamos fazer um tipo de invasão em uma rede oculta. Vamos descobrir, além do seu nome, também o seu MAC Address e, além disso, vamos invadir e burlar a restrição pelo filtro de MAC Address.
+
+## Filtro de MAC Address
+
+Isso é muito comum - principalmente todos os roteadores, mesmo os mais antigos até os mais novos, todos eles possuem isso: você consegue restringir o acesso à nossa rede Wi-Fi através de uma lista seletiva de MAC Address.
+
+Ou seja, mesmo se eu souber a senha, mesmo se eu souber o acesso, ela não vai conseguir acessar porque o endereço MAC Address não está nessa lista. Então você não vai conseguir fazer a conexão mesmo tendo a senha.
+
+Vamos burlar isso: vamos burlar a proteção da rede oculta e vamos burlar a restrição do MAC Address. Para vocês verem que quase nada é realmente seguro - conseguimos burlar essas duas coisas.
+
+## Configuração Inicial do Roteador
+
+Vamos fazer isso no Kali Linux. Primeira coisa que tenho que fazer: principalmente vamos habilitar o filtro de MAC Address.
+
+Vou pegar o MAC Address da minha placa - vou fazer na minha conexão pelo Ubuntu, mas vocês podem fazer pelo Windows, não tem problema nenhum. Você precisa descobrir o endereço MAC.
+
+No meu Ubuntu, que vai ser o meu cliente (supondo um cliente normal), então vou copiar o MAC Address da minha placa de rede Wi-Fi.
+
+### Configurando o Roteador
+
+Vou colocar aqui no meu roteador. Podemos habilitar - ele vai ser o meu Ubuntu. O roteador Wi-Fi está habilitado.
+
+Aqui no nosso Wireless:
+- Vou desabilitar "Exibir nome da rede"  
+- Vou deixar o nome da rede como "WiFi" mesmo
+- Canal, largura de banda: tudo automático
+
+O MAC Address vai estar restrito - ou seja, só vai conseguir conectar com esse MAC Address aqui. Se não, não vai conseguir.
+
+### Testando a Conexão Legítima
+
+Vamos ver aqui, conectar na minha rede oculta. Podemos testar: se você quiser o "WiFi", nenhuma... pronto, já consegui conectar perfeitamente.
+
+Vamos ver nossa lista de clientes: HP, aqui canal B171. Aqui é o meu canal B171 - essa é a minha lista de restrição. Está tudo certinho, está conectado com sucesso.
+
+## Iniciando o Ataque
+
+Agora vamos fazer isso no nosso Kali Linux. Vamos derrubar essa conexão, vamos fazer ele se reconectar novamente. Vamos descobrir o nome daquela rede oculta e, com isso, também vamos descobrir qual é o endereço MAC.
+
+Embora nós já saibamos o endereço, estamos supondo que estamos fazendo um ataque a um cliente desconhecido em ambiente controlado, então temos todo o acesso.
+
+### Configurando o Modo Monitor
+
+Primeira coisa: vamos configurar o modo monitor. Vamos desculpar... vamos configurar o Kali agora:
+
+```bash
+airmon-ng start wlan0
+```
+
+Encontrou ele ativo. Vamos executar `ifconfig` para ver se voltou para nosso monitoramento.
+
+Meu Ubuntu (que é o cliente que vai ser atacado) está conectado normalmente.
+
+### Localizando o Alvo
+
+Vamos encontrar nossa configuração no canal 10. A gente já fez nas aulas anteriores - estou indo mais rápido, só estou recapitulando.
+
+Vamos encontrar o canal 10, nossa rede oculta. Vamos filtrar:
+
+```bash
+airodump-ng -c 10 wlan0mon
+```
+
+Aqui podemos filtrar nosso ataque. Vamos ver aqui: temos nosso canal 10, nossa rede oculta aqui, nosso BSSID está conectado.
+
+Se a gente tiver nossa conexão, vai facilitar. C150 - já temos também o cliente que está conectado nesse aqui: C150, nosso oculto. Vamos atacar esse aqui.
+
+Já tem um cliente, obviamente. Já temos um cliente associado. Vamos derrubar para descobrir o nome (supondo que não saibamos).
+
+### Executando o Ataque de Desautenticação
+
+Vamos dar uma pausa. Esse é o cliente e esse é o nosso roteador. Vamos derrubar ele.
+
+Deixa ele monitorando. Deixa eu abrir outro terminal aqui para poder configurar.
+
+Aqui nosso atacante: vamos derrubar com nosso cliente. Vamos pegar nosso alvo: é esse aqui C150, e nosso cliente é esse aqui: final B171.
+
+```bash
+aireplay-ng -0 100 -a [BSSID] -c B171 wlan0mon
+```
+
+Vamos dar o ataque. Já vai fazer a desconexão.
+
+## Descobrindo Informações
+
+Descobriu aqui o "WiFi" - já caiu, já descobriu "WiFi" o nome. Já descobri também "WiFi" - já caiu.
+
+Deixa eu parar aqui o ataque. Ótimo, já descobrimos. A gente já sabia, mas estamos simulando, então o nome da nossa rede oculta é "WiFi".
+
+O nome do nosso cliente é esse aqui. Deixa eu reconectar novamente - ele vai se reconectar, se restabelecer.
+
+Deixa eu ver aqui minha lista também. Está aqui associado. Prontinho, está conectado.
+
+## Clonagem de MAC Address
+
+Agora já temos o nome da nossa rede oculta e o MAC do cliente/estação. Vamos fazer o quê? Já sabemos quem é ele, já sabemos o nome da nossa rede (não tem senha - é aberta).
+
+Vamos atacar nossa rede, mesmo ele com aquela restrição. Vamos fazer aqui uma clonagem.
+
+### Saindo do Modo Monitor
+
+Vamos parar nossa placa:
+
+```bash
+airmon-ng stop wlan0mon
+ifconfig
+```
+
+Para ver se saiu mesmo do modo monitor.
+
+### Clonando o MAC Address
+
+Vamos ver aqui. No Kali Linux já tem essa função, então não precisa usar o `macchanger`. O Kali Linux (e qualquer distribuição Linux) já possui esse tipo de recurso.
+
+Vou tentar conectar, mas não vou conseguir fazer a conexão porque não tenho o MAC Address correto. Então tenho que clonar o MAC Address.
+
+Deixa eu editar aqui... deixa eu apagar aqui.
+
+Agora vamos recriar novamente: rede oculta, nome "WiFi", sem senha. Ele conecta.
+
+Ótimo! Vamos ver aqui novamente em editar. Vamos ver na configuração - ele tem esse MAC clonado.
+
+### Aplicando o MAC Clonado
+
+Agora sim, vamos copiar o endereço MAC do nosso cliente que está habilitado nessa lista: B171. Esse foi o da lista.
+
+Vamos clonar esse aqui. Ele pode conectar esse porque ele está na nossa restrição. Vamos nos passar por ele: B171, endereço MAC clonado. Salva, fecha.
+
+Agora vamos conseguir conectar.
+
+## Resultado do Ataque
+
+Mas temos um problema: temos dois. Nosso roteador não vai saber quem é quem. Ele vai... caiu os dois. Talvez os dois não vão conseguir fazer a conexão.
+
+Você pode tentar fazer a conexão... já me conectei!
+
+`ifconfig` - olha, já pegou o endereço IP: 192.168.1.122.
+
+Vamos testar aqui. O nosso cliente original não vai conseguir saber quem é quem - o MAC clonado é só um. Meu Ubuntu também não conseguiu conectar... ou conseguiu? Vamos ver... ele conseguiu também.
+
+No meu Kali Linux também conseguiu. Então a pessoa não vai nem saber. O administrador da rede vai achar muito estranho: o MAC Address é o mesmo, mas dois dispositivos estão acessando com o mesmo MAC.
+
+### Testando Conectividade
+
+Vou testar aqui meu roteador. Deixa eu abrir aqui meu roteador no terminal:
+
+```bash
+ping 192.168.1.1
+```
+
+Estou pingando. Vamos pingar aqui: 192.168.1.1. Podemos tentar acessar - estou acessando.
+
+Vou abrir o navegador normalmente também. Estou acessando normalmente meu roteador: 192.168.1.1 - TP-Link.
+
+Vou acessar normalmente. Ou seja, se eu conseguir acessar meu roteador, vou acessar a internet também. Estou navegando normal.
+
+### Confirmação do Bypass
+
+Deixa eu acessar aqui: 192.168.1.1. Pronto, estou dentro.
+
+Então consegui burlar. Talvez porque tem uma sessão aberta, mas estou aqui acessando. Vou acessar até isso - pode ser burlado.
+
+Até isso também é burlado. O TP-Link, meu roteador não vai saber. Estou com uma aba aqui, e ele também conseguiu abrir. Só pode uma pessoa acessar normalmente.
+
+## Conclusão
+
+Então é isso, pessoal. Podem ver que mesmo com restrição, conseguimos burlar. Deixamos ele oculto, deixamos ele com MAC Address restrito, mas não adiantou - conseguimos burlar.
+
+Essa é uma aula de pentest Wi-Fi muito importante e muito interessante. Sabemos também como se precisa tomar cuidado.
+
+Se você trabalhar com Wi-Fi, todo cuidado é pouco.
+
+Bem, pessoal, então é isso aí. A aula foi essa. Qualquer dúvida que vocês tenham, podem perguntar lá no fórum do nosso curso para podermos responder o mais rápido possível.
+
+Abraço para todo mundo!
+
+---
+
+@11
+
+
+# Tutorial: Auditoria de Segurança Wi-Fi com Kali Linux
+
+## Introdução
+
+Olá, todos os alunos! Tudo bem com vocês?
+
+Nesta aula, vamos aprender como descobrir senhas de Wi-Fi usando captura de handshake com técnicas como o handshake WPA/WPA2, que basicamente quebra nossa autenticação através do uso de força bruta (brute force) com uma Wordlist. Vamos usar o próprio Kali Linux que é o sistema operacional padrão para este tipo de teste.
+
+## Preparando o Ambiente
+
+Basicamente, precisamos seguir o que temos feito até agora. Temos nosso roteador - tudo é um ambiente controlado. Ele possui nosso Wi-Fi "WiFi Test", que está exibindo nosso nome. É um roteador normal com o nome configurado, canal automático também configurado, o nome dele está sendo exibido. A segurança dele é WPA2, que é o mais recomendado e que a maioria das pessoas utiliza no protocolo wireless.
+
+O problema é que configuramos uma senha simples: 1, 2, 3, 4, 5, 6, 7, 8, 9 - ou seja, isso é muito fácil de quebrar com qualquer tipo de Wordlist. Então, é uma configuração simples para conseguirmos fazer nossas configurações de ambiente.
+
+Meu Windows está aqui conectado ao "WiFi Test". Não tem internet, mas está conectado. Aqui temos nosso Kali Linux onde faremos os testes.
+
+## Processo de Captura
+
+Primeiro, vamos monitorar nosso Wi-Fi. Vamos derrubar a conexão do Windows que está conectado, simulando um ambiente onde existe um cliente conectado ao roteador. Como derrubamos a conexão daquele cliente? Geralmente ele vai conectar automaticamente - derrubamos e depois ele se conecta sozinho, ou a pessoa vai lá e conecta novamente.
+
+Com isso, capturamos o que chamamos de handshake, que basicamente é quando nosso Kali Linux captura os pacotes transmitidos do nosso cliente (nosso alvo) até nosso roteador. Esses pacotes são totalmente criptografados, então não conseguimos ler diretamente. Os pacotes são trocados no ar através da conexão ou reconexão do Wi-Fi.
+
+Esse handshake que capturamos será usado para fazer um ataque offline, porque se fôssemos atacar diretamente um roteador, qualquer tipo de roteador tem proteção contra brute force, então seríamos bloqueados. Por isso fazemos o ataque offline - pegamos aquele handshake e usamos nossa Wordlist nele.
+
+## Sobre as Wordlists
+
+Claro, temos nossa Wordlist no Kali Linux por padrão, que não é muita coisa. Você pode encontrar na internet wordlists gigantescas, enormes, com trilhões e trilhões de palavras diferentes. Essas wordlists são alimentadas através de vazamentos de milhões de senhas pela internet, de grandes sites, bancos de dados, etc. Essas wordlists vão aumentando cada vez mais, e a complexidade das senhas vai ficando mais fácil de localizar.
+
+Por isso que hoje em dia você consegue visualizar alguns sites que pedem para você mudar sua senha, colocar uma senha mais difícil. Muitos sites hoje em dia nem deixam você usar senhas simples - tem que ter regras: no mínimo 8 caracteres, letras maiúsculas, minúsculas, caracteres especiais, etc. Tudo isso é para dificultar, porque realmente, contra a maior capacidade de processamento das nossas máquinas e nossos Kali Linux, é mais difícil manter tudo seguro.
+
+## Configurando o Modo Monitor
+
+A primeira coisa que precisamos fazer é colocar nossa placa de rede em modo monitor. Ela não está ainda, então vamos configurá-la.
+
+```bash
+airmon-ng start wlan0
+```
+
+Se ela não aparecer, como estamos fazendo muitas aulas de Wi-Fi, tire a placa do seu porto USB e coloque novamente que ela vai funcionar.
+
+Vamos deixar nossa placa de rede em modo de monitoramento para conseguirmos monitorar o ar. Já sabemos qual é nosso alvo, mas vamos monitorar o ar para capturar uma vítima.
+
+```bash
+airodump-ng wlan0mon
+```
+
+## Identificando o Alvo
+
+O que queremos é esse "WiFi Test", com autenticação WPA2. Aqui temos nosso WiFi Test no canal 10, nosso MAC Address, e vamos ver nossa vítima - nosso cliente que está conectado nele. Podemos filtrar pelo canal para ficar mais fácil:
+
+```bash
+airodump-ng -c 10 wlan0mon
+```
+
+Agora temos nosso roteador identificado, já temos nosso alvo. Nosso Windows está no WiFi Test conectado. Temos o BSSID e nossa estação (nosso cliente) que está conectada ao nosso roteador no canal 10.
+
+## Capturando o Handshake
+
+Agora vamos derrubar essa conexão, mas antes precisamos estar monitorando e capturando. Vamos deixar ele aqui novamente em monitoramento e filtrar pelo nosso canal e pelo nosso BSSID, capturando nosso handshake.
+
+```bash
+airodump-ng -c 10 --bssid C0:25:E9:XX:XX:XX -w captura wlan0mon
+```
+
+Ele vai criar vários arquivos com esse mesmo nome "captura": captura-01.cap, arquivo de log, etc. Nossa placa de rede WiFi está configurada.
+
+Ele vai monitorar aquela frequência, aquela rede normalmente, e o mais importante: capturar nosso handshake. Mas como podemos fazer isso sendo que o cliente está conectado normalmente? Vamos derrubar essa conexão e depois ele vai automaticamente se reconectar, já que estava conectado anteriormente.
+
+## Executando o Ataque de Desautenticação
+
+Vamos abrir outro terminal para derrubarmos a conexão, deixando este terminal ativo e ligado.
+
+```bash
+aireplay-ng -0 100 -a C0:25:E9:XX:XX:XX -c D7:3A:XX:XX:XX:XX wlan0mon
+```
+
+Onde:
+- `-0 100`: envia 100 pacotes de desautenticação
+- `-a`: MAC do roteador (BSSID)  
+- `-c`: MAC do cliente
+
+Vamos derrubar aquela conexão enviando 100 pacotes. E não demorou muito - já derrubou. Vamos finalizar o ataque. Ele vai se reconectar novamente.
+
+O cliente, simulando uma situação real, vai ver que o WiFi está desconectado e vai tentar conectar novamente. E pronto! O handshake foi capturado! Ele até mostra nosso BSSID. Podemos dar Ctrl+C para sair.
+
+Conseguimos com sucesso nosso arquivo. O cliente conseguiu se reconectar novamente, então não vai achar nada demais - só teve uma queda de conectividade momentânea.
+
+## Verificando os Arquivos Capturados
+
+Nosso handshake (nosso arquivo) já foi criado. Vamos dar um `ls` para ver:
+
+```bash
+ls
+```
+
+Ele está aqui: "captura". Esse nome "captura" foi o nome que demos no comando. Ele criou vários arquivos: captura.cap (que vamos trabalhar), além de outros formatos como CSV (arquivos de log), XML, etc. Vamos trabalhar com esse .cap.
+
+## Quebrando a Senha
+
+Já capturamos nosso handshake, agora vamos trabalhar com esse arquivo. É um arquivo comum que pode ser trabalhado com o aircrack, que é o comando que serve para quebrar as senhas usando uma Wordlist.
+
+Primeiro, vamos ver a wordlist disponível:
+
+```bash
+ls /usr/share/wordlists/
+```
+
+Temos algumas wordlists aqui. A que queremos é a "rockyou.txt". É um arquivo grande, porém tem milhões de entradas. Ele está compactado (.txt.gz), então vamos descompactar:
+
+```bash
+gzip -d /usr/share/wordlists/rockyou.txt.gz
+ls -lh /usr/share/wordlists/rockyou.txt
+```
+
+É um arquivo de 134 megabytes, que é muito pouco nos padrões de hoje. Você encontra wordlists com terabytes, com trilhões e trilhões de palavras. Mas para nosso teste, isso é suficiente.
+
+## Executando o Aircrack
+
+Agora vamos quebrar nosso arquivo captura.cap usando a wordlist:
+
+```bash
+aircrack-ng -b C0:25:E9:XX:XX:XX -w /usr/share/wordlists/rockyou.txt captura.cap
+```
+
+Onde:
+- `-b`: nosso BSSID
+- `-w`: nossa wordlist
+- `captura.cap`: arquivo que precisamos quebrar
+
+Foi bem rápido! Na minha máquina consegui mais de 3.100 palavras por segundo. Dependendo da sua máquina, isso vai depender muito do seu processador, potência, modelo, ano - tudo isso altera o tempo.
+
+Se tivesse que rodar toda a lista (que é pequena), demoraria quase uma hora. Para uma lista de apenas 134MB! Imagine usando uma GPU, que tem muito mais capacidade de processamento para quebras de senhas, ou processadores mais potentes.
+
+## Resultado
+
+A senha encontrada foi: **123456789**
+
+Nada que já não sabíamos - já tínhamos falado que a senha era essa. Então nosso WiFi foi "crackeado" com sucesso.
+
+## Conclusão e Recomendações de Segurança
+
+Por isso é importante usar:
+- Caracteres maiúsculos
+- Caracteres minúsculos  
+- Caracteres especiais
+- Senhas longas e complexas
+
+Eu sei que é um pouco chato, essa questão de segurança não é muito confortável, mas hoje em dia os computadores estão ficando cada vez mais potentes, e precisamos ter maior atenção com as senhas, principalmente quando acontecem grandes vazamentos de senhas de sites e bancos de dados enormes.
+
+## Considerações Finais
+
+Pessoal, foi isso! Conseguimos quebrar uma senha, conseguimos derrubar nosso cliente, forçá-lo a se reconectar, capturar um handshake e executar um brute force naquele arquivo.
+
+**Importante**: Este tutorial é apenas para fins educacionais e deve ser usado apenas em redes próprias ou com autorização explícita. O uso não autorizado dessas técnicas é ilegal.
+
+---
+
+*Espero que tenham gostado! Qualquer dúvida ou pergunta, podem fazer no fórum do nosso curso. Abraço para todo mundo!*
