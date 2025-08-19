@@ -1,0 +1,71 @@
+# Instalação do VirtualBox no Windows
+
+Olá a todos! Tudo bem com vocês, pessoal?
+
+Bom, mais uma aula muito importante. Vamos fazer a instalação do VirtualBox na nossa máquina Windows.
+
+O VirtualBox é o melhor sistema para a gente emular as nossas máquinas virtuais. Temos outras máquinas virtuais, mas não usem, ok? Usem o VirtualBox, tudo bem?
+
+Então é um programa gratuito que vocês podem baixar e usar. Ele é multiplataforma, então funciona tanto para Linux quanto para Mac, ok?
+
+## Download do VirtualBox
+
+Então temos aqui o nosso site **VirtualBox.org**. Eu vou disponibilizar para vocês o link para vocês baixarem, ok? Eu vou deixar o link para vocês acessarem.
+
+Vamos ver aqui como baixar o nosso programinha. Clique em **Download**. Aí está aqui: VirtualBox para plataforma. Temos para Windows, macOS, temos para Linux, temos para Solaris, ok?
+
+Vamos baixar aqui o nosso programa para Windows, tudo bem? É um arquivo executável. Aqui vamos baixar, tudo bem?
+
+## Instalação
+
+Aqui você só dá dois cliques nele e ele vai fazer a nossa execução, ok? Eu estou aqui usando um Windows Server, ok? Mas ele serve para Windows desktop também: Windows 10, 11, 12 e por aí vai, ok? O importante é que funciona independentemente da versão que você for utilizar.
+
+Então vamos fazer a nossa instalação. É o famoso "Next, Next, Next", ok? Só aceitar os termos e as licenças, vai instalar aqui o nosso programa.
+
+Clica em **Next**, clica em **Yes** quando aparecer sobre conexão. Vai perguntar aqui sobre os **Create Shortcuts**. Você pode criar também e fazer aqui a nossa instalação.
+
+Então nosso VirtualBox não demora muito, ok? Ele também não é muito pesado, tudo bem?
+
+E prontinho! Já foi feita a nossa instalação do nosso VirtualBox. Clique em **Finish** e vai abrir aqui o nosso VirtualBox, tudo bem?
+
+## Interface do VirtualBox
+
+Aparece uma janelinha assim. Aí você pode ver aqui: clicar em **Novo** para criar uma nova máquina, né? Caso você queira. Eu vou usar isso na próxima aula, independentemente do tipo de sistema que você vai utilizar, tudo bem?
+
+Aqui tem o nome, a pasta da máquina virtual que vai ficar armazenada. Então o seu sistema operacional inteiro vai ser um arquivo, resumindo: a imagem que você vai ter que baixar.
+
+### O que é uma imagem?
+
+A imagem é a imagem do seu sistema operacional. Todos eles têm: o Windows tem uma imagem, o Linux tem uma imagem, que é a imagem do sistema operacional inteiro, praticamente, tudo bem?
+
+Aí tem aqui os tipos de sistema: Windows, Linux, enfim, o tipo de sistema operacional que você vai escolher, tudo bem?
+
+Se é Linux, por exemplo, que tipo de Linux que é: se é um Debian, um Ubuntu, um Red Hat (que seria também um CentOS), um Kali Linux, um Ubuntu, ok? Então tudo isso depende do que você vai utilizar, tudo bem, pessoal?
+
+## VirtualBox Extension Pack
+
+E não menos importante - deixa eu frisar aqui - temos que baixar também o **VirtualBox Extension Pack**. Isso também é importante baixar, tudo bem?
+
+São extensões extras para melhorar a compatibilidade do seu VirtualBox, né? Para você usar USB, para você usar câmeras, para você usar algum tipo de extensão importante. Então também é importante isso.
+
+Vem aqui e faz o download. Ele é um programa único, ok? Esse programa do Extension Pack, ele serve para todos os sistemas, porque ele vai ser aberto ou executado pelo VirtualBox, ok?
+
+### Instalação do Extension Pack
+
+Então eu baixei ele aqui. Se você for dar dois cliques nele, ele vai ser executado pelo VirtualBox, ok? Ele vai abrir pelo VirtualBox. Aí você vem aqui e clica em **Instalar**.
+
+Aí você aceita aqui os termos, que são o nosso contrato, né? **Eu concordo**. E prontinho! Já está instalado aqui o nosso Extension Pack, ok? Isso é importante, tudo bem?
+
+## Conclusão
+
+Então o nosso Oracle VirtualBox já está pronto para a gente utilizar, tudo bem?
+
+Eu vou usar o VirtualBox no meu Linux, ok? No meu Linux Ubuntu. Não tem problema, a configuração é a mesma, ok? Como vocês podem visualizar aqui, ok? Eu estou usando aqui um Ubuntu, mas no Windows é a mesma coisa, ok?
+
+Como eu falei, ele é multiplataforma. As configurações são as mesmas, tudo bem?
+
+Então é isso aí, ok? Espero que vocês tenham gostado dessa nossa aula. Qualquer dúvida ou pergunta, vocês podem fazer em nosso fórum, ok?
+
+E trabalhem com o VirtualBox, ok? Eu trabalho com o VirtualBox, ok? Não trabalho com nenhum outro tipo de virtualização, tudo bem?
+
+Então é isso daí, até mais!
