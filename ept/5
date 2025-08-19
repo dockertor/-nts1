@@ -1,0 +1,195 @@
+# Setup para Wireless Hacking - Configuração do Laboratório
+
+Olá a todos! Tudo bem com vocês, pessoal?
+
+Bom, mais uma aula aqui. Vamos dar início à nossa seção sobre **Wireless Hacking** ou **ataques Wi-Fi**. 
+
+Só que para isso precisamos de um setup. A gente já vai explicar aqui para vocês, porque a gente precisa dessas configurações ou equipamentos, senão não vamos conseguir fazer ou dar início nas próximas aulas, tudo bem?
+
+## Equipamentos Necessários
+
+Então, para a gente poder dar aqui continuidade, precisamos de:
+
+### 1. Computadores/Dispositivos
+- **Pelo menos dois PCs ou celulares** com antenas Wi-Fi para fazer o nosso laboratório
+- **Pelo menos uma máquina com Windows 7 ou 10**, enfim, também com Wi-Fi. Pode ser um notebook ou até mesmo uma outra máquina virtual, caso você prefira. Também pode estar sendo utilizado
+
+### 2. Roteador Wi-Fi
+- **Um roteador** - pode ser qualquer tipo de roteador Wi-Fi que suporte encriptação **WEP, WPA e WPA2**. Isso também é muito importante
+- Todos os roteadores hoje em dia, seja um modelo mais avançado ou mais simples, possuem essas funcionalidades
+
+### 3. Adaptador USB Wi-Fi (MAIS IMPORTANTE)
+E o mais importante: em nosso Kali Linux, nosso sistema operacional, vamos precisar de um **adaptador USB Wi-Fi** que possibilite o uso do **modo monitor**, ou seja, o uso do monitoramento da conexão Wi-Fi.
+
+**E não são todos os modelos!** São modelos geralmente mais caros, são modelos geralmente que têm aquela antena, que têm um alto ganho, têm um chipset um pouco mais potente. Por isso que eles são mais caros.
+
+Eu vou até deixar para vocês o link no site para vocês darem uma olhada.
+
+#### Modelos Compatíveis
+Não é qualquer modelo, como eu disse. Se vocês forem procurar, por exemplo, no site de e-commerce, temos aqui alguns modelos:
+
+- **Este daqui aguenta** - são os modelos mais caros
+- **Este daqui também suporta** - WN722N - são os modelos mais caros  
+- **Este daqui não suporta**
+- **Este daqui não** - não tem como fazer
+
+São modelos mais caros mesmo. Então, caso vocês queiram fazer um teste de wireless hacking, é preciso que vocês tenham um adaptador USB mais potente.
+
+Este daqui também serve, tudo bem? São chips, são adaptadores Wi-Fi mais caros. Alguns deles apenas suportam, não são todos que suportam, tudo bem?
+
+**Por isso, se não tiverem o equipamento adequado, não vamos conseguir fazer direito a nossa aula.**
+
+## Configuração no VirtualBox
+
+Eu vou usar um modelo exatamente igual. Nosso roteador vai ser exatamente esse mesmo modelo aqui. Qualquer tipo de roteador que contenha esse tipo de criptografia - todos eles, os mais modernos, mesmo se for o mais barato, possuem. Então não tem problema nenhum para isso.
+
+Vamos abrir aqui. Eu estou usando o meu VirtualBox. Eu estou com o meu Wi-Fi na minha máquina aqui, como vocês podem usar. Ele usa a rede Wi-Fi, mas eu vou ter que fazer o quê? 
+
+Vou jogar esse meu adaptador, esse meu adaptadorzinho aqui Wi-Fi, dentro do meu Kali Linux, que está dentro da minha máquina virtual.
+
+### Configurando o USB no VirtualBox
+
+Então vamos ver aqui no Kali Linux: **Configurações** → **USB**, porque como é adaptador USB, está na parte USB para a gente poder configurar.
+
+Aqui, o **adaptador USB 2.0** é suficiente. Vamos ver aqui... vamos ver o ícone verdinho. O meu, como é um chip Atheros, o **USB WLAN**, então eu vou escolher esse.
+
+É o nome do chip, do chip que está dentro do nosso adaptador. Por isso que não são todos, novamente, não são todos os modelos que suportam. Os modelos mais caros que a gente consegue fazer essa configuração.
+
+Dão um **OK**.
+
+### Resultado da Configuração
+
+Então, feito isso, o nosso adaptador USB vai sair da nossa máquina real, da nossa máquina física, e vai ser plugado em nosso Kali Linux, como se ele estivesse dentro do nosso Kali Linux diretamente.
+
+Vamos inicializar aqui agora o nosso sistema. Vocês podem visualizar que ele vai sair da nossa máquina, ele vai ser desconectado aqui e vai passar a ser conectado em nosso Kali Linux de maneira direta.
+
+Aqui em nosso sistema, se vocês forem no Windows também, é a mesma coisa: ele vai deixar de servir ao seu sistema Windows, por exemplo, ele vai servir pro Kali Linux exclusivamente.
+
+## Testando a Configuração
+
+Vamos entrar aqui no usuário root: 123456.
+
+Vocês podem usar terminal também, não tem problema nenhum.
+
+Então vamos ver aqui, ó: rede Wi-Fi. Estão vendo? Então já temos aqui nossa rede Wi-Fi já está funcionando.
+
+E mais importante: vamos abrir o nosso terminal. Nosso Kali Linux, vou deixar ele maximizado aqui para vocês poderem enxergar melhor.
+
+### Identificando o Adaptador Wi-Fi
+
+Então, no nosso terminal do nosso Kali Linux, vamos ter que configurar a nossa placa Wi-Fi, o nosso adaptador.
+
+O comando é:
+```bash
+iwconfig
+```
+
+A gente pode ver: temos aqui o nosso **wlan0**, que é o nosso chip, o nosso adaptador Wi-Fi USB.
+
+Então, a gente tem aqui o nosso **wlan0**, que é ele que a gente vai trabalhar nas aulas sobre a nossa seção aqui do Wi-Fi.
+
+Lembrando: se vocês tiverem algum outro chip Wi-Fi ou uma placa onboard Wi-Fi, pode ser que apareça com nome diferente, como **wlan1**, por exemplo, caso tenham mais de uma. Não tem problema nenhum.
+
+O importante é vocês conseguirem identificar qual que é a sua placa mesmo.
+
+### Visualizando as Configurações
+
+Então vamos fazer... vamos digitar o nosso comando, caso queiram visualizar:
+```bash
+ifconfig wlan0
+```
+
+Que é o nosso adaptador USB.
+
+Então temos aqui o nosso **MAC address**. Como ele não está conectado a nada, então não tem nenhum tipo de problema de pacotes recebidos ou enviados.
+
+### Fazendo Scan das Redes
+
+Mas vamos fazer um scan. Caso queiram fazer um scan, também é possível. Vocês podem usar o comando:
+```bash
+iw list
+```
+
+Caso queiram:
+```bash
+iwlist wlan0 scan
+```
+
+Para vocês fazerem.
+
+Aí vai fazer o quê? Vai fazer um scan de todas as redes Wi-Fi que ele consegue capturar.
+
+Tem aqui o nome, a potência, a qualidade, se ele está criptografado ou não, o nome daquela rede, a frequência dela (2.4 GHz). Se vocês tiverem um adaptador com 5 GHz, ele também pode capturar essa frequência.
+
+Temos o NET, Claro Wi-Fi, aqui outra rede... então tem a criptografia. Está habilitada, como vocês podem visualizar.
+
+Enfim, temos vários tipos de redes Wi-Fi na minha região. Se vocês tiverem também, vocês vão ver as suas redes.
+
+É basicamente isso daqui, é basicamente essa lista aqui que a gente vê aqui em nossa configuração. Nada além.
+
+## Configurando o Modo Monitor
+
+Então, agora que a gente já sabe... bom, caso queiram usar o nosso comando, agora vamos ter que subir nossa placa para a gente ativar a interface de rede.
+
+Então o comando é:
+```bash
+ifconfig wlan0 up
+```
+
+Que a gente vai deixar ela ativa.
+
+### Ativando o Modo Monitor
+
+E para colocar ela em **modo monitor**, que é o mais importante - deixar ela em modo de monitoramento - a gente tem que usar o nosso:
+```bash
+airmon-ng start wlan0
+```
+
+Isso é o nosso comando. **Airmon-ng** é um programa que já vem instalado em nosso Kali Linux.
+
+E `start wlan0`. O **wlan0** é nossa placa Wi-Fi que a gente vai fazer a configuração.
+
+E prontinho!
+
+### Verificando a Configuração
+
+Então olha aqui: o nosso chip Atheros. Por isso que eu falo novamente: **não é qualquer tipo de USB**. Apenas placas com chips mais potentes mesmo possuem esse tipo de recurso. A gente pode fazer esse tipo de monitoramento.
+
+Caso vocês queiram ver como ficou, rodem o comando:
+```bash
+iwconfig wlan0
+```
+
+Olha aqui como ficou.
+
+Se vocês quiserem visualizar também, podem usar o comando:
+```bash
+ifconfig
+```
+
+Então ele não aparece mais como **wlan0** apenas, mas sim como **wlan0mon**.
+
+Então, a gente mudou o tipo de configuração dela para monitoramento.
+
+## Resultado Final
+
+E com isso, a partir de agora, a gente consegue fazer toda a nossa análise do que se passa dentro da nossa placa de rede Wi-Fi USB.
+
+Então, é a partir daqui que a gente consegue:
+- Monitorar tudo
+- Capturar os pacotes
+- Usar, obviamente, outros programas
+
+Então, aqui a gente consegue fazer muita coisa legal a partir de agora, tudo bem?
+
+## Conclusão
+
+Então, gente, é isso daqui, ok? Nossa aula de setup para configurar nossa placa de rede Wi-Fi.
+
+**Lembrando novamente que não é qualquer tipo de adaptador USB!** 
+
+Então, caso vocês não tenham um adaptador USB desses modelos específicos, infelizmente vocês não vão conseguir dar prosseguimento, não vão conseguir nas próximas aulas fazer aqui os nossos testes, tudo bem?
+
+Então, gente, é isso daí. Qualquer dúvida ou pergunta podem deixar lá no fórum do nosso curso.
+
+Um abraço para todo mundo!
