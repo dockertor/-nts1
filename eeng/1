@@ -1,0 +1,75 @@
+# Introduction to Wi-Fi Penetration Testing Course
+
+Hello, everyone! How are you all doing?
+
+Well, for you who are watching us, for you who are already a student or who are in doubt, let's make here a brief introduction to the Wi-Fi network invasion courses with Kali Linux, a Wi-Fi pentest.
+
+I won't extend too much, I am the instructor of this new course of ours.
+
+Let's talk here quickly about an introduction to what a penetration test on Wi-Fi networks is.
+
+So, this is a very common and very useful question.
+
+Basically, penetration testing on wireless networks is an approach to evaluate the security of Wi-Fi networks.
+
+So, this involves employing tactics and techniques that malicious hackers (ethical hackers, as we say) can employ to exploit vulnerabilities in your wireless infrastructure.
+
+So, the goal is to identify weaknesses in your network's defenses and correct them before some intruder can actually exploit them.
+
+So, our test includes testing Wi-Fi networks, Bluetooth devices, wireless access points, wireless devices like tablets and mice, among other things.
+
+So, these devices are important targets, because the hacker actually has access to our Wi-Fi network and doesn't require any type of social engineering.
+
+So, they have physical access, direct access to your Wi-Fi network.
+
+So, then they can have much better, much more precise physical proximity, and thus really manage to invade or try to do some type of invasion or some type of manipulation technique on your Wi-Fi network.
+
+So, this type of vulnerability can vary, such as, for example, weak passwords, poorly configured devices or devices configured incorrectly, some type of outdated firmware detection.
+
+So, all of this can contribute to our pentest, all these factors contribute to our Wi-Fi network invasion.
+
+## Why test a wireless network?
+
+So, this happens because wireless networks, wireless connections can be compromised. The wireless network can be accessed from a distance, that is, anyone can be having access to the wireless network if you really don't know who it is.
+
+So, unauthorized users, malicious users can really exploit this type of environment.
+
+So, we can reveal some type of weakness that can hide in a wireless network, as I already mentioned, incorrect security configurations or some type of known vulnerability.
+
+Generally, for example, this is very important because it can be easily exploited if not discovered, so we have a certain concern.
+
+So, these factors really leave your wireless networks very unprotected, and this brings serious risks to your network.
+
+Such as, for example, we can have some type of vulnerability that we can discover quickly and strengthen security measures.
+
+So, you can quickly update, mainly regarding firmware. Our encryption protocol has really been improving more and more, our encryption is getting stronger and stronger.
+
+So, this is very good.
+
+## Regulatory Compliance
+
+Regulatory compliance - so, we have here specific security recommendations that must be followed.
+
+This is because many companies go through a certain type of audit, so everything has to be just right.
+
+So that penetration tests help verify if it's really in compliance with these guidelines, to avoid fines and things like that, or even data breaches.
+
+Also, you can protect your company's reputation. So, by performing penetration tests, you demonstrate commitment, mainly to data security.
+
+In addition to cost savings - for example, if you have some type of data breach, this will bring legal problems, compensations, commercial losses, among other things. All of this has to be taken into account, okay?
+
+And Wi-Fi networks are increasingly being used, so wireless networks are increasingly being utilized.
+
+So, it really is a very important environment to be tested, to be verified to be able to see if everything is as right as possible here in our Wi-Fi networks.
+
+## Course Content
+
+Well, so, these courses will show the step-by-step of how attacks work, the main attacks, how an intruder does it, how we can, for example, in addition to invading a Wi-Fi network, what we can do when an intruder really enters a Wi-Fi network.
+
+All of this is very important, okay?
+
+So, I hope you enjoy our course. For you there, it will be increasingly valuable and important knowledge.
+
+So, any doubt or question you have, you can contact the school, and we'll try to respond as quickly as possible.
+
+So, that's it, see you later!
