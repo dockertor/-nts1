@@ -1,0 +1,156 @@
+# Tutorial: Wi-Fi Security Auditing with Kali Linux
+
+## Introduction
+
+Hello, all students! How are you doing?
+
+In this lesson, we're going to learn how to discover Wi-Fi passwords using handshake capture with techniques like the WPA/WPA2 handshake, which basically breaks our authentication through the use of brute force with a Wordlist. We're going to use Kali Linux itself, which is the standard operating system for this type of testing.
+
+## Preparing the Environment
+
+Basically, we need to follow what we've been doing so far. We have our router - everything is a controlled environment. It has our Wi-Fi "WiFi Test", which is displaying our name. It's a normal router with the configured name, automatic channel also configured, its name is being displayed. Its security is WPA2, which is the most recommended and what most people use in the wireless protocol.
+
+The problem is that we configured a simple password: 1, 2, 3, 4, 5, 6, 7, 8, 9 - that is, this is very easy to crack with any type of Wordlist. So, it's a simple configuration to be able to make our environment configurations.
+
+My Windows is here connected to "WiFi Test". It has no internet, but it's connected. Here we have our Kali Linux where we'll do the tests.
+
+## Capture Process
+
+First, we're going to monitor our Wi-Fi. We're going to drop the Windows connection that's connected, simulating an environment where there's a client connected to the router. How do we drop that client's connection? Usually it will connect automatically - we drop it and then it connects by itself, or the person goes there and connects again.
+
+With this, we capture what we call a handshake, which is basically when our Kali Linux captures the packets transmitted from our client (our target) to our router. These packets are totally encrypted, so we can't read them directly. The packets are exchanged in the air through Wi-Fi connection or reconnection.
+
+This handshake we capture will be used to make an offline attack, because if we were to attack a router directly, any type of router has protection against brute force, so we would be blocked. That's why we do the offline attack - we take that handshake and use our Wordlist on it.
+
+## About Wordlists
+
+Of course, we have our Wordlist in Kali Linux by default, which isn't much. You can find gigantic, enormous wordlists on the internet, with trillions and trillions of different words. These wordlists are fed through leaks of millions of passwords across the internet, from major sites, databases, etc. These wordlists keep growing more and more, and password complexity becomes easier to locate.
+
+That's why nowadays you can see some sites that ask you to change your password, put a more difficult password. Many sites nowadays don't even let you use simple passwords - they have to have rules: minimum 8 characters, uppercase letters, lowercase letters, special characters, etc. All of this is to make it more difficult, because really, against the greater processing capacity of our machines and our Kali Linux, it's harder to keep everything secure.
+
+## Configuring Monitor Mode
+
+The first thing we need to do is put our network card in monitor mode. It's not there yet, so let's configure it.
+
+```bash
+airmon-ng start wlan0
+```
+
+If it doesn't appear, since we're doing many Wi-Fi lessons, remove the card from your USB port and put it back in and it will work.
+
+Let's put our network card in monitoring mode so we can monitor the air. We already know what our target is, but let's monitor the air to capture a victim.
+
+```bash
+airodump-ng wlan0mon
+```
+
+## Identifying the Target
+
+What we want is this "WiFi Test", with WPA2 authentication. Here we have our WiFi Test on channel 10, our MAC Address, and let's see our victim - our client that's connected to it. We can filter by channel to make it easier:
+
+```bash
+airodump-ng -c 10 wlan0mon
+```
+
+Now we have our router identified, we already have our target. Our Windows is connected to WiFi Test. We have the BSSID and our station (our client) that's connected to our router on channel 10.
+
+## Capturing the Handshake
+
+Now we're going to drop this connection, but first we need to be monitoring and capturing. Let's leave it here again in monitoring and filter by our channel and our BSSID, capturing our handshake.
+
+```bash
+airodump-ng -c 10 --bssid C0:25:E9:XX:XX:XX -w capture wlan0mon
+```
+
+It will create several files with this same name "capture": capture-01.cap, log file, etc. Our WiFi network card is configured.
+
+It will monitor that frequency, that network normally, and most importantly: capture our handshake. But how can we do this when the client is connected normally? We're going to drop this connection and then it will automatically reconnect, since it was previously connected.
+
+## Executing the Deauthentication Attack
+
+Let's open another terminal to drop the connection, leaving this terminal active and on.
+
+```bash
+aireplay-ng -0 100 -a C0:25:E9:XX:XX:XX -c D7:3A:XX:XX:XX:XX wlan0mon
+```
+
+Where:
+- `-0 100`: sends 100 deauthentication packets
+- `-a`: router MAC (BSSID)  
+- `-c`: client MAC
+
+We're going to drop that connection by sending 100 packets. And it didn't take long - it already dropped. Let's finish the attack. It will reconnect again.
+
+The client, simulating a real situation, will see that the WiFi is disconnected and will try to connect again. And ready! The handshake was captured! It even shows our BSSID. We can press Ctrl+C to exit.
+
+We successfully got our file. The client managed to reconnect again, so it won't think anything unusual - it just had a momentary connectivity drop.
+
+## Verifying Captured Files
+
+Our handshake (our file) has already been created. Let's do an `ls` to see:
+
+```bash
+ls
+```
+
+It's here: "capture". This name "capture" was the name we gave in the command. It created several files: capture.cap (which we'll work with), plus other formats like CSV (log files), XML, etc. We'll work with this .cap.
+
+## Cracking the Password
+
+We've already captured our handshake, now let's work with this file. It's a common file that can be worked with aircrack, which is the command that serves to crack passwords using a Wordlist.
+
+First, let's see the available wordlist:
+
+```bash
+ls /usr/share/wordlists/
+```
+
+We have some wordlists here. The one we want is "rockyou.txt". It's a large file, but it has millions of entries. It's compressed (.txt.gz), so let's decompress it:
+
+```bash
+gzip -d /usr/share/wordlists/rockyou.txt.gz
+ls -lh /usr/share/wordlists/rockyou.txt
+```
+
+It's a 134 megabyte file, which is very little by today's standards. You can find wordlists with terabytes, with trillions and trillions of words. But for our test, this is sufficient.
+
+## Running Aircrack
+
+Now let's crack our capture.cap file using the wordlist:
+
+```bash
+aircrack-ng -b C0:25:E9:XX:XX:XX -w /usr/share/wordlists/rockyou.txt capture.cap
+```
+
+Where:
+- `-b`: our BSSID
+- `-w`: our wordlist
+- `capture.cap`: file we need to crack
+
+It was very fast! On my machine I got more than 3,100 words per second. Depending on your machine, this will depend a lot on your processor, power, model, year - all of this changes the time.
+
+If it had to run through the entire list (which is small), it would take almost an hour. For a list of only 134MB! Imagine using a GPU, which has much more processing capacity for password cracking, or more powerful processors.
+
+## Result
+
+The password found was: **123456789**
+
+Nothing we didn't already know - we had already said the password was this. So our WiFi was successfully "cracked".
+
+## Conclusion and Security Recommendations
+
+That's why it's important to use:
+- Uppercase characters
+- Lowercase characters  
+- Special characters
+- Long and complex passwords
+
+I know it's a bit annoying, this security issue isn't very comfortable, but nowadays computers are getting more and more powerful, and we need to pay greater attention to passwords, especially when large password leaks from sites and enormous databases happen.
+
+## Final Considerations
+
+Folks, that was it! We managed to crack a password, we managed to drop our client, force it to reconnect, capture a handshake and execute a brute force on that file.
+
+**Important**: This tutorial is for educational purposes only and should be used only on your own networks or with explicit authorization. Unauthorized use of these techniques is illegal.
+
+*I hope you enjoyed it! Any doubts or questions, you can ask on our course forum. Hugs to everyone!*
