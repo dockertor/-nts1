@@ -1,0 +1,226 @@
+# Kali Linux Initial Configurations
+
+Hello all students! How are you all doing?
+
+Well, first steps after you've done your Kali Linux installation.
+
+First thing: basic configurations, including configuring the root user, enabling SSH access to your Kali Linux so you can access your system remotely, whether via Windows, Linux, anyway, remotely.
+
+And then update your system, if needed.
+
+So this is an important step for you to do.
+
+## Root User Configuration
+
+So, first thing: open your Kali Linux terminal.
+
+It will always open as a regular user, not a root user - it doesn't have superpowers on your system. So you need to have access to your root user.
+
+So how can we have access to the root user? Remembering that this type of subject is a Linux subject, but I'll explain it to you so you can get ahead.
+
+So, first thing: run our command:
+```bash
+sudo su
+```
+
+Space `sudo`, space `su`, ok? It will ask for your kali user password, which is **kali** too.
+
+And there you go! Then we have access to the root user here.
+
+### What is the root user?
+
+The Linux root user is the user who has all full powers. It's the administrator user, so it has access to everything and everyone. It can do anything on your system.
+
+So it has to be used very carefully, ok?
+
+It's important that you know how to handle between regular user and root user. This is also very important.
+
+This is also a basic Linux subject, not just Kali Linux, but Linux systems. All Linux-based systems have a root user, ok?
+
+So the first thing is knowing how you can navigate from one to another.
+
+### Setting password for root user
+
+The root user doesn't have a password, so we'll have to configure a password for it.
+
+So, the command is:
+```bash
+passwd root
+```
+
+Or just `passwd` to change your password, to be able to create a password.
+
+So, press Enter and put a new password here. For example: 123456, 123456.
+
+Obviously, use much better passwords than this. It's an administrator user. Be careful not to be hacked, obviously. The very system you want to protect from being hacked.
+
+So let's go.
+
+## SSH Configuration
+
+So, another important thing is to configure SSH, which is our remote access protocol, ok?
+
+So, we have to configure it because by default it comes blocked. It comes disabled.
+
+So it's important that we enable this. You can enable it for direct root user access or not. So that's optional for you.
+
+### Enabling SSH service
+
+But then, the first thing we're going to do is enable the daemon. Daemon is the little program that runs in the background.
+
+So let's do:
+```bash
+systemctl enable --now ssh
+```
+
+Why this command here? What does this mean? We'll be able to enable the SSH system.
+
+Every time the system boots, you restart, reboot your system, SSH or daemon, this protocol will be activated by default.
+
+And the `--now` is to start it now. It's equivalent to `systemctl start`.
+
+So, you already leave it activated, ok?
+
+So this is very important.
+
+### Checking SSH status
+
+How can we visualize? To check, use the command:
+```bash
+systemctl status ssh
+```
+
+You'll be able to see it. Look here, it's **active (running)**.
+
+Just forgive me for the image, because I'm using a virtual machine, it will be tiny. But generally, I always work with my Linux screen here so you can see the commands better. Just for us to learn here, ok?
+
+So, see how it's activated.
+
+## Remote SSH Access
+
+So, first thing is: let's access our Kali Linux remotely. We already activated SSH.
+
+So, find out your IP address:
+```bash
+hostname -I
+```
+
+I think I already said this, minus capital I. We'll show the IP addresses here, both IPv4 and IPv6. You can access either one.
+
+So, 192.168.1.125, this is my Kali Linux address.
+
+So, I'm going to access remotely through my Kali Linux IP.
+
+### Access via Windows PowerShell
+
+If you're using Windows - I'm using a Windows Server here, but it works for Windows desktop too - just download **PowerShell 7**. We have a lesson that talks about this too.
+
+You can use PowerShell 7. What I'm going to use is:
+```powershell
+ssh kali@192.168.1.125
+```
+
+Obviously you'll have different addresses from mine. Each network environment has its address: 192.168.1.125, 192.168.1.112, etc.
+
+Since it's the first access, it will ask you here to enable our fingerprint, which would be our digital signature.
+
+And put your Kali Linux password here. Kali Linux is kali/kali.
+
+So, **kali** user, **kali** password.
+
+There you go! We accessed remotely via PowerShell on my Windows, PowerShell version 7. It can't be the old PowerShell. It has to be the new PowerShell.
+
+### Remote access advantages
+
+So, we have remote access to my Kali Linux via my Windows here.
+
+This is also very important. So, you'll be able to do your Kali Linux commands here.
+
+So, it's a good way for you to work with your Kali Linux via terminal. Why is this? Because sometimes you'll need to copy and paste commands, these things, and it's better to work this way, ok?
+
+So, if you can have remote access here, for more information about SSH, configurations, we have it in our Linux course. For you to know, ok? This is the important part.
+
+## System Update
+
+Well, to be able to update our system here, you can use:
+```bash
+apt update
+```
+
+It will update your system, update your system repositories.
+
+Obviously, you have to check that your internet is working. This is important. Your internet has to be working perfectly, ok?
+
+It will access the Kali Linux servers.
+
+### Listing available updates
+
+And then it will ask here if you want to update. So, you can run the command here:
+```bash
+apt list --upgradable
+```
+
+So you can see the list.
+
+And we have here more than 700 packages to update. That's quite a lot.
+
+As I said, Kali Linux is heavy, it has many tools, many programs. It's a complete platform, it's not just an operating system. It comes with everything possible, so it's quite heavy.
+
+It's quite heavy, has many updates and also bugs, sometimes.
+
+### Experience with Kali Linux
+
+So, in my experience of several years as a pentest instructor, Kali Linux is a very good system. It's constantly updating.
+
+However, some bugs in the version can occur. So, this has to be clear to you.
+
+### Running the updates
+
+First, you do an `update`. If you want to update, you can give the command:
+```bash
+apt upgrade
+```
+
+The upgrade will enable all our updates. It's a command that will take a long time. I'm warning you in advance.
+
+You press Enter. It will do all the update calculations. It's a lot of stuff.
+
+Here it will update quite a lot. There's a whole list of updates. What will be updated? The main programs and their dependencies, ok?
+
+It's a lot of stuff. Let me show you remotely, let's see so you can see better here.
+
+It's a lot of stuff to update with the `apt upgrade` command. There are many programs to be updated. It takes a long time. It's a lot of stuff.
+
+But maybe it's necessary. It's your choice. You can update or not, ok?
+
+## Configuration Summary
+
+This is it for you to be aware of our configuration:
+
+1. **Kali Linux Terminal** - first thing
+2. **Enable root user** - change password
+3. **Enable SSH** - to be able to have remote access
+
+Some lessons I'll use the programs right here, but I'll use on a bigger screen so you can see, ok?
+
+Some lessons, many lessons, I'll use the terminal itself. Then you'll be able to see better here.
+
+But you can also use it through Windows PowerShell, Linux terminal, or some SSH emulator. Putty is also possible, ok?
+
+## Conclusion
+
+That's it. I made everything very clear, everything how it works, the first steps, step by step, ok?
+
+So, that's it. I hope you like it. Any doubt or question, or if something important is missing, just let me know.
+
+So, that's it!
+
+---
+
+## Next Lesson: Wireless Hacking
+
+Hello everyone! How are you all doing?
+
+Let's start our section on **Wireless Hacking** or **Wi-Fi Attacks**.
+
+But for that we need a...
