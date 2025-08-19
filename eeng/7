@@ -1,0 +1,102 @@
+# Wi-Fi Network Monitoring Lesson
+
+Hello everyone! How are you all doing?
+
+Well, another lesson here. This time we're going to learn how we can monitor our wireless environment.
+
+Let's enter our environment here. If you're already in any environment today, especially in big cities, large metropolises or in large areas, you'll obviously have a lot of Wi-Fi frequency saturation.
+
+So, you can do this in any area, since nowadays Wi-Fi is more present than ever.
+
+## Environment Configuration
+
+Let's go back to our environment here. I'm in my Kali Linux running through my Ubuntu, but you can also do this through your terminal. No problem at all, ok?
+
+I'll adjust here to make it better visible for you.
+
+So let's see, first check if it's really in monitoring mode. So run an `iwconfig` to see if it's in monitor monitoring mode.
+
+This is the first thing we'll have to check.
+
+## Using Airodump-ng
+
+With this now, we can use our Airodump. With Airodump, what can we do? Monitor our network.
+
+Execute: `airodump-ng wlan0mon`
+
+Let me go back here to our command: `airodump-ng wlan0mon` for monitoring mode.
+
+It will keep monitoring our entire network here.
+
+## Information Collected
+
+This here is a very interesting and very important part. Why? Here we have various types of information that we'll use throughout our lessons.
+
+### ESSID (Network Name)
+Like, for example, here we have the name of each network. We already know this - the names of each network. When we're going to access a network, they all have names. Here we'll have the ESSID.
+
+We have "CriamoLo" here. I have our "WiFi Teste" here that we can be using. There are others here too, like "VEM", which is the name of our network.
+
+### Authentication Method
+We have the authentication method. How is authentication done? Most nowadays is all through PSK, which is the most secure method.
+
+### Encryption Type
+The encryption type: WPA2 is the most used today. There's also WEP, but this is less secure. So this type of configuration will be much less used.
+
+Some open networks, including "NET_CLARO_WIFI", is an open network, so it doesn't have a password. But for you to be able to browse, you need a login, if I'm not mistaken. So here there's another type of security.
+
+### Channel and Power
+The channel: generally they're also automatic. Here we have channel 1, channel 11, which is where our frequency is.
+
+Amount of data that was transported from one to another, their power, the power of each signal. The smaller the better: if it's -40, it's closer; when it gets to -80, it's even farther away.
+
+So, the higher the value (closer to zero), the better; the lower (more negative), the worse. This is the logic of our power. Since it has a negative sign, the closer to zero, the better it gets; the farther away (more negative), the worse it gets.
+
+### MAC Address
+And here we have our MAC Address too. We'll work a lot with these MAC Addresses in these lessons too.
+
+In the lessons to come, we'll work quite a bit with these MAC Addresses here. These MAC Addresses here are the MAC Addresses of the routers - called BSSID.
+
+So they all have our MAC Address here, and down here we have some important information.
+
+### Connected Devices
+Like, for example, we have the MAC Addresses of our routers and the MAC Addresses of devices that are connected to these routers.
+
+So, ending in 98F2, we have the WiFi here, and we have some hosts: cell phones, notebooks, anyway, any type of Wi-Fi connection. We can see that they're listed here with our MAC Address, as you can see here.
+
+But we have others too, like 4A43, which is this other router here. I'm here in an environment with few Wi-Fi connections, but you, if you're in a quite voluminous connection, with quite a lot of Wi-Fi, quite a lot of routers, will be able to see quite a lot.
+
+### Additional Information
+So here we have the power of our connection, if there's some type of lost packet, if there are some type of lost packets - we can also see this here, which is also quite important.
+
+## Channel Filtering
+
+This here is the basic part of being able to monitor. If I want to monitor, for example, a specific channel, I can monitor a single channel to filter this, which also helps a lot and is very important.
+
+To exit the screen, press Ctrl+C to be able to exit our screen here, and let's try to configure here, for example, a specific channel.
+
+It's the same command: Airodump, we can complement here:
+`airodump-ng wlan0mon -c 1`
+
+For example, then we'll filter. Here, look, channel 1, do you see? So we filtered only this type of connection, which makes it easier to choose your target, for example.
+
+## BSSID Filtering
+
+This is important to configure. We can still filter by our BSSID, filter by a specific router.
+
+So, for example, let's filter here by our router, let's filter this little router of ours here.
+
+Ctrl+C to exit. The same command, you can filter by our channel, if you want, or by our BSSID.
+
+So let's use here as command:
+`airodump-ng wlan0mon -c 1 --bssid [MAC_ADDRESS]`
+
+There you go. So here we have only one, so it will only list only one single access point, and all its connections that are connected to it.
+
+## Conclusion
+
+Folks, this here is a phase - we're still at the very beginning, but it's important that you know all these types of techniques, because they will be used later in the more advanced lessons.
+
+Well, so folks, that's it. We'll continue here to our next lesson.
+
+A hug to everyone!
