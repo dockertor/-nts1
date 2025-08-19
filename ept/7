@@ -1,0 +1,102 @@
+# Aula sobre Monitoramento de Redes Wi-Fi
+
+Olá a todos! Tudo bem com vocês?
+
+Bem, mais uma aula aqui. Desta vez vamos aprender como podemos monitorar o nosso ambiente wireless.
+
+Vamos entrar no nosso ambiente aqui. Se você já está em qualquer ambiente hoje, principalmente em grandes cidades, grandes metrópoles ou em grandes áreas, você vai ter obviamente muita saturação de frequências Wi-Fi.
+
+Então, você pode fazer isso em qualquer área, já que hoje em dia o Wi-Fi está mais presente do que nunca.
+
+## Configuração do Ambiente
+
+Vamos voltar aqui ao nosso ambiente. Eu estou no meu Kali Linux executado pelo meu Ubuntu, mas você pode fazer isso também pelo seu terminal. Não tem problema nenhum, tudo bem?
+
+Vou ajustar aqui para ficar melhor visível para vocês.
+
+Então vamos ver, primeiro verificar se ele realmente está em modo de monitoramento. Então execute um `iwconfig` para ver se ele está em modo monitor de monitoramento.
+
+Essa é a primeira coisa que vamos ter que verificar.
+
+## Usando o Airodump-ng
+
+Com isso agora, podemos usar nosso Airodump. Com o Airodump, conseguimos fazer o quê? O monitoramento da nossa rede.
+
+Execute: `airodump-ng wlan0mon`
+
+Deixe-me voltar aqui para o nosso comando: `airodump-ng wlan0mon` para modo de monitoramento.
+
+Ele vai ficar monitorando aqui toda a nossa rede.
+
+## Informações Coletadas
+
+Isso aqui é uma parte muito interessante e muito importante. Por quê? Aqui temos vários tipos de informações que vamos usar ao longo das nossas aulas.
+
+### ESSID (Nome da Rede)
+Como, por exemplo, aqui temos o nome de cada rede. Isso aqui já sabemos - os nomes de cada rede. Quando vamos acessar uma rede, todos eles têm nome. Aqui vamos ter o ESSID.
+
+Temos aqui "CriamoLo". Eu tenho aqui o nosso "WiFi Teste" que podemos estar utilizando. Tem outros aqui também, como "VEM", que é o nome da nossa rede.
+
+### Método de Autenticação
+Temos o método de autenticação. Como é que ela é feita, a autenticação? A maioria hoje em dia é tudo pelo PSK, que é o método mais seguro.
+
+### Tipo de Criptografia
+O tipo de criptografia: o WPA2 é o mais utilizado hoje. Tem também o WEP, mas este é menos seguro. Então vai ser bem menos utilizado esse tipo de configuração.
+
+Algumas redes abertas, inclusive, como "NET_CLARO_WIFI", é uma rede aberta, então ela não tem senha. Mas para você poder navegar, você precisa de um login, se não me engano. Então aqui tem outro tipo de segurança.
+
+### Canal e Potência
+O canal: geralmente também são automáticos. Aqui temos o canal 1, o canal 11, que é onde nossa frequência está.
+
+Quantidade de dados que foram transportados de um para outro, a potência deles, a potência de cada sinal. Quanto menor é melhor: se está -40, está mais próximo; quando fica -80, está mais longe ainda.
+
+Então, quanto maior o valor (mais próximo de zero), melhor; quanto menor (mais negativo), pior. Essa é a lógica da nossa potência. Como está com sinal negativo, quanto mais próximo de zero, melhor fica; quanto mais longe (mais negativo), pior fica.
+
+### MAC Address
+E aqui temos o nosso MAC Address também. Vamos trabalhar muito também nessas aulas com esses MAC Address.
+
+Nas aulas que vêm, vamos trabalhar bastante aqui os MAC Address. Esses MAC Address aqui são os MAC Address dos roteadores - os chamados BSSID.
+
+Então todos eles têm aqui o nosso MAC Address, e aqui embaixo temos algumas informações importantes.
+
+### Dispositivos Conectados
+Como, por exemplo, temos os MAC Address dos nossos roteadores e os MAC Address de dispositivos que estão conectados nesses roteadores.
+
+Então, terminando em 98F2, temos o WiFi aqui, e temos alguns hosts: celulares, notebooks, enfim, qualquer tipo de conexão Wi-Fi. Podemos ver que eles estão listados aqui com o nosso MAC Address, como se pode visualizar aqui.
+
+Mas temos outros também, como o 4A43, que é esse outro roteador aqui. Eu estou aqui num ambiente com poucas conexões Wi-Fi, mas vocês, se estiverem numa conexão bastante volumosa, com bastante Wi-Fi, bastantes roteadores, vão conseguir visualizar bastante coisa.
+
+### Informações Adicionais
+Então aqui temos a potência da nossa conexão, se tem algum tipo de pacote perdido, se tem algum tipo de pacotes perdidos - também conseguimos visualizar isso aqui, o que também é bem importante.
+
+## Filtragem por Canal
+
+Essa aqui é a parte básica de poder monitorar. Caso eu queira monitorar, por exemplo, um canal específico, eu posso monitorar um canal único para filtrar isso, o que também ajuda muito e é muito importante.
+
+Para sair da tela, aperte Ctrl+C para poder sair aqui da nossa tela, e vamos tentar configurar aqui, por exemplo, um canal específico.
+
+É o mesmo comando: Airodump, podemos complementar aqui:
+`airodump-ng wlan0mon -c 1`
+
+Por exemplo, aí vamos filtrar. Aqui, ó, o canal 1, estão vendo? Então filtramos apenas esse tipo de conexão, o que facilita na escolha do seu alvo, por exemplo.
+
+## Filtragem por BSSID
+
+Isso é importante para configurar. Ainda podemos filtrar pelo nosso BSSID, filtrar por um roteador específico.
+
+Então, por exemplo, vamos filtrar aqui pelo nosso roteador, vamos filtrar esse nosso roteadorzinho aqui.
+
+Ctrl+C para sair. O mesmo comando, você pode filtrar pelo nosso canal, caso queira, ou pelo nosso BSSID.
+
+Então vamos usar aqui como comando:
+`airodump-ng wlan0mon -c 1 --bssid [MAC_ADDRESS]`
+
+Prontinho. Então aqui temos apenas um, então só vai listar apenas um único ponto de acesso, e todas as suas conexões que estão conectadas nele.
+
+## Conclusão
+
+Pessoal, essa aqui é uma fase - estamos bem no começo ainda, mas é importante vocês saberem todos esses tipos de técnicas, porque elas serão usadas mais adiante nas aulas um pouco mais avançadas.
+
+Bem, então pessoal, é isso aí. Vamos continuar aqui para a nossa próxima aula.
+
+Abraço para todo mundo!
