@@ -1,9 +1,0 @@
-// Aula 3 - Monitorando o Ar
-
-# iwconfig wlan0mon
-
-# airodump-ng wlan0mon
-
-# airodump-ng wlan0mon -c 1
-
-# airodump-ng wlan0mon -c 1 --bssid C0:3D:D9:26:98:F2
