@@ -1,0 +1,71 @@
+# VirtualBox Installation on Windows
+
+Hello everyone! How are you all doing?
+
+Well, another very important lesson. We're going to install VirtualBox on our Windows machine.
+
+VirtualBox is the best system for us to emulate our virtual machines. We have other virtual machines, but don't use them, ok? Use VirtualBox, alright?
+
+So it's a free program that you can download and use. It's cross-platform, so it works for both Linux and Mac, ok?
+
+## VirtualBox Download
+
+So we have here our **VirtualBox.org** website. I'll provide you with the link for you to download, ok? I'll leave the link for you to access.
+
+Let's see here how to download our little program. Click on **Download**. There it is: VirtualBox for platform. We have for Windows, macOS, we have for Linux, we have for Solaris, ok?
+
+Let's download here our program for Windows, alright? It's an executable file. Here we're going to download, ok?
+
+## Installation
+
+Here you just double-click on it and it will execute, ok? I'm here using a Windows Server, ok? But it works for Windows desktop too: Windows 10, 11, 12 and so on, ok? The important thing is that it works regardless of the version you're going to use.
+
+So let's do our installation. It's the famous "Next, Next, Next", ok? Just accept the terms and licenses, it will install our program here.
+
+Click **Next**, click **Yes** when it appears about connection. It will ask here about **Create Shortcuts**. You can create them too and do our installation here.
+
+So our VirtualBox doesn't take long, ok? It's also not very heavy, alright?
+
+And there we go! Our VirtualBox installation is done. Click **Finish** and it will open our VirtualBox here, ok?
+
+## VirtualBox Interface
+
+A little window like this appears. Then you can see here: click **New** to create a new machine, right? In case you want to. I'll use this in the next lesson, regardless of the type of system you're going to use, ok?
+
+Here we have the name, the virtual machine folder where it will be stored. So your entire operating system will be a file, in summary: the image that you'll have to download.
+
+### What is an image?
+
+The image is the image of your operating system. They all have one: Windows has an image, Linux has an image, which is the image of the entire operating system, practically, ok?
+
+Then we have here the system types: Windows, Linux, anyway, the type of operating system you're going to choose, ok?
+
+If it's Linux, for example, what type of Linux it is: if it's a Debian, an Ubuntu, a Red Hat (which would also be a CentOS), a Kali Linux, an Ubuntu, ok? So all of this depends on what you're going to use, alright, folks?
+
+## VirtualBox Extension Pack
+
+And no less important - let me emphasize here - we also have to download the **VirtualBox Extension Pack**. This is also important to download, ok?
+
+These are extra extensions to improve your VirtualBox compatibility, right? For you to use USB, for you to use cameras, for you to use some type of important extension. So this is also important.
+
+Come here and download it. It's a single program, ok? This Extension Pack program, it works for all systems, because it will be opened or executed by VirtualBox, ok?
+
+### Extension Pack Installation
+
+So I downloaded it here. If you double-click on it, it will be executed by VirtualBox, ok? It will open through VirtualBox. Then you come here and click **Install**.
+
+Then you accept the terms here, which are our contract, right? **I agree**. And there we go! Our Extension Pack is already installed here, ok? This is important, alright?
+
+## Conclusion
+
+So our Oracle VirtualBox is ready for us to use, ok?
+
+I'm going to use VirtualBox on my Linux, ok? On my Ubuntu Linux. No problem, the configuration is the same, ok? As you can see here, ok? I'm using Ubuntu here, but on Windows it's the same thing, ok?
+
+As I said, it's cross-platform. The configurations are the same, alright?
+
+So that's it, ok? I hope you enjoyed this lesson of ours. Any doubt or question, you can ask in our forum, ok?
+
+And work with VirtualBox, ok? I work with VirtualBox, ok? I don't work with any other type of virtualization, alright?
+
+So that's it, see you later!
