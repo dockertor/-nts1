@@ -1,0 +1,195 @@
+# Wireless Hacking Setup - Lab Configuration
+
+Hello everyone! How are you all doing?
+
+Well, another lesson here. We're going to start our section on **Wireless Hacking** or **Wi-Fi attacks**.
+
+But for this we need a setup. We'll explain here to you why we need these configurations or equipment, otherwise we won't be able to do or start the next lessons, ok?
+
+## Required Equipment
+
+So, for us to be able to continue here, we need:
+
+### 1. Computers/Devices
+- **At least two PCs or phones** with Wi-Fi antennas to make our lab
+- **At least one machine with Windows 7 or 10**, anyway, also with Wi-Fi. It can be a laptop or even another virtual machine, if you prefer. It can also be used
+
+### 2. Wi-Fi Router
+- **A router** - can be any type of Wi-Fi router that supports **WEP, WPA and WPA2** encryption. This is also very important
+- All routers nowadays, whether a more advanced or simpler model, have these functionalities
+
+### 3. USB Wi-Fi Adapter (MOST IMPORTANT)
+And the most important: in our Kali Linux, our operating system, we'll need a **USB Wi-Fi adapter** that enables the use of **monitor mode**, that is, the use of Wi-Fi connection monitoring.
+
+**And not all models work!** They are generally more expensive models, they are generally models that have that antenna, that have high gain, have a slightly more powerful chipset. That's why they are more expensive.
+
+I'll even leave you the link on the site for you to take a look.
+
+#### Compatible Models
+It's not just any model, as I said. If you look, for example, on e-commerce sites, we have some models here:
+
+- **This one here works** - these are the more expensive models
+- **This one here also supports** - WN722N - these are the more expensive models
+- **This one here doesn't support**
+- **This one here doesn't** - there's no way to do it
+
+They are really more expensive models. So, if you want to do a wireless hacking test, you need to have a more powerful USB adapter.
+
+This one here also works, ok? They are chips, they are more expensive Wi-Fi adapters. Only some of them support it, not all of them support it, ok?
+
+**Therefore, if you don't have the adequate equipment, we won't be able to do our lesson properly.**
+
+## VirtualBox Configuration
+
+I'm going to use an exactly identical model. Our router will be exactly this same model here. Any type of router that contains this type of encryption - all of them, the most modern ones, even if it's the cheapest, have it. So there's no problem with that.
+
+Let's open here. I'm using my VirtualBox. I have my Wi-Fi on my machine here, as you can use. It uses the Wi-Fi network, but what will I have to do?
+
+I'm going to throw this my adapter, this my little Wi-Fi adapter here, inside my Kali Linux, which is inside my virtual machine.
+
+### Configuring USB in VirtualBox
+
+So let's see here in Kali Linux: **Settings** → **USB**, because since it's a USB adapter, it's in the USB part for us to configure.
+
+Here, the **USB 2.0 adapter** is sufficient. Let's see here... let's see the green icon. Mine, since it's an Atheros chip, the **USB WLAN**, so I'm going to choose this one.
+
+It's the name of the chip, of the chip that's inside our adapter. That's why not all of them, again, not all models support it. The more expensive models that we can make this configuration.
+
+Give an **OK**.
+
+### Configuration Result
+
+So, once this is done, our USB adapter will leave our real machine, our physical machine, and will be plugged into our Kali Linux, as if it were inside our Kali Linux directly.
+
+Let's initialize our system here now. You can see that it will leave our machine, it will be disconnected here and will be connected to our Kali Linux directly.
+
+Here in our system, if you go to Windows too, it's the same thing: it will stop serving your Windows system, for example, it will serve Kali Linux exclusively.
+
+## Testing the Configuration
+
+Let's enter here as root user: 123456.
+
+You can use terminal too, no problem.
+
+So let's see here, look: Wi-Fi network. Do you see? So we already have our Wi-Fi network working here.
+
+And more importantly: let's open our terminal. Our Kali Linux, I'll leave it maximized here so you can see better.
+
+### Identifying the Wi-Fi Adapter
+
+So, in our Kali Linux terminal, we'll have to configure our Wi-Fi card, our adapter.
+
+The command is:
+```bash
+iwconfig
+```
+
+We can see: we have our **wlan0** here, which is our chip, our USB Wi-Fi adapter.
+
+So, we have our **wlan0** here, which is what we'll work with in the lessons about our Wi-Fi section here.
+
+Remember: if you have some other Wi-Fi chip or an onboard Wi-Fi card, it might appear with a different name, like **wlan1**, for example, if you have more than one. No problem.
+
+The important thing is that you can identify which one is your card.
+
+### Viewing the Configurations
+
+So let's do... let's type our command, if you want to visualize:
+```bash
+ifconfig wlan0
+```
+
+Which is our USB adapter.
+
+So we have our **MAC address** here. Since it's not connected to anything, then there's no problem with packets received or sent.
+
+### Scanning Networks
+
+But let's do a scan. If you want to do a scan, it's also possible. You can use the command:
+```bash
+iw list
+```
+
+If you want:
+```bash
+iwlist wlan0 scan
+```
+
+For you to do it.
+
+Then what will it do? It will scan all the Wi-Fi networks it can capture.
+
+There's the name, the power, the quality, whether it's encrypted or not, the name of that network, its frequency (2.4 GHz). If you have an adapter with 5 GHz, it can also capture this frequency.
+
+We have NET, Claro Wi-Fi, here another network... so there's encryption. It's enabled, as you can see.
+
+Anyway, we have various types of Wi-Fi networks in my region. If you have them too, you'll see your networks.
+
+It's basically this here, it's basically this list here that we see here in our configuration. Nothing more.
+
+## Configuring Monitor Mode
+
+So, now that we know... well, if you want to use our command, now we'll have to bring up our card to activate the network interface.
+
+So the command is:
+```bash
+ifconfig wlan0 up
+```
+
+We'll leave it active.
+
+### Activating Monitor Mode
+
+And to put it in **monitor mode**, which is the most important - leave it in monitoring mode - we have to use our:
+```bash
+airmon-ng start wlan0
+```
+
+This is our command. **Airmon-ng** is a program that already comes installed in our Kali Linux.
+
+And `start wlan0`. The **wlan0** is our Wi-Fi card that we're going to configure.
+
+And there you go!
+
+### Checking the Configuration
+
+So look here: our Atheros chip. That's why I say again: **it's not just any type of USB**. Only cards with more powerful chips really have this type of resource. We can do this type of monitoring.
+
+If you want to see how it turned out, run the command:
+```bash
+iwconfig wlan0
+```
+
+Look here how it turned out.
+
+If you want to visualize too, you can use the command:
+```bash
+ifconfig
+```
+
+So it no longer appears as just **wlan0**, but as **wlan0mon**.
+
+So, we changed its configuration type to monitoring.
+
+## Final Result
+
+And with this, from now on, we can do all our analysis of what happens inside our USB Wi-Fi network card.
+
+So, it's from here that we can:
+- Monitor everything
+- Capture packets
+- Use, obviously, other programs
+
+So, here we can do a lot of cool stuff from now on, ok?
+
+## Conclusion
+
+So, folks, that's it here, ok? Our setup lesson to configure our Wi-Fi network card.
+
+**Remembering again that it's not just any type of USB adapter!**
+
+So, if you don't have a USB adapter of these specific models, unfortunately you won't be able to proceed, you won't be able to do our tests in the next lessons, ok?
+
+So, folks, that's it. Any doubt or question you can leave there in our course forum.
+
+A hug to everyone!
