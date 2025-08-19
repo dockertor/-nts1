@@ -1,0 +1,169 @@
+# Aula sobre Localização e Ataque a Redes Ocultas
+
+Olá a todos, alunos! Tudo bem com vocês?
+
+Bem, mais uma aula. Desta vez vamos trabalhar com a localização de redes ocultas em nosso Kali Linux.
+
+## Configuração Inicial do Roteador
+
+Então, primeiramente, precisamos de um roteador. Se você tem que ter acesso a algum roteador, pode ser um mais simples, porém os mais modernos, todos eles possuem esse tipo de recurso.
+
+Nós vamos fazer isso: vamos trabalhar e tentar localizar redes ocultas perto da sua localização, onde você está.
+
+Então vamos começar aqui. Eu estou aqui com meu roteador, na parte de Wireless. Aqui no meu roteador, ele está aqui: "Exibir nome de rede".
+
+Aqui você consegue exibir. Aqui também tem uma explicação: você vai exibir o seu nome do seu SSID. O nome é este que é mostrado quando você vai tentar se conectar em alguma rede - ele mostra para vocês o nome.
+
+Mas você pode deixar isso oculto, pode deixar isso de maneira oculta, sem que as pessoas saibam qual o nome real. No meu caso, é "WiFi Teste".
+
+### Ocultando a Rede
+
+Vamos ver aqui, vamos experimentar ocultar a nossa rede. Vamos desmarcar "Exibir" aqui.
+
+No meu Windows, eu tenho aqui também uma outra rede, uma outra placa Wi-Fi, que também mostra aqui todas as nossas redes Wi-Fi da nossa máquina.
+
+Pode ver que já tem uma "Hidden Network" - pode ver que ele já está oculto, a nossa rede acabou de ocultar.
+
+Vamos ver aqui no meu Kali Linux também - pode ver que já não tem mais. A minha rede não aparece mais, pode ver que também não está mais aqui.
+
+Então já está tudo oculto aqui: a nossa rede, o nosso sistema.
+
+## Configurando o Modo Monitor
+
+Agora vamos fazer aqui: vamos configurar a nossa placa de rede em modo monitor. Vamos deixá-la em modo monitor.
+
+Lembre-se de usar aqui o nosso `wlan0`.
+
+Então, `airmon-ng start wlan0` - vamos deixá-lo em modo monitor.
+
+Vou deixá-lo configurado. E aqui temos duas configurações. Na verdade, não é um aviso.
+
+Como não matamos nosso interface de gerenciamento de rede (essa parte aqui de gerenciamento de rede), ele mesmo avisa para você.
+
+Então ele mostra para você a configuração e já deixa desabilitado.
+
+### Eliminando Interferências
+
+Vamos estar aqui configurado. Pode usar esse comando aqui: `airmon-ng check kill` para você matar qualquer tipo de processo que pode causar problemas.
+
+Então ele automaticamente já mata para você esses dois tipos de processos para você poder configurar.
+
+Feito isso, execute `ifconfig` aqui para ver se realmente temos o `wlan0mon`, que estamos em modo monitoramento.
+
+## Detectando Redes Ocultas
+
+Vamos executar `airodump-ng`. A gente já sabe da nossa rede, então não precisa ser tão difícil assim.
+
+A nossa rede é essa daqui: o sinal mais potente, -40. Ela vai aparecer com esses campos aqui vazios. O nome tem zero caracteres.
+
+Eu tenho o tipo de criptografia que ela usa, a autenticação. Eu tenho algumas informações, mesmo assim. Pode ver a potência.
+
+Eu sei que é essa daqui porque é a única aqui da minha rede. Mas se você tiver algum outro tipo de redes ocultas, você vai ver várias outras dessas aqui com esse tipo de caracteres vazios.
+
+### Filtrando por Canal
+
+Talvez mude o número da sua rede. Você pode filtrar para um canal específico para poder melhor fazer o nosso ataque.
+
+Vamos filtrar pelo canal 10. Está trabalhando aqui. Vamos interromper aqui com Ctrl+C.
+
+Vamos executar normalmente como o nosso comando `airodump-ng`, só que com `-c 10` (o canal 10 é o único, se não me engano).
+
+Se não é o único, é um dos únicos. A gente consegue fazer o nosso ataque melhor.
+
+## Estratégia de Descoberta
+
+Qual vai ser o nosso ataque? Vamos derrubar alguma conexão que está nele. Não tem nenhuma conexão nele ainda para poder descobrir o nome da rede de fato.
+
+Então temos dois jeitos:
+1. Você esperar alguém conectar nele (que eu acho um pouco mais improvável)
+2. Você derrubar as conexões que já estão nele
+
+Então, muito provavelmente, alguém deve estar conectado nessa rede. Não é o caso, porque vamos fazer a nossa conexão.
+
+Depois que derrubarmos aquela conexão ou esperarmos alguém se conectar, vamos conseguir visualizar aqui qual o BSSID, qual a estação que está sendo associada nesse nosso MAC Address.
+
+### Conectando um Dispositivo
+
+Por enquanto não temos nenhum aqui. Vamos ver aqui em nossa rede no Windows. Vamos conectar em alguma rede específica aqui para podermos ver.
+
+Vamos usar aqui "Hidden Network". Vamos conectar aqui. Hidden Network é oculta. Para podermos conectar, precisamos das configurações.
+
+Podemos saber aqui a nossa rede. Então vamos para "Hidden Network". Caso você queira saber, vamos ver aqui em "Hidden Network". Vamos saber o nome.
+
+Então não sabe o nome, não há como. Mas é "WiFi Teste". A gente já sabe aqui.
+
+Esse daqui: "WiFi Teste". Vamos ver aqui "WiFi Teste". Neste, ele vai pedir a senha.
+
+Sim, é 123456789. Para podermos conectar, ele vai pedir a senha. Obviamente: 123456789.
+
+Pronto. Agora ele vai conectar. Agora sim, vamos saber aqui o que vai conectar nesse nosso roteador.
+
+## Descobrindo Informações da Rede
+
+A gente já descobriu aqui. Já pode ver aqui "WiFi Teste". Já foi descoberto porque alguém conectou - foi esse nosso roteador aqui, esse nosso MAC Address da estação: final 17A9.
+
+Então conectou. A gente conseguiu descobrir. Aqui também já conectamos. Vai aparecer - aqui vai ter dado "Hidden Network" ou rede oculta. Vai aparecer aqui o nomezinho dele depois.
+
+E aqui já está conectado. Já descobrimos o nosso nome.
+
+## Executando Ataque de Desautenticação
+
+Agora podemos derrubar isso. Não só esse tipo de conexão, mas qualquer tipo de conexão Wi-Fi. Não necessariamente seja Wi-Fi oculto, mas derrubar qualquer um.
+
+Por isso precisamos de uma placa Wi-Fi potente, porque temos que mandar sinais para derrubar a nossa rede de configuração.
+
+O nosso Hidden Network já está conectado. Deixa eu ver aqui. Desconectou de novo. A nossa conexão aqui foi feita com sucesso.
+
+### Identificando Alvos
+
+Vamos dar aqui. Já descobrimos, inclusive, qual é o nosso MAC Address: esse final C150. Também temos a estação - o MAC Address da estação conectada.
+
+Você pode atacar ou derrubar o ataque daquela conexão com os dois MAC Address, ou só com um. É mais eficiente com os dois.
+
+Caso você queira saber: só com o BSSID funciona muito bem com celulares. Para estações de desktop, alguma coisa mais grande, um notebook, talvez os dois MAC Address funcionam melhor.
+
+### Executando o Ataque
+
+Vamos aqui em nossa configuração. Vamos usar o nosso `aireplay-ng`. Vamos usar o nosso comando:
+
+```bash
+aireplay-ng -0 100 -a [BSSID] wlan0mon
+```
+
+- `-0`: modo de desautenticação  
+- `100`: 100 ataques (pode ser mais eficiente)
+- `-a`: com a nossa base, este aqui BSSID
+
+Você pode talvez dar certo ou não, mas com mais eficiência, se você usar (como ele já fala) o MAC do cliente:
+
+```bash
+aireplay-ng -0 100 -a [BSSID] -c [MAC_CLIENTE] wlan0mon
+```
+
+Essa é uma outra opção também. Você coloca aqui, antes do `wlan0mon`, `-c` e o endereço do cliente MAC - o endereço do cliente completo. E aí sim temos uma maior eficiência.
+
+## Resultado do Ataque
+
+Estou conectado aqui no meu Windows. Já vai cair aqui a nossa conexão. O sistema demora um pouquinho. Depende também do adaptador Wi-Fi que você está utilizando - se for uma placa externa, é um pouquinho mais eficiente.
+
+Já desconectou. Está vendo? Já não está mais conectada. E o ataque continua. Ele não vai conseguir se conectar.
+
+Ele não vai conseguir se conectar. Não adianta, está vendo? A pessoa tenta se conectar, não consegue. O ataque está continuando.
+
+Quando terminar os 100 ataques, você vai ver que já até sumiu aqui a rede para tentar se conectar. Terminou. Está muito... está até dificultando bastante.
+
+Então essa é a parte interessante: ele não vai conseguir. Você vê que agora que já parou, agora ele vai conseguir se conectar aqui na nossa rede Wi-Fi.
+
+Deixa eu ver aqui... Agora sim, conectou. Está vendo?
+
+## Conclusão
+
+Então, pessoal, é isso aí. Você pode fazer isso no seu celular, no seu... qualquer tipo de dispositivo.
+
+Se você souber o endereço do cliente, melhor ainda - o ataque é muito mais eficiente. Se não, você pode testar só pelo BSSID naquele roteador também. É uma outra opção.
+
+Tudo bem, pessoal? Então é isso aí.
+
+Qualquer dúvida que vocês tenham, podem perguntar lá no fórum do nosso curso.
+
+Abraço para todo mundo!
