@@ -1,0 +1,179 @@
+# Lesson on Hidden Network Invasion and MAC Filter Bypass
+
+Hello everyone! How are you all doing?
+
+Well, here's another lesson. This time we're going to perform a type of invasion on a hidden network. We're going to discover, besides its name, also its MAC Address and, furthermore, we're going to invade and bypass the restriction through MAC Address filtering.
+
+## MAC Address Filter
+
+This is very common - mainly all routers, from the oldest to the newest ones, all of them have this: you can restrict access to our Wi-Fi network through a selective list of MAC Addresses.
+
+That is, even if I know the password, even if I know the access credentials, it won't be able to access because the MAC Address isn't on this list. So you won't be able to make the connection even having the password.
+
+We're going to bypass this: we're going to bypass the hidden network protection and we're going to bypass the MAC Address restriction. So you can see that almost nothing is really secure - we can bypass these two things.
+
+## Initial Router Configuration
+
+We're going to do this on Kali Linux. First thing I have to do: mainly we're going to enable the MAC Address filter.
+
+I'm going to get the MAC Address of my card - I'm going to do it on my Ubuntu connection, but you can do it on Windows, no problem at all. You need to discover the MAC address.
+
+On my Ubuntu, which will be my client (assuming a normal client), so I'm going to copy the MAC Address of my Wi-Fi network card.
+
+### Configuring the Router
+
+I'm going to put it here on my router. We can enable it - it will be my Ubuntu. The Wi-Fi router is enabled.
+
+Here on our Wireless:
+- I'm going to disable "Show network name"  
+- I'm going to leave the network name as "WiFi"
+- Channel, bandwidth: everything automatic
+
+The MAC Address will be restricted - that is, it will only be able to connect with this MAC Address here. If not, it won't be able to.
+
+### Testing the Legitimate Connection
+
+Let's see here, connect to my hidden network. We can test: if you want the "WiFi", none... ready, I was able to connect perfectly.
+
+Let's see our client list: HP, here channel B171. Here is my channel B171 - this is my restriction list. Everything is correct, it's connected successfully.
+
+## Starting the Attack
+
+Now we're going to do this on our Kali Linux. We're going to drop this connection, we're going to make it reconnect again. We're going to discover the name of that hidden network and, with that, we're also going to discover what the MAC address is.
+
+Although we already know the address, we're assuming we're performing an attack on an unknown client in a controlled environment, so we have full access.
+
+### Configuring Monitor Mode
+
+First thing: let's configure monitor mode. Let's excuse... let's configure Kali now:
+
+```bash
+airmon-ng start wlan0
+```
+
+Found it active. Let's run `ifconfig` to see if it returned to our monitoring.
+
+My Ubuntu (which is the client that will be attacked) is connected normally.
+
+### Locating the Target
+
+We're going to find our configuration on channel 10. We already did this in previous lessons - I'm going faster, I'm just recapping.
+
+Let's find channel 10, our hidden network. Let's filter:
+
+```bash
+airodump-ng -c 10 wlan0mon
+```
+
+Here we can filter our attack. Let's see here: we have our channel 10, our hidden network here, our BSSID is connected.
+
+If we have our connection, it will make it easier. C150 - we also have the client that's connected to this one: C150, our hidden one. Let's attack this one.
+
+There's already a client, obviously. We already have an associated client. Let's drop it to discover the name (assuming we don't know it).
+
+### Executing the Deauthentication Attack
+
+Let's pause. This is the client and this is our router. Let's drop it.
+
+Leave it monitoring. Let me open another terminal here to be able to configure.
+
+Here our attacker: we're going to drop with our client. Let's get our target: it's this one C150, and our client is this one: ending B171.
+
+```bash
+aireplay-ng -0 100 -a [BSSID] -c B171 wlan0mon
+```
+
+Let's give the attack. It's going to disconnect.
+
+## Discovering Information
+
+Discovered here the "WiFi" - it already dropped, already discovered "WiFi" the name. I already discovered "WiFi" too - it already dropped.
+
+Let me stop the attack here. Great, we already discovered. We already knew, but we're simulating, so the name of our hidden network is "WiFi".
+
+The name of our client is this one here. Let me reconnect again - it's going to reconnect, reestablish itself.
+
+Let me see my list here too. It's here associated. Ready, it's connected.
+
+## MAC Address Cloning
+
+Now we already have the name of our hidden network and the client/station MAC. What are we going to do? We already know who it is, we already know the name of our network (it has no password - it's open).
+
+We're going to attack our network, even with that restriction. Let's do cloning here.
+
+### Exiting Monitor Mode
+
+Let's stop our card:
+
+```bash
+airmon-ng stop wlan0mon
+ifconfig
+```
+
+To see if it really exited monitor mode.
+
+### Cloning the MAC Address
+
+Let's see here. Kali Linux already has this function, so you don't need to use `macchanger`. Kali Linux (and any Linux distribution) already has this type of resource.
+
+I'm going to try to connect, but I won't be able to make the connection because I don't have the correct MAC Address. So I have to clone the MAC Address.
+
+Let me edit here... let me delete here.
+
+Now let's recreate again: hidden network, name "WiFi", no password. It connects.
+
+Great! Let's see here again in edit. Let's see in the configuration - it has this cloned MAC.
+
+### Applying the Cloned MAC
+
+Now yes, let's copy the MAC address of our client that's enabled on this list: B171. This was the one from the list.
+
+Let's clone this one. It can connect this one because it's in our restriction. Let's impersonate it: B171, cloned MAC address. Save, close.
+
+Now we're going to be able to connect.
+
+## Attack Result
+
+But we have a problem: we have two. Our router won't know who is who. It's going to... both dropped. Maybe both won't be able to make the connection.
+
+You can try to make the connection... I already connected!
+
+`ifconfig` - look, it already got the IP address: 192.168.1.122.
+
+Let's test here. Our original client won't be able to know who is who - the cloned MAC is just one. My Ubuntu also couldn't connect... or did it? Let's see... it managed too.
+
+On my Kali Linux it managed too. So the person won't even know. The network administrator is going to find it very strange: the MAC Address is the same, but two devices are accessing with the same MAC.
+
+### Testing Connectivity
+
+I'm going to test my router here. Let me open my router in the terminal here:
+
+```bash
+ping 192.168.1.1
+```
+
+I'm pinging. Let's ping here: 192.168.1.1. We can try to access - I'm accessing.
+
+I'm going to open the browser normally too. I'm accessing my router normally: 192.168.1.1 - TP-Link.
+
+I'm going to access normally. That is, if I can access my router, I'm going to access the internet too. I'm browsing normally.
+
+### Bypass Confirmation
+
+Let me access here: 192.168.1.1. Ready, I'm inside.
+
+So I managed to bypass. Maybe because there's an open session, but I'm here accessing. I'm going to access even this - it can be bypassed.
+
+Even this is also bypassed. The TP-Link, my router won't know. I have a tab here, and it also managed to open. Only one person can access normally.
+
+## Conclusion
+
+So that's it, folks. You can see that even with restriction, we managed to bypass. We left it hidden, we left it with restricted MAC Address, but it didn't help - we managed to bypass.
+
+This is a very important and very interesting Wi-Fi pentest lesson. We also know how you need to be careful.
+
+If you work with Wi-Fi, you can never be too careful.
+
+Well, folks, so that's it. The lesson was this one. Any questions you have, you can ask on our course forum so we can answer as quickly as possible.
+
+Hugs to everyone!
